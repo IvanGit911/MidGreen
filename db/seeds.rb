@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# user1 = User.create()
+
+User.create(username:Faker::Name.name, email: Faker::Internet.email, password: '123456')
+# category1 = Category.create(title: 'LEED');
