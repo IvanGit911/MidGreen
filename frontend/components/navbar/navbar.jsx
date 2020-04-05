@@ -17,8 +17,8 @@ const NavBar = ({currentUser, logout}) => {
     const loggedin = (currentUser) => {
         return (
             <>
-                <button id='logout-btn' onClick={() => logout()}>Log out</button>
                 <div>{currentUser.username}</div>
+                <button id='logout-btn' onClick={logout}>Log out</button>
             </>
         )
     };

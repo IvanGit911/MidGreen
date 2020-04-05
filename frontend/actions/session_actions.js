@@ -23,7 +23,7 @@ export const login = (user) => (dispatch) =>
 
 
 export const logout = () => (dispatch) =>
-  SessionApiUtil.logout(user).then(
+  SessionApiUtil.logout().then(
     () => dispatch(logoutCurrentUser()), 
     errors => dispatch(receiveErrors(errors.responseJSON))
 );
