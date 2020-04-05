@@ -2,7 +2,7 @@ import * as UserApiUtil from '../utils/user-api_util';
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 
-const receiveCurrentUser = (currentUser) => ({
+export const receiveCurrentUser = (currentUser) => ({
   type: RECEIVE_CURRENT_USER,
   user: currentUser,
 });
