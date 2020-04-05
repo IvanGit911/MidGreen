@@ -3,7 +3,7 @@ import NavBarContainer from './navbar/navbar_container';
 const App = () => (
     <div>
         <div className="navbar">MidGreen
-            <div id="web-icon">
+            <div className="nav-btn">
                 <NavBarContainer />
             </div>
         </div>

@@ -8,20 +8,22 @@ const logoutCurrentUser = () => ({
   type: LOGOUT_CURRENT_USER,
 });
 
-//todo errors
-const receiveErrors = (errors = []) => ({
+//todo test errors
+export const receiveErrors = (errors = []) => ({
   type: RECEIVE_SESSION_ERRORS,
   errors: errors,
 });
 
-//thunk actions
 
 export const login = (user) => (dispatch) =>
-  SessionApiUtil.login(user).then((user) => 
-  dispatch(receiveCurrentUser(user)));
-
+  SessionApiUtil.login(user).then(
+    (user) => dispatch(receiveCurrentUser(user)), 
+    errors => dispatch(receiveErrors(errors.responseJSON))
+);
 
 
 export const logout = () => (dispatch) =>
-  SessionApiUtil.logout(user).then(() => 
-  dispatch(logoutCurrentUser()));
+  SessionApiUtil.logout(user).then(
+    () => dispatch(logoutCurrentUser()), 
+    errors => dispatch(receiveErrors(errors.responseJSON))
+);

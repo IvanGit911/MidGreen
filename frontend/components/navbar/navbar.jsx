@@ -17,28 +17,13 @@ const NavBar = ({currentUser, logout}) => {
     const loggedin = (currentUser) => {
         return (
             <>
-                <button id='logout-btn' onClick={() => logout()}></button>
+                <button id='logout-btn' onClick={() => logout()}>Log out</button>
                 <div>{currentUser.username}</div>
             </>
         )
     };
 
-    return currentUser ? loggedin() : loggedout();
-
+    return currentUser ? loggedin(currentUser) : loggedout();
 }
-
-
-// class NavBarForm extends React.Component {
-
-     
-    
-    
-
-//     render(){  
-//         const { currentUser } = this.props;
-        
-//     }
-
-// }
 
 export default NavBar;
