@@ -1,0 +1,72 @@
+.navbar {
+    padding: 20px 30px 20px 30px;
+    
+}
+
+.navbar-content{
+    display: flex;
+    justify-content: space-between;
+    height: 36px;
+}
+
+#midgrn {
+    font-family: 'DM Serif Display', serif;
+    font-size: 30px;
+    margin-left: 50px;
+    color: green;
+    
+}
+
+#login-btn{
+    font-family:sans-serif;
+}
+
+
+#signup-btn {
+    // display: inline-flex;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(3, 168, 124, 1);    
+    color: white;
+    padding: 8px 16px 8px 16px;
+    line-height: 36px;
+    text-align: center;
+    margin-left: 35px;
+    margin-right: 50px;
+    border: 1px solid rgba(3, 168, 124, 1);
+    border-radius: 3px;
+    width: 100px;
+    height: 18px;
+}
+
+#signup-btn:hover {
+    background-color: rgb(1, 143, 105);
+}
+
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+
+.show{
+    display: block;
+}
+
