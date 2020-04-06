@@ -8,5 +8,5 @@
 
 # user1 = User.create()
 
-User.create(username:Faker::Name.name, email: Faker::Internet.email, password: '123456')
+# User.create(username:Faker::Name.name, email: Faker::Internet.email, password: '123456')
 # category1 = Category.create(title: 'LEED');
