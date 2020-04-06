@@ -8,24 +8,32 @@ class NavBar extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  toggleShow() {
-    // debugger
+  handleClickOutside(e){
+
   }
 
   handleClick(e) {
-    document.getElementById("user-dropdown").classList.toggle("show");
-    // const dropdown = document.getElementsByClassName('dropdown-content')[0];
-    // if (dropdown.classList.contains('show') && !e.target.matches('dropdown-content')) {
-    //     dropdown.classList.remove('show')
+      document.getElementById("user-dropdown").classList.toggle("show");
+
+    // if (e.target.matches('dropdown-btn')){
+         
+    // } else {dropdown.classList.contains('show') && !e.target.matches('dropdown-content')
+    //   const dropdown = document.getElementsByClassName('dropdown-content')[0];
+    //   dropdown.classList.remove('show')
     // }
+    
   }
 
   loggedout() {
     const { openModal } = this.props;
     return (
-      <div>
-        <button onClick={() => openModal("login")}>Login</button>
-        <button onClick={() => openModal("signup")}>Signup</button>
+      <div className='session-btn'>
+        <button id="login-btn" onClick={() => openModal("login")}>
+          Sign in
+        </button>
+        <button id="signup-btn" onClick={() => openModal("signup")}>
+          Get started
+        </button>
       </div>
     );
   }

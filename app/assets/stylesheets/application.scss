@@ -14,8 +14,8 @@
  *= require_self
  */
 
- @import "base/reset.scss";
+@import "base/reset.scss";
 
- @import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@600&family=DM+Serif+Display&display=swap');
+@import "base/fonts.scss";
 
- @import "component/*"
+@import "component/*";
