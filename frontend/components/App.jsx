@@ -1,23 +1,32 @@
 import React from "react";
-import NavBarContainer from './navbar/navbar_container';
-import LoginFormContainer from './session/login_form_container';
-import SignupFormContainer from './session/signup_form_container';
-import { Route } from "react-router-dom";
-import { AuthRoute } from '../utils/route_util';
+import NavBarContainer from "./navbar/navbar_container";
+import LoginFormContainer from "./session/login_form_container";
+import SignupFormContainer from "./session/signup_form_container";
+import { Route, Link } from "react-router-dom";
+import { AuthRoute } from "../utils/route_util";
+import Modal from './modal/modal'
 
-const App = () => (
+const App = () => {
+  return (
     <div>
-        <div className="navbar">
-            <p id='midgrn'>MidGreen</p>
-            
-            <div className="nav-btn">
-                <NavBarContainer />
-            </div>
+      <div className="navbar">
+        <div className="navbar-content">
+          <Link id="midgrn" to="/">
+            MidGreen
+          </Link>
 
+          <div className="nav-btn">
+            <NavBarContainer />
+            <Modal />
+          </div>
         </div>
-        <AuthRoute path="/login" component={LoginFormContainer} />
-        <AuthRoute path="/signup" component={SignupFormContainer} />
+      </div>
+      {/* <AuthRoute path="/login" component={LoginFormContainer} />
+            <AuthRoute path="/signup" component={SignupFormContainer} /> */}
+
+      {/* <Route path="/welcometomidgreen" /> */}
     </div>
-);
+  );
+};
 
 export default App;
