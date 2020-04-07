@@ -6,6 +6,7 @@ class EditUserForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.user;
+    this.handleUpdate = this.handleUpdate.bind(this);
   }
 
   componentDidMount() {
@@ -13,16 +14,21 @@ class EditUserForm extends React.Component {
   }
 
   update(field) {
-    return (e) => this.setState({ [field]: e.targer.value });
+    return (e) => this.setState({ [field]: e.target.value });
+  }
+
+  handleUpdate(e) {
+    e.preventDefault();
+    this.props.updateUser(this.state);
   }
 
   render() {
     const { updateUser } = this.props;
-    debugger;
+    // debugger;
     return (
       <div className="editUser">
         <div className="edit-title">User settings</div>
-        <form className="user-form">
+        <form className="user-form" onSubmit={this.handleUpdate}>
           <div className="editUser-box">
             <label className="editUser-title">Your username</label>
             <input
@@ -34,7 +40,7 @@ class EditUserForm extends React.Component {
           </div>
           <input className="edit-btn" type="submit" value="Edit username" />
         </form>
-        <form className="user-form">
+        <form className="user-form" onSubmit={this.handleUpdate}>
           <div className="editUser-box">
             <label className="editUser-title">Your email</label>
             <input
@@ -61,7 +67,7 @@ const msp = (state, ownProps) => {
 
 const mdp = (dispatch) => ({
   fetchUser: (userId) => dispatch(fetchUser(userId)),
-  updateUser: (user) => dispatch(signup(user)),
+  updateUser: (user) => dispatch(updateUser(user)),
 });
 
 export default connect(msp, mdp)(EditUserForm);

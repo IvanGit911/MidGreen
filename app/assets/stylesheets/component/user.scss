@@ -7,23 +7,30 @@
   color: rgba(0, 0, 0, 0.8);
   display: flex;
   flex-direction: column;
-//   justify-content: center;
   align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 100px
 }
 
 .edit-title {
   font-size: 23px;
   font-weight: bold;
+  padding-bottom: 25px;
+  position: relative;
+  left: 0px;
 }
 
 .editUser,
 .user-form {
-  border: 1px solid red;
+//   border: 1px solid red;
 }
 
 .editUser-title {
   font-size: 18px;
   font-weight: bold;
+  
 }
 
 .editUser-input {
@@ -45,12 +52,20 @@
   display: flex;
   justify-content: space-between;
   width: 760px;
+  border-top: 1px solid  rgba(104, 102, 102, 0.36);
 }
 
 .edit-btn {
+    position: relative;
+    top: 35px;
+    right: 15px;
   color: rgba(0, 0, 0, 0.5);
   border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   height: 35px;
   padding: 0px 16px 0px 16px;
+}
+
+.edit-btn:hover {
+  border: 1px solid rgba(0, 0, 0, 0.8);
 }
