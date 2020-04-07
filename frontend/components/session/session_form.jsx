@@ -74,7 +74,7 @@ class SessionForm extends React.Component {
 
             <br />
             <input className="modal-submit" type="submit" value={btn_text} />
-            <button className="modal-submit" onClick={()=>this.demoLogin()}>Demo User</button>
+            <button className="modal-submit demo" onClick={()=>this.demoLogin()}>Demo User</button>
           </form>
 
           <div className="modal-btm">

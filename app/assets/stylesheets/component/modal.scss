@@ -93,11 +93,7 @@
   line-height: 1.2;
 }
 
-.modal-submit {
-  border: 1px solid grey;
-  padding: 10px 30px;
-  border-radius: 100px;
-}
+
 
 .modal-btm {
   width: 80%;
@@ -117,4 +113,19 @@
 .close-x:hover {
   color: black;
   cursor: pointer;
+}
+
+.modal-submit {
+  border: 1px solid grey;
+  padding: 10px 30px;
+  border-radius: 100px;
+}
+
+.demo{
+  margin-top: 30px;
+}
+
+.demo:hover{
+  color: white;
+  background-color: rgba(3, 168, 124, 1);
 }
