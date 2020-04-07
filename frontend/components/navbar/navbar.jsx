@@ -8,7 +8,12 @@ class NavBar extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClickOutside(e) {}
+  handleClickOutside(e) {
+    debugger
+
+  }
+
+  
 
   handleClick(e) {
     document.getElementById("user-dropdown").classList.toggle("show");
@@ -59,6 +64,7 @@ class NavBar extends React.Component {
               <li>New journal</li>
               <li>My journal</li>
               <li>Profile</li>
+              <li><Link to='/me/settings'>Account settings</Link></li>
             </div>
             <button id="logout-btn" onClick={logout}>
               Log out
