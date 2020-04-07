@@ -10,9 +10,7 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentWillUpdate(){
-      
-  }
+  componentWillUpdate() {}
 
   handleSubmit(e) {
     e.preventDefault();
@@ -28,41 +26,57 @@ class SessionForm extends React.Component {
     const { formType, errors, otherForm, closeModal } = this.props;
     const errList = errors.map((err, idx) => <li key={idx}>{err}</li>);
     const msg =
-      formType === "Go Green." ? "Already have an account? " : "No account? ";
+      formType === "Go Green." ? "Already have an account?" : "No account?";
     const btn_text = formType === "Go Green." ? "Sign up" : "Log in";
+    const intro =
+      formType === "Go Green."
+        ? "Create an account to join our green community, publish sustainability journals, and follow authors and categories you love."
+        : "Sign in to get up-to-date sustainability journals, follow authors and categories you love, and interact with journals.";
 
     return (
-      <div className="modal-content">
-        <form onSubmit={this.handleSubmit}>
-          <div>{formType}</div>
-          <div onClick={closeModal} className="close-x">
-            &times;
-          </div>
-
+      <div className="modal-child">
+        <div onClick={closeModal} className="close-x">
+          &times;
+        </div>
+        <div className="modal-content">
+          <div className="modal-title">{formType}</div>
+          <div className="modal-intro">{intro}</div>
+          <div className="modal-info2">Think Globally, act green!</div>
           <ul className="session-err">{errList}</ul>
-          <label htmlFor="username">
-            Username
-            <input
-              type="text"
-              value={this.state.username}
-              onChange={this.update("username")}
-            />
-          </label>
-          <br />
-          <label htmlFor="password">
-            Password
-            <input
-              type="password"
-              value={this.state.password}
-              onChange={this.update("password")}
-            />
-          </label>
-          <br />
-          <input type="submit" value={btn_text} />
-        </form>
-        <div>
-          {msg}
-          {otherForm}
+          <form className="modal-form" onSubmit={this.handleSubmit}>
+            <div className="ses-info">
+              <label htmlFor="username">Username</label>
+              <input
+                className="modal-input"
+                type="text"
+                value={this.state.username}
+                onChange={this.update("username")}
+                placeholder="Enter username"
+              />
+            </div>
+
+            <br />
+
+            <div className="ses-info">
+              <label htmlFor="password">Password</label>
+              <input
+                className="modal-input"
+                type="password"
+                value={this.state.password}
+                onChange={this.update("password")}
+                placeholder="Enter password"
+              />
+            </div>
+
+            <br />
+            <input className="modal-submit" type="submit" value={btn_text} />
+            <button className="modal-submit">Demo User</button>
+          </form>
+
+          <div className="modal-btm">
+            {msg}
+            <div className="modal-switch">{otherForm}</div>
+          </div>
         </div>
       </div>
     );

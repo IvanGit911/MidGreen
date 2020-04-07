@@ -9,6 +9,7 @@ import Modal from './modal/modal'
 const App = () => {
   return (
     <div>
+      <Modal />
       <div className="navbar">
         <div className="navbar-content">
           <Link id="midgrn" to="/">
@@ -17,14 +18,13 @@ const App = () => {
 
           <div className="nav-btn">
             <NavBarContainer />
-            <Modal />
           </div>
         </div>
       </div>
       {/* <AuthRoute path="/login" component={LoginFormContainer} />
             <AuthRoute path="/signup" component={SignupFormContainer} /> */}
 
-      {/* <Route path="/welcometomidgreen" /> */}
+      <Route path="/welcome-to-midgreen" component={NavBarContainer} />
     </div>
   );
 };
