@@ -12,6 +12,10 @@ class SessionForm extends React.Component {
 
   componentWillUpdate() {}
 
+  demoLogin(e){
+    this.props.demoLogin(this.props.demoUser).then(this.props.closeModal)
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
@@ -70,7 +74,7 @@ class SessionForm extends React.Component {
 
             <br />
             <input className="modal-submit" type="submit" value={btn_text} />
-            <button className="modal-submit">Demo User</button>
+            <button className="modal-submit" onClick={()=>this.demoLogin()}>Demo User</button>
           </form>
 
           <div className="modal-btm">
