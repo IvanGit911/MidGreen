@@ -55,9 +55,11 @@ class NavBar extends React.Component {
                 <li>{`@${email}`}</li>
               </div>
             </div>
-            <li>New journal</li>
-            <li>My journal</li>
-            <li>Profile</li>
+            <div className="dropdown-action">
+              <li>New journal</li>
+              <li>My journal</li>
+              <li>Profile</li>
+            </div>
             <button id="logout-btn" onClick={logout}>
               Log out
             </button>

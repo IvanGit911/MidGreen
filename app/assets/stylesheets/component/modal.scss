@@ -99,7 +99,7 @@
 }
 
 .modal-btm {
-  width: 70%;
+  width: 80%;
   display: flex;
   justify-content: space-between;
   margin-top: 40px;
@@ -108,6 +108,9 @@
 .close-x {
   color: rgb(89, 91, 89);
   font-size: 25px;
+  position: absolute;
+  top: 0;
+  right: 8px;
 }
 
 .close-x:hover {

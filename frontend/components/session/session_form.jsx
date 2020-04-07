@@ -42,8 +42,8 @@ class SessionForm extends React.Component {
           <div className="modal-title">{formType}</div>
           <div className="modal-intro">{intro}</div>
           <div className="modal-info2">Think Globally, act green!</div>
+          <ul className="session-err">{errList}</ul>
           <form className="modal-form" onSubmit={this.handleSubmit}>
-            <ul className="session-err">{errList}</ul>
             <div className="ses-info">
               <label htmlFor="username">Username</label>
               <input
@@ -70,6 +70,7 @@ class SessionForm extends React.Component {
 
             <br />
             <input className="modal-submit" type="submit" value={btn_text} />
+            <button className="modal-submit">Demo User</button>
           </form>
 
           <div className="modal-btm">

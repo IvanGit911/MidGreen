@@ -12,6 +12,7 @@
   display: flex;
   width: 80%;
   padding: 25px 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.312);
 }
 
 .user-info3 > .currentuser {
@@ -37,6 +38,16 @@
   font-weight: bold;
 }
 
+.dropdown-action {
+  width: 80%;
+  padding: 10px 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.312);
+}
+
+.dropdown-action > li {
+  padding: 7px 0px 7px 0px;
+}
+
 .dropdown-box {
   display: flex;
   flex-direction: column;
@@ -47,7 +58,7 @@
   display: none;
   position: absolute;
   z-index: 1;
-  border: 1px solid red;
+  border: 1px solid rgba(0, 0, 0, 0.312);
   right: 30px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: rgba(0, 0, 0, 0.6);
@@ -57,4 +68,8 @@
 
 .show {
   display: block;
+}
+
+#logout-btn {
+  padding: 10px 0px 10px 0px;
 }
