@@ -58,7 +58,6 @@ class SessionForm extends React.Component {
             </div>
 
             <br />
-
             <div className="ses-info">
               <label htmlFor="password">Password</label>
               <input
