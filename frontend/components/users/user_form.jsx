@@ -1,33 +1,67 @@
+import React from "react";
+import { fetchUser, updateUser } from "../../actions/user_actions";
+import { connect } from "react-redux";
 
+class EditUserForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = this.props.user;
+  }
 
-// class EditUserForm extends React.Component {
-//     componentDidMount() {
-//         this.props.fetchUser(this.props.match.params.userId)
-//     }
+  componentDidMount() {
+    this.props.fetchUser(this.props.user.id);
+  }
 
-//     render() {
-//         const { user, formType, processForm } = this.props;
+  update(field) {
+    return (e) => this.setState({ [field]: e.targer.value });
+  }
 
-//         if (!user) return null;
-//         return (
-            
-//         )
+  render() {
+    const { updateUser } = this.props;
+    debugger;
+    return (
+      <div className="editUser">
+        <div className="edit-title">User settings</div>
+        <form className="user-form">
+          <div className="editUser-box">
+            <label className="editUser-title">Your username</label>
+            <input
+              className="editUser-input"
+              type="text"
+              value={this.state.username}
+              onChange={this.update("username")}
+            />
+          </div>
+          <input className="edit-btn" type="submit" value="Edit username" />
+        </form>
+        <form className="user-form">
+          <div className="editUser-box">
+            <label className="editUser-title">Your email</label>
+            <input
+              className="editUser-input"
+              type="text"
+              value={this.state.email}
+              onChange={this.update("email")}
+            />
+          </div>
+          <input className="edit-btn" type="submit" value="Edit email" />
+        </form>
+      </div>
+    );
+  }
+}
 
-//     }
-// }
+const msp = (state, ownProps) => {
+  debugger;
+  return {
+    // user: state.entities.users[ownProps.match.params.userId],
+    user: state.entities.users[state.session.id],
+  };
+};
 
-// const msp = (state, ownProps) => {
-//     // debugger
-//     return {
-//         user: state.entities.users[ownProps.match.params.userId],
-//         formType: 'signup'
-//     }
-// };
+const mdp = (dispatch) => ({
+  fetchUser: (userId) => dispatch(fetchUser(userId)),
+  updateUser: (user) => dispatch(signup(user)),
+});
 
-// const mdp = dispatch => ({
-//     fetchUser: (userId) => dispatch(fetchUser(userId)),
-//     processForm: (user) => dispatch(signup(user))
-// });
-
-
-// export default connect(msp, mdp)(EditUserForm);
+export default connect(msp, mdp)(EditUserForm);
