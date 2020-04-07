@@ -5,14 +5,14 @@ class CategoriesBar extends React.Component {
     this.props.requestAllCategories();
   }
   render() {
-      const { categories} = this.props;
-      const categoryList = categories.map( category => (
-      <li>{category.title}</li>
-      ))
+    const { categories } = this.props;
+    const categoryList = categories.map((category) => (
+      <li key={category.id}>{category.title}</li>
+    ));
+
     return (
       <div>
-        <h1>this is CategoriesBar!</h1>
-            <p>{categoryList}</p>
+        <ul className="categoryList">{categoryList}</ul>
       </div>
     );
   }
