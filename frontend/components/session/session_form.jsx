@@ -10,10 +10,8 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentWillUpdate() {}
-
-  demoLogin(e){
-    this.props.demoLogin(this.props.demoUser).then(this.props.closeModal)
+  demoLogin(e) {
+    this.props.demoLogin(this.props.demoUser).then(this.props.closeModal);
   }
 
   handleSubmit(e) {
@@ -74,8 +72,13 @@ class SessionForm extends React.Component {
 
             <br />
             <input className="modal-submit" type="submit" value={btn_text} />
-            <button className="modal-submit demo" onClick={()=>this.demoLogin()}>Demo User</button>
           </form>
+          <button
+            className="modal-submit demo"
+            onClick={() => this.demoLogin()}
+          >
+            Demo User
+          </button>
 
           <div className="modal-btm">
             {msg}
