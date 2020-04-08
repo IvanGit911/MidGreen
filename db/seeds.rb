@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-15.times do 
+30.times do 
     User.create(username:Faker::Name.unique.name, email: Faker::Internet.unique.email, password: 'password')
 end
 
@@ -25,6 +25,6 @@ category8 = Category.create(title: 'Transportation', description: 'Transportatio
 category5 = Category.create(title: 'Air Polution', description: 'Air Polution');
 category9 = Category.create(title: 'Water polution', description: 'Water polution');
 
-30.times do
+100.times do
     Journal.create(title: Faker::Book.unique.title, body: Faker::Hipster.paragraphs, author_id: rand(1...30), category_id: rand(1..10))
 end

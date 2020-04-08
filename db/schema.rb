@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_04_08_002203) do
     t.string "description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["title"], name: "index_categories_on_title", unique: true
   end
 
   create_table "journals", force: :cascade do |t|

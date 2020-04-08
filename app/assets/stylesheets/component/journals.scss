@@ -34,6 +34,7 @@
     height: 355px;
     border: 1px solid red;
     padding-top: 50px;
+    display: flex;
 }
 
 .category-flw{
@@ -53,4 +54,10 @@
     border-radius: 5px;
     color: rgba(140, 93, 255, 1);
     padding: 8px 16px 8px 16px;
+}
+
+.journal-img{
+    width:70%;
+    height: 100%;
+
 }
