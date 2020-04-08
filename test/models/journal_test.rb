@@ -1,16 +1,18 @@
 # == Schema Information
 #
-# Table name: categories
+# Table name: journals
 #
 #  id          :bigint           not null, primary key
 #  title       :string           not null
-#  description :string           not null
+#  body        :string           not null
+#  author_id   :integer          not null
+#  category_id :integer          not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
 require 'test_helper'
 
-class CategoryTest < ActiveSupport::TestCase
+class JournalTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
