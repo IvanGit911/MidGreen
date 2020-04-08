@@ -1,0 +1,1 @@
+json.partial! 'journal', journal: @journal

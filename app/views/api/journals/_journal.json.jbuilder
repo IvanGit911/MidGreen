@@ -1,0 +1,1 @@
+json.extract! journal, :id, :title, :body, :author_id, :category_id

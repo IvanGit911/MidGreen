@@ -22,7 +22,8 @@ class User < ApplicationRecord
 
     has_many :journals,
         foreign_key: :author_id,
-        class_name: :Journal
+        class_name: :Journal,
+        dependent: :destroy
 
 
 
