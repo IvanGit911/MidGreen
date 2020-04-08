@@ -1,4 +1,5 @@
 .categoryList {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   padding: 0px 30px 0px 30px;
   display: flex;
   justify-content: space-evenly;
@@ -9,5 +10,6 @@
   line-height: 50px;
   text-align: center;
   width: 1032px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
   // overflow: hidden;  this is for bonus, move outside the bar
 }

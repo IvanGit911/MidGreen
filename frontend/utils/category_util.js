@@ -4,8 +4,8 @@ export const fetchAllCategories = () =>
     url: "/api/categories",
   });
 
-export const fetchCategory = (category) =>
+export const fetchCategory = (categoryId) =>
   $.ajax({
     method: "GET",
-      url: `/api/categories/${category.id}`,
+      url: `/api/categories/${categoryId}`,
   });
