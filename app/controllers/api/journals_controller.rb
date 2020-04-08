@@ -43,7 +43,7 @@ class Api::JournalsController < ApplicationController
         @journal = Journal.find(params[:id])
         if @journal.author_id == current_user.id
             @journal.destroy
-            debugger
+            # debugger
             #?! how to user currentuser.id to navigate back to index page. all the id ?
             # render 
         else

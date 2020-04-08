@@ -2,7 +2,7 @@ import React from "react";
 import NavBarContainer from "./navbar/navbar_container";
 import EditUserContainer from "./users/user_form";
 import { Route, Link } from "react-router-dom";
-import { ProtectedRoute } from "../utils/route_util";
+import { AuthRoute, ProtectedRoute } from "../utils/route_util";
 import Modal from "./modal/modal";
 import CategoriesBar from "../components/categories/category_container";
 import Welcome from "./welcome/welcome";
@@ -29,12 +29,13 @@ const App = () => {
 
       <Route exact path="/me/settings" component={EditUserContainer} />
       <Route path="/users/:userId/journals" component="" />
-      <Route path="/categories/:categoryId/journals" component={JournalContainer} />
-      
-      <Link to="/welcome">test</Link>
+      <Route
+        path="/categories/:categoryId/journals"
+        component={JournalContainer}
+      />
 
-      <ProtectedRoute extract path="/" component={App} />
-      <ProtectedRoute path="/welcome" component={Welcome} />
+      <AuthRoute extract path="/" component={Welcome} />
+      <ProtectedRoute path="/welcome" component={App} />
     </div>
   );
 };

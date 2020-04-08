@@ -1,19 +1,18 @@
 import { connect } from "react-redux";
 import JournalIndex from "./journals_index";
-
-
+import { requestCategoryJournals } from "../../actions/journal_actions";
 
 const msp = (state, ownProps) => {
-    debugger
-    return {
-        category: state.entities.categories
-        // journals:
-    }
-
-}
+  const category = state.entities.categories[ownProps.match.params.categoryId];
+  return {
+    category: category,
+    journals: Object.values(state.entities.journals)
+  };
+};
 
 const mdp = (dispatch) => ({
-  requestCategoryJournals: (categoryId) => dispatch(requestCategoryJournals(categoryId)),
+  requestCategoryJournals: (categoryId) =>
+    dispatch(requestCategoryJournals(categoryId)),
 });
 
 export default connect(msp, mdp)(JournalIndex);
