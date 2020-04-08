@@ -6,28 +6,31 @@ import { AuthRoute, ProtectedRoute } from "../utils/route_util";
 import Modal from "./modal/modal";
 import CategoriesBar from "../components/categories/category_container";
 import Welcome from "./welcome/welcome";
-import JournalContainer from './journals/journal_container'
+import JournalContainer from "./journals/journal_container";
 
 const App = () => {
   return (
-    <div>
+    <div className="main">
       <Modal />
-      <div className="navbar">
-        <div className="navbar-content">
-          <Link id="midgrn" to="/">
-            MidGreen
-          </Link>
+      <div>
+        <div className="navbar">
+          <div className="navbar-content">
+            <Link id="midgrn" to="/">
+              MidGreen
+            </Link>
 
-          <div className="nav-btn">
-            <NavBarContainer />
+            <div className="nav-btn">
+              <NavBarContainer />
+            </div>
           </div>
         </div>
-        <div>
-          <CategoriesBar />
-        </div>
+      </div>
+      <div>
+        <CategoriesBar />
       </div>
 
       <Route exact path="/me/settings" component={EditUserContainer} />
+      <Route path="/journals/:journal.id" component={Welcome} />
       <Route path="/users/:userId/journals" component="" />
       <Route
         path="/categories/:categoryId/journals"

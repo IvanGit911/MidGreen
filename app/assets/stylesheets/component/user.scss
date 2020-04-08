@@ -1,7 +1,6 @@
 .editUser {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
-
   width: 1000px;
   padding: 60px 20px 0px 20px;
   color: rgba(0, 0, 0, 0.8);
@@ -11,7 +10,8 @@
   position: absolute;
   left: 50%;
   transform: translate(-50%);
-  top: 100px
+  top: 100px;
+  background-color: white;
 }
 
 .edit-title {

@@ -13,9 +13,9 @@ class CategoriesBar extends React.Component {
     ));
 
     return (
-      <div>
+      <>
         <ul className="categoryList">{categoryList}</ul>
-      </div>
+      </>
     );
   }
 }

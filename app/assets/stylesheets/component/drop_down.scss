@@ -52,6 +52,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 .dropdown-content {
@@ -64,11 +65,12 @@
   color: rgba(0, 0, 0, 0.6);
   font-size: 16px;
   width: 215px;
-  background-color: white;
+  background-color: rgb(116, 6, 6);
 }
 
 .show {
   display: block;
+  
 }
 
 #logout-btn {

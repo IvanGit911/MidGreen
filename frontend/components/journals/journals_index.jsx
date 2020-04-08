@@ -7,16 +7,22 @@ class JournalIndex extends React.Component {
     this.props.requestCategoryJournals(this.props.match.params.categoryId);
   }
 
+  //   componentWillUnmount {
+
+  //   }
+
   render() {
     // debugger
     const { category, journals } = this.props;
     // debugger;
     const journalList = journals.map((journal) => (
-      <li key={journal.id}>{journal.title}</li>
+      <li key={journal.id}>
+        <Link to={`/journals/${journal.id}`}>{journal.title}</Link>
+      </li>
     ));
 
     return (
-      <div>
+      <div className="journals">
         <p>{category.title}</p>
         <h1>{category.description}</h1>
         <p>{journalList}</p>
