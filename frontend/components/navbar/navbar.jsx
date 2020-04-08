@@ -8,12 +8,11 @@ class NavBar extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClickOutside(e) {
-    debugger
+  // handleClickOutside(e) {
+  //   debugger
 
-  }
+  // }
 
-  
 
   handleClick(e) {
     document.getElementById("user-dropdown").classList.toggle("show");

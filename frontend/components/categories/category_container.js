@@ -3,7 +3,7 @@ import CategoriesBar from "./categories_bar";
 import { requestAllCategories } from "../../actions/category_action";
 
 const msp = (state) => ({
-        categories: Object.values(state.entities.categories),
+  categories: Object.values(state.entities.categories),
 });
 
 const mdp = (dispatch) => ({
