@@ -2,10 +2,11 @@ import React from "react";
 import NavBarContainer from "./navbar/navbar_container";
 import EditUserContainer from "./users/user_form";
 import { Route, Link } from "react-router-dom";
-import { AuthRoute, ProtectedRoute } from "../utils/route_util";
+import { ProtectedRoute } from "../utils/route_util";
 import Modal from "./modal/modal";
 import CategoriesBar from "../components/categories/category_container";
 import Welcome from "./welcome/welcome";
+import JournalContainer from './journals/journal_container'
 
 const App = () => {
   return (
@@ -26,12 +27,14 @@ const App = () => {
         </div>
       </div>
 
-      <Route path="/me/settings" component={EditUserContainer} />
+      <Route exact path="/me/settings" component={EditUserContainer} />
+      <Route path="/users/:userId/journals" component="" />
+      <Route path="/categories/:categoryId/journals" component={JournalContainer} />
       
-      {/* <Link to="/welcome-to-midgreen">test</Link>
-      <ProtectedRoute extract path="/" component={App} />
-      <ProtectedRoute path="/welcome-to-midgreen" component={Welcome} /> */}
+      <Link to="/welcome">test</Link>
 
+      <ProtectedRoute extract path="/" component={App} />
+      <ProtectedRoute path="/welcome" component={Welcome} />
     </div>
   );
 };

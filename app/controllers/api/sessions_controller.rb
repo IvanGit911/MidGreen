@@ -1,6 +1,5 @@
 class Api::SessionsController < ApplicationController
-    skip_before_action :verify_authenticity_token
-
+    
     def create
         # check username or email exisitence
         @user = User.find_by_credentials(params[:user][:username], params[:user][:password])

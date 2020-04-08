@@ -43,7 +43,8 @@ class Api::JournalsController < ApplicationController
         @journal = Journal.find(params[:id])
         if @journal.author_id == current_user.id
             @journal.destroy
-            #?! how to user currentuser.id to navigate back to index page
+            debugger
+            #?! how to user currentuser.id to navigate back to index page. all the id ?
             # render 
         else
             render json: ["You can't delete this journal!"], status: 422 #?!

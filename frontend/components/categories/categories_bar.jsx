@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 
 class CategoriesBar extends React.Component {
   componentDidMount() {
@@ -7,7 +9,7 @@ class CategoriesBar extends React.Component {
   render() {
     const { categories } = this.props;
     const categoryList = categories.map((category) => (
-      <li key={category.id}>{category.title}</li>
+      <li key={category.id}><Link to={`/categories/${category.id}/journals`}>{category.title}</Link></li>
     ));
 
     return (

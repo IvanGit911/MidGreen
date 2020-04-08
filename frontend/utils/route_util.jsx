@@ -18,7 +18,7 @@ const Protected = ({ component: Component, path, loggedIn, exact }) => (
       // <Component {...props} />
       <Redirect to="/" />
     ) : (
-        <Redirect to="/welcome-to-midgreen" />
+        <Redirect to="/welcome" />
       )
   )} />
 );
