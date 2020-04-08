@@ -22,3 +22,11 @@ export const updateUser = (user) =>(
   })
 );
 
+
+export const deleteUser = (userId) => (
+  $.ajax({
+    method: 'DELETE',
+    url: `/api/users/${userId}`
+  })
+)
+

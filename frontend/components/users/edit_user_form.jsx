@@ -1,4 +1,5 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
 
 class EditUserForm extends React.Component {
   constructor(props) {
@@ -48,6 +49,21 @@ class EditUserForm extends React.Component {
           </div>
           <input className="edit-btn" type="submit" value="Edit email" />
         </form>
+        <div className="dlt-user">
+          <label className="editUser-title">Delete account</label>
+          <p>Permanently delete your account and all of your journals.</p>
+          <button
+            className="dlt-user-btn"
+            onClick={
+              (() => {
+                this.props.deleteUser(this.props.user.id),
+              <Redirect to="/" />
+            })
+            }
+          >
+            Delete account
+          </button>
+        </div>
       </div>
     );
   }

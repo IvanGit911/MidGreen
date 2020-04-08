@@ -2,8 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import SessionForm from "./session_form";
 import { login } from "../../actions/session_actions";
-import { Link } from "react-router-dom";
 import { openModal, closeModal } from "../../actions/modal_action";
+import { clearErrors } from "../../actions/error_actions";
 
 const msp = (state) => ({
   demoUser: {
@@ -12,7 +12,6 @@ const msp = (state) => ({
   },
   errors: state.errors.session,
   formType: "Welcome back.",
-  navLink: <Link to="/signup">Create one</Link>,
 });
 
 const mdp = (dispatch) => ({
@@ -21,7 +20,7 @@ const mdp = (dispatch) => ({
   otherForm: (
     <button
       onClick={() => {
-        dispatch(openModal("login"));
+        dispatch(openModal("signup"));
         dispatch(clearErrors());
       }}
     >

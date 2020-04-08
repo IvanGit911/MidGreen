@@ -10,7 +10,7 @@
   position: absolute;
   left: 50%;
   transform: translate(-50%);
-  top: 100px;
+  top: 150px;
   background-color: white;
 }
 
@@ -22,21 +22,14 @@
   left: 0px;
 }
 
-.editUser,
-.user-form {
-//   border: 1px solid red;
-}
-
 .editUser-title {
   font-size: 18px;
   font-weight: bold;
-  
 }
 
 .editUser-input {
   font-size: 15px;
-  border: 1px solid rgba(104, 102, 102, 0.36);
-  // border-width: 2px;
+  // border: 1px solid rgba(104, 102, 102, 0.36);
   width: 360px;
 }
 
@@ -52,13 +45,13 @@
   display: flex;
   justify-content: space-between;
   width: 760px;
-  border-top: 1px solid  rgba(104, 102, 102, 0.36);
+  border-top: 1px solid rgba(104, 102, 102, 0.36);
 }
 
 .edit-btn {
-    position: relative;
-    top: 35px;
-    right: 15px;
+  position: relative;
+  top: 35px;
+  right: 15px;
   color: rgba(0, 0, 0, 0.5);
   border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 5px;
@@ -68,4 +61,24 @@
 
 .edit-btn:hover {
   border: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+.dlt-user {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 110px;
+  width: 760px;
+  padding: 30px 0px 35px 0px;
+  border-top: 1px solid rgba(104, 102, 102, 0.36);
+}
+
+.dlt-user > p{
+  font-size: 13px;
+}
+
+.dlt-user-btn {
+  text-decoration: underline;
+  font-size: 13px;
+  color: rgba(104, 102, 102, 0.6);
 }

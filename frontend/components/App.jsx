@@ -1,6 +1,6 @@
 import React from "react";
 import NavBarContainer from "./navbar/navbar_container";
-import EditUserContainer from "./users/user_form";
+import EditUserContainer from "./users/edit_user_container";
 import { Route, Link } from "react-router-dom";
 import { AuthRoute, ProtectedRoute } from "../utils/route_util";
 import Modal from "./modal/modal";
@@ -10,36 +10,42 @@ import JournalContainer from "./journals/journal_container";
 
 const App = () => {
   return (
-    <div className="main">
+    <>
       <Modal />
-      <div>
-        <div className="navbar">
-          <div className="navbar-content">
-            <Link id="midgrn" to="/">
-              MidGreen
-            </Link>
+      <div className="main">
+        <div>
+          <div className="navbar">
+            <div className="navbar-content">
+              <Link id="midgrn" to="/">
+                MidGreen
+              </Link>
 
-            <div className="nav-btn">
-              <NavBarContainer />
+              <div className="nav-btn">
+                <NavBarContainer />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div>
-        <CategoriesBar />
-      </div>
+        <div>
+          <CategoriesBar />
+        </div>
 
-      <Route exact path="/me/settings" component={EditUserContainer} />
-      <Route path="/journals/:journal.id" component={Welcome} />
-      <Route path="/users/:userId/journals" component="" />
-      <Route
-        path="/categories/:categoryId/journals"
-        component={JournalContainer}
-      />
+        <ProtectedRoute
+          exact
+          path="/me/settings"
+          component={EditUserContainer}
+        />
+        <Route path="/journals/:journal.id" component={Welcome} />
+        <Route path="/users/:userId/journals" component="" />
+        <Route
+          path="/categories/:categoryId/journals"
+          component={JournalContainer}
+        />
 
-      <AuthRoute extract path="/" component={Welcome} />
-      <ProtectedRoute path="/welcome" component={App} />
-    </div>
+        <AuthRoute extract path="/" component={Welcome} />
+        <ProtectedRoute path="/welcome" component={App} />
+      </div>
+    </>
   );
 };
 
