@@ -55,7 +55,7 @@ class NavBar extends React.Component {
                 {currentUser.username[0].toUpperCase()}
               </li>
               <div className="user-info4">
-                <li className="current-username">{currentUser.username}</li>
+                <li className="current-username">{currentUser.username.slice(0,4)}</li>
                 <li>{`@${email}`}</li>
               </div>
             </div>
