@@ -5,10 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+# require 'faker'
 
-# user1 = User.create()
+# # 15.times do 
+#     User.create(username:Faker::Name.unique.name, email: Faker::Internet.unique.email, password: 'password')
+# # end
 
-# User.create(username:Faker::Name.name, email: Faker::Internet.email, password: '123456')
 
 demoUser = User.create(username: "IvanGoGreen", email: "wang.han.ivan@hotmail.com", password: 'thisisareallygoodpassword');
  
@@ -23,3 +25,6 @@ category8 = Category.create(title: 'Transportation', description: 'Transportatio
 category5 = Category.create(title: 'Air Polution', description: 'Air Polution');
 category9 = Category.create(title: 'Water polution', description: 'Water polution');
 
+30.times do
+    Journal.create(title: Faker::Book.unique.title, body: Faker::Hipster.paragraphs, author_id: rand(1...30), category_id: rand(1..10))
+end

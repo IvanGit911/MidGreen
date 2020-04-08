@@ -22,11 +22,7 @@ class User < ApplicationRecord
 
     has_many :journals,
         foreign_key: :author_id,
-        class_name: :User
-
-
-
-
+        class_name: :Journal
 
 
 

@@ -13,7 +13,7 @@
 class Journal < ApplicationRecord
     validates :title, :body, :author_id, :category_id, presence: true
 
-    belongs_to :user,
+    belongs_to :author,
         foreign_key: :author_id,
         class_name: :User
 
