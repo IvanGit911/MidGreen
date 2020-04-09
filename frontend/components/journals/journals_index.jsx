@@ -26,10 +26,19 @@ class JournalIndex extends React.Component {
     const journalList = journals.map((journal) => (
       <li key={journal.id}>
         <div className="journal-img">this is the pic placeholder</div>
-        <Link to={`/journals/${journal.id}`}>{journal.title}</Link>
+        <ul className="journal-info">
+          <li>
+            <Link to={`/journals/${journal.id}`}>{journal.title}</Link>
+          </li>
+
+          <li>subtitle</li>
+          <li>author name</li>
+          <li>date</li>
+          <li>4 mins read</li>
+        </ul>
       </li>
     ));
-      // debugger
+    // debugger
     return (
       <div className="journals">
         <div className="journal-top">
@@ -40,8 +49,7 @@ class JournalIndex extends React.Component {
             <p> 100k followers</p>
           </div>
         </div>
-        <ul>{journalList}</ul>
-        <p>this is list of journal pic and journal title and an overview</p>
+        <ul className='category-journals'>{journalList}</ul>
       </div>
     );
   }
