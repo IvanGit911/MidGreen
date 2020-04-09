@@ -25,7 +25,7 @@ class JournalIndex extends React.Component {
         // this.props.match.params.categoryId
       return (
         <>
-          <p>refresh is not working</p>
+          {/* <p>refresh is not working</p> */}
         </>
       );
     }

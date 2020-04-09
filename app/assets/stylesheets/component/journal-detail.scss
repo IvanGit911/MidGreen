@@ -1,0 +1,68 @@
+.journal-detail {
+  width: 680px;
+  border: 1px solid red;
+  font-family: "Varela Round", sans-serif;
+}
+
+.journal-title {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.journal-subtitle {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.312);
+  font-weight: lighter;
+}
+
+.journal-authinfo {
+  border: 1px solid red;
+  display: flex;
+  height: 50px;
+}
+
+.journal-authinfo > div:first-child { //this is profile pic
+  border-radius: 200px 200px 200px 200px;
+  height: 50px;
+  width: 50px;
+  background-color: blue;
+}
+
+.journal-authinfo > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: 1px solid red;
+}
+
+.journal-authinfo-1 {
+  display: flex;
+  font-size: 15px;
+}
+
+.journal-authinfo-2 {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 13px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.journal-body > p {
+  //this is first letter
+  border: 1px solid red;
+  border-radius: 200px 200px 200px 200px;
+  height: 80px;
+  width: 80px;
+  line-height: 80px;
+  text-align: center;
+  color: white;
+  background-color: blue;
+  font-size: 50px;
+}
+
+.journal-flw-btn {
+  border: 1px solid rgba(140, 93, 255, 1);
+  border-radius: 5px;
+  color: rgba(140, 93, 255, 1);
+  padding: 0px 8px 0px 8px;
+}

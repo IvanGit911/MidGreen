@@ -1,4 +1,6 @@
 import React from "react";
+import Img from "react-image";
+import dateHelper from "../../utils/date_helper";
 
 class JournalDetail extends React.Component {
   componentDidMount() {
@@ -11,16 +13,26 @@ class JournalDetail extends React.Component {
       <ul className="journal-detail">
         <li className="journal-title">{journal.title}</li>
         <li className="journal-subtitle">subtitle</li>
-        <li class="journal-authinfo">
-          <div>authorname, follow, date, read-time</div>
+        <li className="journal-authinfo">
+          <div>PIC</div>
+          <div>
+            <div className="journal-authinfo-1">
+              <div> author {journal.author_id}</div>
+              <button className="journal-flw-btn">Follow</button>
+            </div>
+            <div className="journal-authinfo-2">
+              <div>{dateHelper(journal.updated_at)}</div>
+              <div>{`${Math.floor(Math.random() * 10 + 2)} min read`}</div>
+            </div>
+          </div>
         </li>
-        <li>img</li>
+        <li>
+          <Img src={journal.image_url}></Img>
+        </li>
         <li className="journal-body">
-            <p>
-                    {journal.body[2].toUpperCase()}
-            </p>
-            {journal.body.slice(3)}
-            </li>
+          <p>{journal.body[2].toUpperCase()}</p>
+          {journal.body.slice(3)}
+        </li>
       </ul>
     );
   }
