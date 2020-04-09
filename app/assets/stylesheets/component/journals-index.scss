@@ -34,7 +34,7 @@
 .category-journals > li:first-child .journal-info {
   background-color: rgba(140, 93, 255, 1);
   color: white;
-
+  width: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,8 +47,21 @@
   display: flex;
 }
 
+.category-journals > li:nth-child(-n + 2) .journal-info > li {
+padding: 10px;
+}
+
 .category-journals > li:nth-child(-n + 2) .journal-info li:nth-child(2) {
   text-align: center;
+}
+
+
+.category-journals > li:nth-child(-n + 2) .journal-info .journal-btm{
+  display: flex;
+  width: 33%;
+  justify-content: space-between;
+  font-size: 13px;
+
 }
 
 // .category-journals > li:nth-child(1) .journal-info:nth-child(3) {
@@ -59,14 +72,15 @@
   flex-direction: row-reverse;
 }
 
-//?! second change, first didn't change
-// .category-journals > li:nth-child(n + 2) .journal-info {
-//     border: 1px solid red;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// justify-content: center;
-// }
+
+.category-journals > li:nth-child(2) .journal-info {
+    border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+justify-content: center;
+// width:40%
+}
 
 .category-journals > li:nth-child(n + 2) .journal-info li:nth-child(3) {
   color: rgba(140, 93, 255, 1);
@@ -118,9 +132,6 @@
   padding: 8px 16px 8px 16px;
 }
 
-.journal-info > li {
-    // padding-bottom: ;
-}
 
 .journal-info > li:nth-child(1) {
   //this is title{
@@ -131,6 +142,7 @@
 .journal-info > li:nth-child(2) {
   //this is subtitle
   font-size: 15px;
+  width: 80%;
   
 }
 

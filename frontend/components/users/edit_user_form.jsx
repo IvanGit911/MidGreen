@@ -63,6 +63,8 @@ class EditUserForm extends React.Component {
           >
             Delete account
           </button>
+
+          {/* react redirect .then, history.push */}
         </div>
       </div>
     );

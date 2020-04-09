@@ -7,6 +7,7 @@ import Modal from "./modal/modal";
 import CategoriesBar from "../components/categories/category_container";
 import Welcome from "./welcome/welcome";
 import JournalContainer from "./journals/journal_container";
+import JournalDetailContainer from '../components/journals/journal_detail_container'
 
 
 const App = () => {
@@ -36,7 +37,7 @@ const App = () => {
           path="/me/settings"
           component={EditUserContainer}
         />
-        <Route path="/journals/:journal.id" component={Welcome} />
+        <Route path="/journals/:journalId" component={JournalDetailContainer} />
         <Route path="/users/:userId/journals" component="" />
         <Route
           path="/categories/:categoryId/journals"
