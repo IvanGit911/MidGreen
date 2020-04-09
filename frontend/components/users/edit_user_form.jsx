@@ -54,12 +54,11 @@ class EditUserForm extends React.Component {
           <p>Permanently delete your account and all of your journals.</p>
           <button
             className="dlt-user-btn"
-            onClick={
-              (() => {
-                this.props.deleteUser(this.props.user.id),
-              <Redirect to="/" />
-            })
-            }
+            onClick={() => {
+              this.props.deleteUser(this.props.user.id),
+                alert("You clicked outside of me!");
+              // <Redirect to="/" />
+            }}
           >
             Delete account
           </button>
