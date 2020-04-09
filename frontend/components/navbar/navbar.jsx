@@ -23,7 +23,7 @@ class NavBar extends React.Component {
   }
 
   handleButtonClick() {
-    debugger;
+    // debugger;
     this.setState({ open: !this.state.open });
   }
 

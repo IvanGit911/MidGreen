@@ -31,7 +31,8 @@ class JournalDetail extends React.Component {
         </li>
         <li className="journal-body">
           <p>{journal.body[2].toUpperCase()}</p>
-          {journal.body.slice(3)}
+          <div>{journal.body.slice(3)}</div>
+          
         </li>
       </ul>
     );
