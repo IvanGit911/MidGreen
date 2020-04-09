@@ -26,5 +26,5 @@ category5 = Category.create(title: 'Air Polution', description: 'Air Polution');
 category9 = Category.create(title: 'Water polution', description: 'Water polution');
 
 100.times do
-    Journal.create(title: Faker::Book.unique.title, body: Faker::Hipster.paragraphs, author_id: rand(1...30), category_id: rand(1..10))
+    Journal.create(title: Faker::Book.unique.title, body: Faker::Hipster.paragraphs, author_id: rand(1...30), category_id: rand(1..10), image_url: "https://picsum.photos/200")
 end

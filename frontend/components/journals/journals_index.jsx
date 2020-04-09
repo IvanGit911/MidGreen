@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Img from "react-image";
 
 class JournalIndex extends React.Component {
   // constructor(props) {
@@ -23,21 +24,26 @@ class JournalIndex extends React.Component {
     // debugger
     const { category, journals } = this.props;
     // debugger;
-    const journalList = journals.map((journal) => (
-      <li key={journal.id}>
-        <div className="journal-img">this is the pic placeholder</div>
-        <ul className="journal-info">
-          <li>
-            <Link to={`/journals/${journal.id}`}>{journal.title}</Link>
-          </li>
+    const journalList = journals.map((journal) => {
+      debugger
+      return (
+        <li key={journal.id}>
+          
+            <Img className="journal-img" src={journal.image_url}></Img>
+          
+          <ul className="journal-info">
+            <li>
+              <Link to={`/journals/${journal.id}`}>{journal.title}</Link>
+            </li>
 
-          <li>subtitle</li>
-          <li>author name</li>
-          <li>date</li>
-          <li>4 mins read</li>
-        </ul>
-      </li>
-    ));
+            <li>subtitle</li>
+            <li>author name</li>
+            <li>date</li>
+            <li>4 mins read</li>
+          </ul>
+        </li>
+      );
+    });
     // debugger
     return (
       <div className="journals">
@@ -49,7 +55,7 @@ class JournalIndex extends React.Component {
             <p> 100k followers</p>
           </div>
         </div>
-        <ul className='category-journals'>{journalList}</ul>
+        <ul className="category-journals">{journalList}</ul>
       </div>
     );
   }

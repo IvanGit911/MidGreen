@@ -8,6 +8,7 @@ import CategoriesBar from "../components/categories/category_container";
 import Welcome from "./welcome/welcome";
 import JournalContainer from "./journals/journal_container";
 
+
 const App = () => {
   return (
     <>

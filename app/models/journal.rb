@@ -9,6 +9,7 @@
 #  category_id :integer          not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  image_url   :string
 #
 class Journal < ApplicationRecord
     validates :title, :body, :author_id, :category_id, presence: true
