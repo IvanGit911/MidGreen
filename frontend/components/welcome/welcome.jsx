@@ -8,6 +8,7 @@ class Welcome extends React.Component {
     return (
       <ul className="welcome">
         <h1>We can’t just consume our way to a more sustainable world.</h1>
+        {/* <li>todo this should be categories, but can't get access</li> */}
         <li>
           <ul className="checkmark-list">
             <li className="checkmark">
@@ -50,7 +51,7 @@ class Welcome extends React.Component {
                 knowledge, and perspectives. We don’t serve ads—we serve you,
                 the reader who intends to save the planet. MidGreen helps you
                 find the best reading just for you and provides you with
-                unlimited ideas with unlimited journals
+                unlimited ideas with unlimited journals.
               </div>
             </div>
           </div>
@@ -87,7 +88,7 @@ const mdp = (dispatch) => ({
         dispatch(openModal("signup"))
       }}
     >
-      Get start
+      Get started
     </button>
   ),
 });
