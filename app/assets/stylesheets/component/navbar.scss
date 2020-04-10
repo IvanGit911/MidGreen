@@ -24,7 +24,7 @@
   font-family: "DM Serif Display", serif;
   font-size: 30px;
   margin-left: 50px;
-  color: green;
+  color: rgb(2, 106, 78);
 }
 
 #login-btn {
@@ -35,12 +35,12 @@
 #signup-btn {
   font-family: "Jaldi", sans-serif;
   font-size: 16px;
-  background-color: rgba(3, 168, 124, 1);
+  background-color: #04A87C;
   color: white;
   padding: 8px 16px 8px 16px;
   margin-left: 35px;
   margin-right: 50px;
-  border: 1px solid rgba(3, 168, 124, 1);
+  border: 1px solid #04A87C;
   border-radius: 3px;
   width: 125px;
   height: 18px;
@@ -50,5 +50,5 @@
 }
 
 #signup-btn:hover {
-  background-color: rgb(1, 143, 105);
+  background-color: rgb(2, 139, 102);
 }

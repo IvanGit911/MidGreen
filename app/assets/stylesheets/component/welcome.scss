@@ -1,0 +1,133 @@
+.welcome {
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  font-family: "Jaldi", sans-serif;
+}
+
+.welcome > h1 {
+  height: 200px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 60px;
+  font-weight: bold;
+
+  text-align: center;
+  margin-top: 85px;
+  width: 80%;
+  color: rgb(2, 106, 78);
+  margin-bottom: 50px;
+}
+
+.welcome > li {
+  width: 1190px;
+  margin-bottom: 75px;
+}
+
+.checkmark-list {
+  display: flex;
+  justify-content: center;
+  //   width: 80%;
+}
+
+.checkmark-list > li:nth-child(3) {
+  margin-right: 25px;
+}
+
+.checkmark > div {
+  display: flex;
+  margin-right: 10px;
+  font-size: 22px;
+  color: #808080;
+}
+
+.wel-sub-sub-tle {
+  // margin-left: 20px;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.wel-icon {
+  margin-right: 7px;
+}
+
+.wel-title {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 70px;
+  color: #2e2e2e;
+  // width: 50%;
+}
+
+.wel-sub-tle {
+  height: 290px;
+  display: flex;
+  margin-top: 25px;
+}
+
+.sub-tle-btn-box {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.wel-tle-2 {
+  height: 470px;
+  display: flex;
+}
+
+.wel-tle-2 > h1 {
+  width: 40%;
+}
+
+.wel-background {
+  // width: 70;
+  // z-index: -1;
+  // background-color: #d5fce9;
+}
+
+.wel-cmt {
+  width: 60%;
+  border: 1px solid red;
+  background-color: #d5fce9;
+}
+
+.wel-prg {
+  font-size: 22px;
+  color: #808080;
+}
+
+.sub-tle-msg {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.wel-sub-sub-tle {
+  font-weight: bold;
+  font: 25px;
+}
+
+.wel-btn {
+  background-color: rgba(3, 168, 124, 1);
+  color: white;
+  border: 1px solid rgba(3, 168, 124, 1);
+  border-radius: 5px;
+  width: 306px;
+  height: 44px;
+  padding: 8px 16px 8px 16px;
+  line-height: 44px;
+  text-align: center;
+}
+
+.wel-btm {
+  display: flex;
+  justify-content: center;
+}
+
+.wel-btm > .wel-title {
+  width: 50%;
+  line-height: 100px;
+  text-align: center;
+}
