@@ -56,7 +56,7 @@ class EditUserForm extends React.Component {
             className="dlt-user-btn"
             onClick={() => {
               this.props.deleteUser(this.props.user.id),
-                alert("You clicked outside of me!");
+                alert("You damn fool!");
               // <Redirect to="/" />
             }}
           >
