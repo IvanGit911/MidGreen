@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 class Welcome extends React.Component {
   render() {
-    const {openModal} = this.props;
+    const { openModal } = this.props;
 
     return (
       <ul className="welcome">
@@ -41,7 +41,9 @@ class Welcome extends React.Component {
           </div>
           <div className="wel-sub-tle">
             <div className="sub-tle-btn-box">
-              <div className="wel-btn">{openModal}</div>
+              <button className="wel-btn" onClick={openModal}>
+                Get started
+              </button>
             </div>
             <div className="sub-tle-msg">
               <div className="wel-sub-sub-tle">We do things greenly.</div>
@@ -70,8 +72,9 @@ class Welcome extends React.Component {
         <li className="wel-btm">
           <div className="wel-title">Save the planet. Save the legacy.</div>
         </li>
-        <div className="wel-btn">{openModal}</div>
-        {/* <button className="wel-btn">Get started</button> */}
+        <button className="wel-btn" onClick={openModal}>
+          Get started
+        </button>
       </ul>
     );
   }
@@ -82,15 +85,7 @@ import { openModal, closeModal } from "../../actions/modal_action";
 const msp = (state) => ({});
 
 const mdp = (dispatch) => ({
-  openModal: (
-    <button
-      onClick={() => {
-        dispatch(openModal("signup"))
-      }}
-    >
-      Get started
-    </button>
-  ),
+  openModal: () => dispatch(openModal("signup")),
 });
 
-export default connect(msp, mdp)(Welcome);
+export default connect(null, mdp)(Welcome);
