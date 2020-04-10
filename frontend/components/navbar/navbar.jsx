@@ -35,30 +35,6 @@ class NavBar extends React.Component {
     }
   }
 
-  //   There are a couple of elements to this process.
-  // the element that you click on to open the drop-down needs to be focusable, meaning it can have an onFocus attribute (e.g. button or field element)
-  // store the element that triggers the drop-down in a ref
-  // create an onClick event listener that will close the drop-down if the ref and eventTarget do not match.
-
-  // toggleShow(e) {
-  //   // event.stopPropagation();
-  //   document.getElementById("user-dropdown").classList.toggle("show");
-
-  //   // if (e.target.matches('dropdown-btn')){
-
-  //   // } else {dropdown.classList.contains('show') && !e.target.matches('dropdown-content')
-  //   //   const dropdown = document.getElementsByClassName('dropdown-content')[0];
-  //   //   dropdown.classList.remove('show')
-  //   // }
-  // }
-
-  // handleClickOutside(e) {
-  //   debugger;
-  //   if (this.container.current && !this.container.current.contains(e.target)) {
-  //     document.getElementById("user-dropdown").classList.remove("show");
-  //   }
-  // }
-
   loggedout() {
     const { openModal } = this.props;
     return (
@@ -99,8 +75,12 @@ class NavBar extends React.Component {
                 </div>
               </div>
               <div className="dropdown-action">
-                <li>New journal</li>
-                <li>My journal</li>
+                <li>
+                  <Link to="/journals/new">New journal</Link>
+                </li>
+                <li>
+                  <Link to="/users/:userId/journals">My journal</Link>
+                </li>
                 <li>Profile</li>
                 <li>
                   <Link to="/me/settings">Account settings</Link>

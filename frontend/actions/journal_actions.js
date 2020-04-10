@@ -31,9 +31,8 @@ export const requestCategoryJournals = (categoryId) => (dispatch) =>
   );
 
 export const requestJournal = (journalId) => (dispatch) =>
-  JournalApiUtil.fetchJournal(journalId).then(
-    (journal) => dispatch(receiveJournal(journal)),
-    (errors) => dispatch(receiveErrors(errors.responseJSON))
+  JournalApiUtil.fetchJournal(journalId).then((journal) =>
+    dispatch(receiveJournal(journal))
   );
 
 export const createJournal = (journal) => (dispatch) =>
@@ -50,6 +49,6 @@ export const updateJournal = (journal) => (dispatch) =>
 
 export const deleteJournal = (journalId) => (dispatch) =>
   JournalApiUtil.deleteJournal(journalId).then(
-      () => dispatch(removeJournal(journalId)),
+    () => dispatch(removeJournal(journalId)),
     (errors) => dispatch(receiveErrors(errors.responseJSON))
   );
