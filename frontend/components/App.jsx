@@ -9,7 +9,7 @@ import Welcome from "./welcome/welcome";
 import JournalContainer from "./journals/journal_container";
 import JournalDetailContainer from "../components/journals/journal_detail_container";
 import CreateJournalContainer from "../components/journals/create_journal_container";
-import EditFormContainer from "../components/journals/edit_form_container";
+import EditJournalContainer from "../components/journals/edit_journal_container";
 
 const App = () => {
   return (
@@ -38,9 +38,19 @@ const App = () => {
           path="/me/settings"
           component={EditUserContainer}
         />
-        <Route path="/journals/:journalId" component={JournalDetailContainer} />
-        <Route path="/journals/new" component={CreateJournalContainer} />
-        <Route path="/journals/:journalId/edit" component={EditFormContainer} />
+        <Route
+          exact
+          path="/journals/:journalId"
+          component={JournalDetailContainer}
+        />
+
+        <Route exact path="/new/journal" component={CreateJournalContainer} />
+
+
+        <Route
+          path="/journals/:journalId/edit"
+          component={EditJournalContainer}
+        />
 
         <Route path="/users/:userId/journals" component="" />
         <Route

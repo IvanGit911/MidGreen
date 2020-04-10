@@ -76,7 +76,7 @@ class NavBar extends React.Component {
               </div>
               <div className="dropdown-action">
                 <li>
-                  <Link to="/journals/new">New journal</Link>
+                  <Link to="/new/journal">New journal</Link>
                 </li>
                 <li>
                   <Link to="/users/:userId/journals">My journal</Link>

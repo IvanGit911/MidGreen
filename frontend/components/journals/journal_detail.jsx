@@ -8,7 +8,7 @@ class JournalDetail extends React.Component {
   }
   render() {
     const { journal } = this.props;
-
+    // debugger
     return (
       <ul className="journal-detail">
         <li className="journal-title">{journal.title}</li>

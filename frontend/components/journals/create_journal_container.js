@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import CreateJournalForm from "./journal_form";
+import JournalForm from "./journal_form";
 import { createJournal } from "../../actions/journal_actions";
 
 const msp = (state) => ({
@@ -8,10 +8,11 @@ const msp = (state) => ({
     body: "",
     image_url: "",
   },
+  btnText: "Publish",
 });
 
 const mdp = (dispatch) => ({
-  createJournal: (journal) => dispatch(createJournal(journal)),
+  action: (journal) => dispatch(createJournal(journal)),
 });
 
-export default connect(msp, mdp)(CreateJournalForm);
+export default connect(msp, mdp)(JournalForm);
