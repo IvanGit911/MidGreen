@@ -61,7 +61,7 @@ class NavBar extends React.Component {
         {/* <Dropdown logout={logout} email={email} currentUser={currentUser} /> */}
 
         {this.state.open && (
-          <div id="user-dropdown" className="dropdown-content">
+          <div className="dropdown-content">
             <ul className="dropdown-box">
               <div className="user-info3">
                 <li className="currentuser">

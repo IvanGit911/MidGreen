@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Img from "react-image";
 import dateHelper from "../../utils/date_helper";
 
-
 class JournalIndex extends React.Component {
   componentDidMount() {
     this.props.requestCategoryJournals(this.props.match.params.categoryId);
@@ -20,18 +19,9 @@ class JournalIndex extends React.Component {
   render() {
     const { category, journals } = this.props;
 
-    if (!this.props.category) {
-      // debugger;
-        // this.props.match.params.categoryId
-      return (
-        <>
-          {/* <p>refresh is not working</p> */}
-        </>
-      );
-    }
-    
-    const journalList = journals.map((journal) => {
+    if (!this.props.category) return null;
 
+    const journalList = journals.map((journal) => {
       return (
         <li key={journal.id}>
           <Img className="journal-img" src={journal.image_url}></Img>
@@ -53,7 +43,6 @@ class JournalIndex extends React.Component {
         </li>
       );
     });
- 
 
     return (
       <div className="journals">

@@ -14,59 +14,51 @@ import UserJournalsContainer from "../components/users/user_journals_container";
 
 const App = () => {
   return (
-    <>
+    <div className="body">
       <Modal />
-      <div className="main">
-        <div>
-          <div className="navbar">
-            <div className="navbar-content">
-              <Link id="midgrn" to="/">
-                MidGreen
-              </Link>
 
-              <div className="nav-btn">
-                <NavBarContainer />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <ProtectedRoute path="/" component={CategoriesBar} />
+      <div className="navbar">
+        <div id="midgrn">
+          <Link to="/">MidGreen</Link>
         </div>
 
-        <ProtectedRoute
-          exact
-          path="/me/settings"
-          component={EditUserContainer}
-        />
-
-        <Route
-          path="/users/:userId/journals"
-          component={UserJournalsContainer}
-        />
-
-        <Route
-          exact
-          path="/journals/:journalId"
-          component={JournalDetailContainer}
-        />
-
-        <Route exact path="/new/journal" component={CreateJournalContainer} />
-
-        <Route
-          path="/journals/:journalId/edit"
-          component={EditJournalContainer}
-        />
-
-        <Route
-          path="/categories/:categoryId/journals"
-          component={JournalIndexContainer}
-        />
-
-        <AuthRoute extract path="/" component={Welcome} />
-        <ProtectedRoute path="/welcome" component={App} />
+        <div className="nav-btn">
+          <NavBarContainer />
+        </div>
       </div>
-    </>
+      <div>
+        <ProtectedRoute path="/" component={CategoriesBar} />
+      </div>
+
+      <AuthRoute extract path="/" component={Welcome} />
+      <ProtectedRoute path="/welcome" component={App} />
+
+      <ProtectedRoute exact path="/me/settings" component={EditUserContainer} />
+
+      <Route path="/users/:userId/journals" component={UserJournalsContainer} />
+
+      <Route
+        exact
+        path="/journals/:journalId"
+        component={JournalDetailContainer}
+      />
+
+      <Route exact path="/new/journal" component={CreateJournalContainer} />
+
+      <Route
+        path="/journals/:journalId/edit"
+        component={EditJournalContainer}
+      />
+
+      <Route
+        path="/categories/:categoryId/journals"
+        component={JournalIndexContainer}
+      />
+
+      <div className="footer">
+        <h1>this is footer</h1>
+      </div>
+    </div>
   );
 };
 

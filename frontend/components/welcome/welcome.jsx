@@ -35,9 +35,11 @@ class Welcome extends React.Component {
           </ul>
         </li>
         <li>
-          <div className="wel-title">No charge. No ads.</div>
-          <div className="wel-prg">
-            Trust-proof. We don't publish fake journals. Never. Ever.
+          <div className="wel-sub-1">
+            <div className="wel-title">No charge. No ads.</div>
+            <div className="wel-prg">
+              Trust-proof. We don't publish fake journals. Never. Ever.
+            </div>
           </div>
           <div className="wel-sub-tle">
             <div className="sub-tle-btn-box">

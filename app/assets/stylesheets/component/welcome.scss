@@ -13,14 +13,14 @@
   font-weight: bold;
 
   text-align: center;
-  margin-top: 85px;
+  margin-top: 55px;
   width: 80%;
   color: rgb(2, 106, 78);
   margin-bottom: 50px;
 }
 
 .welcome > li {
-  width: 1190px;
+  // width: 1190px;
   margin-bottom: 75px;
 }
 
@@ -55,6 +55,7 @@
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 70px;
   color: #2e2e2e;
+  // font-weight: 600;
   // width: 50%;
 }
 
@@ -93,8 +94,16 @@
 }
 
 .wel-prg {
-  font-size: 22px;
+  font-family: "Jaldi", sans-serif;
+  font-size: 24px;
   color: #808080;
+  line-height: 32px;
+}
+.wel-sub-1{
+  height: 125px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .sub-tle-msg {
