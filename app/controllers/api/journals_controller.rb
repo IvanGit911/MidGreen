@@ -2,15 +2,19 @@ class Api::JournalsController < ApplicationController
     def index
         # debugger
         if params[:user_id]
+            # @Journals = Journal.includes(:author).find_by(author_id: params[:user_id])
             @journals = User.find(params[:user_id]).journals 
         elsif params[:category_id]
+            # debugger
+            # @Journals = Journal.includes(:category).where("category.id = ?", "3")
+            # find_by(category_id: params[:category_id].to_i)
             @journals = Category.find(params[:category_id]).journals
         end
         render :index
     end
 
     def show
-        @journal = Journal.find(params[:id])
+        @journal = Journal.includes(:author).find(params[:id])
         render :show
     end
 

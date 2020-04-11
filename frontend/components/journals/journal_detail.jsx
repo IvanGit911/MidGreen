@@ -1,13 +1,18 @@
 import React from "react";
 import Img from "react-image";
 import dateHelper from "../../utils/date_helper";
+import { Link } from "react-router-dom";
 
 class JournalDetail extends React.Component {
   componentDidMount() {
     this.props.requestJournal(this.props.match.params.journalId);
   }
+
   render() {
     const { journal } = this.props;
+
+    if (!journal) return null;
+
     // debugger
     return (
       <ul className="journal-detail">
@@ -17,7 +22,9 @@ class JournalDetail extends React.Component {
           <div>PIC</div>
           <div>
             <div className="journal-authinfo-1">
-              <div> author {journal.author_id}</div>
+              <div>
+                <Link to="">{journal.author}</Link>
+              </div>
               <button className="journal-flw-btn">Follow</button>
             </div>
             <div className="journal-authinfo-2">
@@ -32,7 +39,6 @@ class JournalDetail extends React.Component {
         <li className="journal-body">
           <p>{journal.body[2].toUpperCase()}</p>
           <div>{journal.body.slice(3)}</div>
-          
         </li>
       </ul>
     );

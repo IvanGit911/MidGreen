@@ -5,7 +5,8 @@ class Api::CategoriesController < ApplicationController
     end
 
     def show
-        @category = Category.find(params[:id])
+        # @category = Category.find(params[:id])
+        @category = Category.includes(:journals).find(params[:id])
         render :show
     end
 

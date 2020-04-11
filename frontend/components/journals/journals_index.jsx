@@ -44,7 +44,7 @@ class JournalIndex extends React.Component {
             <li>
               {journal.body.slice(2, Math.floor(Math.random() * 50 + 50))}
             </li>
-            <li>{`The author is ${journal.author_id}`}</li>
+            <li>{journal.author}</li>
             <div className="journal-btm">
               <li>{dateHelper(journal.updated_at)}</li>
               <li>{`${Math.floor(Math.random() * 10 + 2)} min read`}</li>

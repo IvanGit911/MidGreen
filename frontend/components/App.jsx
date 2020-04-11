@@ -6,10 +6,11 @@ import { AuthRoute, ProtectedRoute } from "../utils/route_util";
 import Modal from "./modal/modal";
 import CategoriesBar from "../components/categories/category_container";
 import Welcome from "./welcome/welcome";
-import JournalContainer from "./journals/journal_container";
+import JournalIndexContainer from "./journals/journal_index_container";
 import JournalDetailContainer from "../components/journals/journal_detail_container";
 import CreateJournalContainer from "../components/journals/create_journal_container";
 import EditJournalContainer from "../components/journals/edit_journal_container";
+import UserJournalsContainer from "../components/users/user_journals_container";
 
 const App = () => {
   return (
@@ -30,7 +31,7 @@ const App = () => {
           </div>
         </div>
         <div>
-          <CategoriesBar />
+          <ProtectedRoute path="/" component={CategoriesBar} />
         </div>
 
         <ProtectedRoute
@@ -38,6 +39,12 @@ const App = () => {
           path="/me/settings"
           component={EditUserContainer}
         />
+
+        <Route
+          path="/users/:userId/journals"
+          component={UserJournalsContainer}
+        />
+
         <Route
           exact
           path="/journals/:journalId"
@@ -46,16 +53,14 @@ const App = () => {
 
         <Route exact path="/new/journal" component={CreateJournalContainer} />
 
-
         <Route
           path="/journals/:journalId/edit"
           component={EditJournalContainer}
         />
 
-        <Route path="/users/:userId/journals" component="" />
         <Route
           path="/categories/:categoryId/journals"
-          component={JournalContainer}
+          component={JournalIndexContainer}
         />
 
         <AuthRoute extract path="/" component={Welcome} />

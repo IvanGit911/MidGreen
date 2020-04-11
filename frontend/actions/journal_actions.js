@@ -20,10 +20,10 @@ const removeJournal = (journalId) => ({
   journalId,
 });
 
-export const requestAuthoredJournals = (userId) => (dispatch) =>
-  JournalApiUtil.fetchAuthoredJournals(userId).then((journals) =>
-    dispatch(receiveJournals(journals))
-  );
+// export const requestAuthoredJournals = (userId) => (dispatch) =>
+//   JournalApiUtil.fetchAuthoredJournals(userId).then((journals) =>
+//     dispatch(receiveJournals(journals))
+//   );
 
 export const requestCategoryJournals = (categoryId) => (dispatch) =>
   JournalApiUtil.fetchCategoryJournals(categoryId).then((journals) =>

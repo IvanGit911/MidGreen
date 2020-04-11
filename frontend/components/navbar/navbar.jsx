@@ -79,7 +79,7 @@ class NavBar extends React.Component {
                   <Link to="/new/journal">New journal</Link>
                 </li>
                 <li>
-                  <Link to="/users/:userId/journals">My journal</Link>
+                  <Link to={`/users/${currentUser.id}/journals`}>My journal</Link>
                 </li>
                 <li>Profile</li>
                 <li>
@@ -101,5 +101,7 @@ class NavBar extends React.Component {
     return currentUser ? this.loggedin(currentUser) : this.loggedout();
   }
 }
+
+//add a class to control
 
 export default NavBar;
