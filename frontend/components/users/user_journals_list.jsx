@@ -1,18 +1,33 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
-const UserJournalsList = ({ user }) => {
-  // debugger
-  const myList = user.journals.map((journal) => (
-    <li key={journal.id}>
-      <Link to={`/journals/${journal.id}`}>{journal.title}</Link>
-    </li>
-  ));
-  return (
-    <>
-      <ul>{myList}</ul>
-    </>
-  );
-};
+class UserJournalsList extends React.Component {
+  constructor(props){
+    super(props);
+    this.handleDelete = this.handleDelete.bind(this);
+  }
 
-export default UserJournalsList;
+  handleDelete(journalId) {
+    this.props.deleteJournal(journalId).then(()=> this.props.history.push(`/users/${this.props.user.id}/journals`)());
+  }
+
+  render() {
+    const { user } = this.props;
+    const myList = user.journals.map((journal) => (
+      <li key={journal.id}>
+        <Link to={`/journals/${journal.id}`}>{journal.title}</Link>
+        <div>
+          <Link to={`/journals/${journal.id}/edit`}>Edit</Link>
+          <button onClick={() => this.handleDelete(journal.id)}>Delete</button>
+        </div>
+      </li>
+    ));
+    return (
+      <>
+        <ul className="my-journal-list">{myList}</ul>
+      </>
+    );
+  }
+}
+
+export default withRouter(UserJournalsList);

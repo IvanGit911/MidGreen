@@ -7,7 +7,7 @@
 }
 
 .welcome > h1 {
-  min-height: 200px;
+  min-height: 160px;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 60px;
   font-weight: bold;
@@ -16,6 +16,33 @@
   width: 80%;
   color: rgb(2, 106, 78);
   margin-bottom: 50px;
+}
+
+
+.cat-icons{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 50%;
+  min-height: 240px;
+}
+
+.cat-icons > li > *{
+  color: rgba(0, 0, 0, 0.54);
+  background-color: rgba(0, 0, 0, 0.05);
+  font-size: 24px;
+  height: 42px;
+  padding: 6px 12px 6px 6px;
+  margin: 5px;
+  border-radius: 99em;
+}
+
+.cat-icons > li > *:focus{
+  background-color: #D5FCE9;
+}
+
+.cat-icons > li > *:hover{
+  background-color: rgba(76, 79, 76, 0.3);
 }
 
 .wel-p-1 {

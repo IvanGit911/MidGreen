@@ -9,14 +9,16 @@ class Welcome extends React.Component {
     const { openModal } = this.props;
     const { categories } = this.props;
     const categoryList = categories.map((category) => (
-      <li key={category.id}>ic {category.title}</li>
+      <li key={category.id}>
+        <button>ic {category.title}</button>
+      </li>
     ));
 
     return (
       <ul className="welcome">
         <h1>We can’t just consume our way to a more sustainable world.</h1>
 
-        <ul>{categoryList}</ul>
+        <ul className="cat-icons">{categoryList}</ul>
 
         <p className="wel-p-1">
           Select what you're into. We'll help you find great things to read.
@@ -28,7 +30,9 @@ class Welcome extends React.Component {
             </button>
             <div className="wel-p-2">
               <p>Already have an account?</p>
-              <button className="wel-btn-2">Sign in</button>
+              <button className="wel-btn-2" onClick={openModal}>
+                Sign in
+              </button>
             </div>
           </div>
         </li>

@@ -1,23 +1,42 @@
 import React from "react";
+import { Link, withRouter } from "react-router-dom";
 
 class JournalForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.journal;
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   update(field) {
     return (e) => this.setState({ [field]: e.target.value });
   }
 
+  handleSubmit(e) {
+    debugger
+    e.preventDefault();
+    this.props
+      .action(this.state)
+      .then(() => this.props.history.push(`/users/${this.props.currentUserId}/journals`));
+  }
+
+
+
   render() {
-    const { btnText } = this.props;
+    const { btnText, currentUserId } = this.props;
     const scdButton = btnText !== "Publish" ? "Back to Journals" : null;
+    // debugger
     return (
       <div>
-        <form className="journal-form">
+        <form className="journal-form" onSubmit={this.handleSubmit}>
           <div className="j-btns">
-            <button className="j-scdButton">{scdButton}</button>
+            <Link
+              className="j-scdButton"
+              to={`/users/${currentUserId}/journals`}
+            >
+              {scdButton}
+            </Link>
             <input className="publish-btn" type="submit" value={btnText} />
           </div>
           <input
@@ -45,4 +64,4 @@ class JournalForm extends React.Component {
   }
 }
 
-export default JournalForm;
+export default withRouter(JournalForm);

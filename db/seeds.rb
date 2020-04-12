@@ -7,12 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-30.times do 
+20.times do 
     User.create(username:Faker::Name.unique.name, email: Faker::Internet.unique.email, password: 'password')
 end
 
 
-demoUser = User.create(username: "IvanGoGreen", email: "wang.han.ivan@hotmail.com", password: 'thisisareallygoodpassword');
+demoUser = User.create(username: "Ivan Wang", email: "wang.han.ivan@hotmail.com", password: 'thisisareallygoodpassword');
  
 category1 = Category.create(title: 'Solar', description: 'Solar energy.');
 category2 = Category.create(title: 'Wind', description: 'Wind energy.');
@@ -26,5 +26,5 @@ category5 = Category.create(title: 'Air Polution', description: 'Air Polution');
 category9 = Category.create(title: 'Water polution', description: 'Water polution');
 
 100.times do
-    Journal.create(title: Faker::Book.unique.title, body: Faker::Hipster.paragraphs, author_id: rand(1...30), category_id: rand(1..10), image_url: "https://picsum.photos/200")
+    Journal.create(title: Faker::Book.unique.title, body: Faker::Hipster.paragraphs, author_id: rand(1...30), category_id: rand(1..10), image_url: "https://picsum.photos/200/?random=#{rand(1...1000)}")
 end

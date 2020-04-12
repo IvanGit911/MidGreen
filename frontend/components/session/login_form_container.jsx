@@ -7,7 +7,7 @@ import { clearErrors } from "../../actions/error_actions";
 
 const msp = (state) => ({
   demoUser: {
-    username: "IvanGoGreen",
+    username: "Ivan Wang",
     password: "thisisareallygoodpassword",
   },
   errors: state.errors.session,

@@ -5,7 +5,8 @@ class EditUserForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.user;
-    this.handleUpdate = this.handleUpdate.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
@@ -16,16 +17,23 @@ class EditUserForm extends React.Component {
     return (e) => this.setState({ [field]: e.target.value });
   }
 
-  handleUpdate(e) {
+  handleSubmit(e) {
     e.preventDefault();
     this.props.updateUser(this.state);
   }
 
+  handleDelete() {
+    this.props
+      .deleteUser(this.props.user.id)
+      .then(() => this.props.history.push("/welcome"));
+  }
+
   render() {
+    // debugger;
     return (
       <div className="editUser">
         <div className="edit-title">User settings</div>
-        <form className="user-form" onSubmit={this.handleUpdate}>
+        <form className="user-form" onSubmit={this.handleSubmit}>
           <div className="editUser-box">
             <label className="editUser-title">Your username</label>
             <input
@@ -37,7 +45,7 @@ class EditUserForm extends React.Component {
           </div>
           <input className="edit-btn" type="submit" value="Edit username" />
         </form>
-        <form className="user-form" onSubmit={this.handleUpdate}>
+        <form className="user-form" onSubmit={this.handleSubmit}>
           <div className="editUser-box">
             <label className="editUser-title">Your email</label>
             <input
@@ -54,11 +62,10 @@ class EditUserForm extends React.Component {
           <p>Permanently delete your account and all of your journals.</p>
           <button
             className="dlt-user-btn"
-            onClick={() => {
-              this.props.deleteUser(this.props.user.id),
-                alert("You damn fool!");
-              // <Redirect to="/" />
-            }}
+            onClick={this.handleDelete}
+            // onClick={() => {
+            //   this.props.deleteUser(this.props.user.id);
+            // }}
           >
             Delete account
           </button>

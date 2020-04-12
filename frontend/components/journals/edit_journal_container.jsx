@@ -9,22 +9,30 @@ class EditJournalForm extends React.Component {
   }
 
   render() {
-    const { journal, action, btnText } = this.props;
+    const { journal, action, btnText, currentUserId } = this.props;
 
     if (!journal) return null; //?!
 
     return (
       <>
-        <JournalForm action={action} btnText={btnText} journal={journal} />
+        <JournalForm
+          action={action}
+          btnText={btnText}
+          journal={journal}
+          currentUserId={currentUserId}
+        />
       </>
     );
   }
 }
 
-const msp = (state, ownProps) => ({
-  journal: state.entities.journals[ownProps.match.params.journalId],
-  btnText: "Save and publish",
-});
+const msp = (state, ownProps) => {
+  return {
+    currentUserId: state.session.id,
+    journal: state.entities.journals[ownProps.match.params.journalId],
+    btnText: "Save and publish",
+  };
+};
 
 const mdp = (dispatch) => ({
   action: (journal) => dispatch(updateJournal(journal)),
