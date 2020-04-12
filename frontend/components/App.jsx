@@ -5,7 +5,7 @@ import { Route, Link } from "react-router-dom";
 import { AuthRoute, ProtectedRoute } from "../utils/route_util";
 import Modal from "./modal/modal";
 import CategoriesBar from "../components/categories/category_container";
-import Welcome from "./welcome/welcome";
+import WelcomeContainer from "./welcome/welcome_container";
 import JournalIndexContainer from "./journals/journal_index_container";
 import JournalDetailContainer from "../components/journals/journal_detail_container";
 import CreateJournalContainer from "../components/journals/create_journal_container";
@@ -26,11 +26,11 @@ const App = () => {
           <NavBarContainer />
         </div>
       </div>
-      <div>
+      <div className="category-bar">
         <ProtectedRoute path="/" component={CategoriesBar} />
       </div>
 
-      <AuthRoute extract path="/" component={Welcome} />
+      <AuthRoute extract path="/" component={WelcomeContainer} />
       <ProtectedRoute path="/welcome" component={App} />
 
       <ProtectedRoute exact path="/me/settings" component={EditUserContainer} />

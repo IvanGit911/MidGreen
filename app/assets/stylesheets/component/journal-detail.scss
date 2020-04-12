@@ -1,13 +1,15 @@
 .journal-content {
-  display: flex;
+  width: 60%;
   // flex-direction: column;
-  justify-content: center;
+  // justify-content: center;
   // align-items: center;
   // // max-width: 680px;
 }
 .journal-detail {
   // max-width: 680px;
   font-family: "Varela Round", sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 .journal-title {

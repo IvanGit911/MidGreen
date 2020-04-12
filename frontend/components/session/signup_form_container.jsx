@@ -8,8 +8,8 @@ import { clearErrors } from "../../actions/error_actions";
 
 const msp = (state) => ({
   demoUser: {
-    username: 'IvanGoGreen',
-    password: "thisisareallygoodpassword"
+    username: "IvanGoGreen",
+    password: "thisisareallygoodpassword",
   },
   errors: state.errors.session,
   formType: "Go Green.",
@@ -19,13 +19,17 @@ const mdp = (dispatch) => ({
   demoLogin: (user) => dispatch(login(user)),
   processForm: (user) => dispatch(signup(user)),
   otherForm: (
-    <button onClick={() => {
-      dispatch(openModal("login"));
-      dispatch(clearErrors());
-    }
-  }>Sign in</button>
+    <button
+      onClick={() => {
+        dispatch(openModal("login"));
+        dispatch(clearErrors());
+      }}
+    >
+      Sign in
+    </button>
   ),
   closeModal: () => dispatch(closeModal()),
+  clearErrors: () => dispatch(clearErrors())
 });
 
 export default connect(msp, mdp)(SessionForm);

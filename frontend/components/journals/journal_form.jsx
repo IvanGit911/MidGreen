@@ -12,10 +12,14 @@ class JournalForm extends React.Component {
 
   render() {
     const { btnText } = this.props;
-    const scdButton = (btnText !== "Publish") ? "Back to Journals" : null;
+    const scdButton = btnText !== "Publish" ? "Back to Journals" : null;
     return (
       <div>
         <form className="journal-form">
+          <div className="j-btns">
+            <button className="j-scdButton">{scdButton}</button>
+            <input className="publish-btn" type="submit" value={btnText} />
+          </div>
           <input
             className="j-form-title"
             type="text"
@@ -34,11 +38,8 @@ class JournalForm extends React.Component {
             onChange={this.update("body")}
             value={this.state.body}
           ></textarea>
-          <div className="j-btns">
-            <button className="j-scdButton">{scdButton}</button>
-            <input className="publish-btn" type="submit" value={btnText} />
-          </div>
         </form>
+        <div>+</div>
       </div>
     );
   }

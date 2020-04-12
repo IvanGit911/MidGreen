@@ -28,6 +28,7 @@ const mdp = (dispatch) => ({
     </button>
   ),
   closeModal: () => dispatch(closeModal()),
+  clearErrors: () => dispatch(clearErrors())
 });
 
 export default connect(msp, mdp)(SessionForm);

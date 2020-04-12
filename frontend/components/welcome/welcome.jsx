@@ -1,14 +1,37 @@
 import React from "react";
-import { connect } from "react-redux";
 
 class Welcome extends React.Component {
+  componentDidMount() {
+    this.props.requestAllCategories();
+  }
+
   render() {
     const { openModal } = this.props;
+    const { categories } = this.props;
+    const categoryList = categories.map((category) => (
+      <li key={category.id}>ic {category.title}</li>
+    ));
 
     return (
       <ul className="welcome">
         <h1>We can’t just consume our way to a more sustainable world.</h1>
-        {/* <li>todo this should be categories, but can't get access</li> */}
+
+        <ul>{categoryList}</ul>
+
+        <p className="wel-p-1">
+          Select what you're into. We'll help you find great things to read.
+        </p>
+        <li>
+          <div>
+            <button className="wel-btn-1" onClick={openModal}>
+              Get started
+            </button>
+            <div className="wel-p-2">
+              <p>Already have an account?</p>
+              <button className="wel-btn-2">Sign in</button>
+            </div>
+          </div>
+        </li>
         <li>
           <ul className="checkmark-list">
             <li className="checkmark">
@@ -82,12 +105,4 @@ class Welcome extends React.Component {
   }
 }
 
-import { openModal, closeModal } from "../../actions/modal_action";
-
-const msp = (state) => ({});
-
-const mdp = (dispatch) => ({
-  openModal: () => dispatch(openModal("signup")),
-});
-
-export default connect(null, mdp)(Welcome);
+export default Welcome;

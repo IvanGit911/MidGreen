@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Dropdown from "./dropdown";
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -54,7 +53,7 @@ class NavBar extends React.Component {
     const email = currentUser.email ? currentUser.email.split("@")[0] : null;
     return (
       <div ref={this.container}>
-        <button className="currentuser" onClick={this.handleButtonClick}>
+        <button className="currentuser-1" onClick={this.handleButtonClick}>
           {currentUser.username[0].toUpperCase()}
         </button>
         {/* dropdown */}
