@@ -11,6 +11,7 @@ import JournalDetailContainer from "../components/journals/journal_detail_contai
 import CreateJournalContainer from "../components/journals/create_journal_container";
 import EditJournalContainer from "../components/journals/edit_journal_container";
 import UserJournalsContainer from "../components/users/user_journals_container";
+import Footer from "./footer/footer";
 
 const App = () => {
   return (
@@ -55,9 +56,7 @@ const App = () => {
         component={JournalIndexContainer}
       />
 
-      <div className="footer">
-        <h1>this is footer</h1>
-      </div>
+      <Footer />
     </div>
   );
 };
