@@ -18,16 +18,15 @@
   margin-bottom: 50px;
 }
 
-
-.cat-icons{
+.cat-icons {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  width: 50%;
+  width: 60%;
   min-height: 240px;
 }
 
-.cat-icons > li > *{
+.cat-icons > li {
   color: rgba(0, 0, 0, 0.54);
   background-color: rgba(0, 0, 0, 0.05);
   font-size: 24px;
@@ -37,11 +36,11 @@
   border-radius: 99em;
 }
 
-.cat-icons > li > *:focus{
-  background-color: #D5FCE9;
+.cat-icons > li > *:focus {
+  background-color: #d5fce9;
 }
 
-.cat-icons > li > *:hover{
+.cat-icons > li:hover {
   background-color: rgba(76, 79, 76, 0.3);
 }
 
@@ -85,6 +84,7 @@
 .checkmark-list {
   display: flex;
   justify-content: center;
+  min-width: 40px;
   //   width: 80%;
 }
 
@@ -94,6 +94,7 @@
 
 .checkmark > div {
   display: flex;
+  align-items: center;
   margin-right: 10px;
   font-size: 22px;
   color: #808080;
@@ -203,4 +204,19 @@
 .wel-btn-1:hover,
 .wel-btn:hover {
   background-color: rgb(2, 139, 102);
+}
+
+.cat-icons img {
+  height: 40px;
+  width: auto;
+}
+
+.cat-icons > li {
+  display: flex;
+  align-items: center;
+}
+
+.wel-icon > img {
+  height: 30px;
+  width: auto;
 }

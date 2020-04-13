@@ -14,6 +14,8 @@
 class Journal < ApplicationRecord
     validates :title, :body, :author_id, :category_id, presence: true
 
+    validate :ensure_photo
+
     belongs_to :author,
         foreign_key: :author_id,
         class_name: :User
@@ -21,5 +23,14 @@ class Journal < ApplicationRecord
 
     belongs_to :category
 
-    has_one_attached :picture 
+    has_one_attached :photo 
+
+
+    #todo  this may need to change
+
+    def ensure_photo
+        unless self.photo.attached?
+            errors[:photo] << 'must exist to publish a journal!'
+        end
+    end
 end

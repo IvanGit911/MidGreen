@@ -8,9 +8,12 @@ class Welcome extends React.Component {
   render() {
     const { openModal } = this.props;
     const { categories } = this.props;
-    const categoryList = categories.map((category) => (
+    const categoryList = categories.map((category, idx) => (
       <li key={category.id}>
-        <button>ic {category.title}</button>
+        
+        <img src={window.catIcons[idx]} alt="" />
+          <p>{category.title}</p> 
+        
       </li>
     ));
 
@@ -40,19 +43,25 @@ class Welcome extends React.Component {
           <ul className="checkmark-list">
             <li className="checkmark">
               <div>
-                <div className="wel-icon">ic</div>
+                <div className="wel-icon">
+                  <img src={window.tree} alt="" />
+                </div>
                 <div>Up-to-date journalisms.</div>
               </div>
             </li>
             <li className="checkmark">
               <div>
-                <div className="wel-icon">ic</div>
+                <div className="wel-icon">
+                  <img src={window.tree} alt="" />
+                </div>
                 <div>Undiscovered trends.</div>
               </div>
             </li>
             <li className="checkmark">
               <div>
-                <div className="wel-icon">ic</div>
+                <div className="wel-icon">
+                  <img src={window.tree} alt="" />
+                </div>
                 <div>Categories you love.</div>
               </div>
             </li>

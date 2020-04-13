@@ -7,9 +7,18 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <script type="text/javascript">
+      window.tree = "<%= image_url('tree.png') %>"
+      window.solar = "<%= image_url('solar.png') %>"
+      window.hashTag = "<%= image_url('hashtag.png') %>"
+      window.catIcons= ["<%= image_url('solar.png') %>", "<%= image_url('hashtag.png') %>","<%= image_url('ran-1.png') %>", "<%= image_url('hashtag.png') %>","<%= image_url('ran-2.png') %>", "<%= image_url('ran-3.png') %>", "<%= image_url('ran-4.png') %>", "<%= image_url('ran-5.png') %>", "<%= image_url('ran-6.png') %>","<%= image_url('hashtag.png') %>"]
+    </script>
+
+ 
   </head>
 
   <body>
+
     <%= yield %>
   </body>
 </html>
