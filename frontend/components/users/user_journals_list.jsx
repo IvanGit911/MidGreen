@@ -16,9 +16,9 @@ class UserJournalsList extends React.Component {
     const myList = user.journals.map((journal) => (
       <li key={journal.id}>
         <Link to={`/journals/${journal.id}`}>{journal.title}</Link>
-        <div>
-          <Link to={`/journals/${journal.id}/edit`}>Edit</Link>
-          <button onClick={() => this.handleDelete(journal.id)}>Delete</button>
+        <div className="my-j-btns">
+          <Link to={`/journals/${journal.id}/edit`}>Edit journal</Link>
+          <button onClick={() => this.handleDelete(journal.id)}>Delete journal</button>
         </div>
       </li>
     ));

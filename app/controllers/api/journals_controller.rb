@@ -23,8 +23,8 @@ class Api::JournalsController < ApplicationController
         @journal.author_id = current_user.id
 
         #todo
-        @journal.category_id = 1;
-        
+        # @journal.category_id = 1;
+
         if @journal.save
             render :show
         else
@@ -43,7 +43,7 @@ class Api::JournalsController < ApplicationController
                 return
             end
         else
-            render json: ["You can't delete this journal!"], status: 401 #?!
+            render json: ["You can't update this journal!"], status: 401 #?!
         end
     end
 
@@ -51,9 +51,6 @@ class Api::JournalsController < ApplicationController
         @journal = Journal.find(params[:id])
         if @journal.author_id == current_user.id
             @journal.destroy
-            # debugger
-            #?! how to user currentuser.id to navigate back to index page. all the id ?
-            # render 
         else
             render json: ["You can't delete this journal!"], status: 422 #?!
         end

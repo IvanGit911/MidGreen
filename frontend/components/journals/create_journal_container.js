@@ -4,16 +4,18 @@ import { createJournal } from "../../actions/journal_actions";
 
 const msp = (state) => ({
   currentUserId: state.session.id,
+  categories: Object.values(state.entities.categories),
   journal: {
     title: "",
     body: "",
+    category_id: undefined,
     image_url: "",
   },
   btnText: "Publish",
 });
 
-const mdp = (dispatch) => ({
-  action: (journal) => dispatch(createJournal(journal)),
-});
+// const mdp = (dispatch) => ({
+//   action: (journal) => dispatch(createJournal(journal)),
+// });
 
-export default connect(msp, mdp)(JournalForm);
+export default connect(msp, null)(JournalForm);

@@ -11,7 +11,7 @@ class EditJournalForm extends React.Component {
   render() {
     const { journal, action, btnText, currentUserId } = this.props;
 
-    if (!journal) return null; //?!
+    if (!journal) return null; 
 
     return (
       <>

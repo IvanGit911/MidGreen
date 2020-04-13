@@ -10,10 +10,15 @@ class JournalForm extends React.Component {
 
     this.handleFile = this.handleFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.update = this.update.bind(this);
   }
 
   update(field) {
     return (e) => this.setState({ [field]: e.target.value });
+  }
+
+  updateSelect(){
+    return (e) => this.setState({ category_id: parseInt(e.target.value) });
   }
 
   handleSubmit(e) {
@@ -22,9 +27,12 @@ class JournalForm extends React.Component {
     const formData = new FormData();
     formData.append("journal[title]", this.state.title);
     formData.append("journal[body]", this.state.body);
+    formData.append("journal[category_id]", this.state.category_id);
+
     if (this.state.imageUrl) {
       formData.append("journal[photo]", this.state.imageFile);
     }
+
     $.ajax({
       url: "/api/journals",
       method: "POST",
@@ -54,23 +62,31 @@ class JournalForm extends React.Component {
   }
 
   render() {
-    const { btnText, currentUserId } = this.props;
+    const { btnText, currentUserId, categories } = this.props;
     const scdButton = btnText !== "Publish" ? "Back to Journals" : null;
     const preview = this.state.imageUrl ? (
       <img src={this.state.imageUrl} alt="" />
     ) : null;
-    // debugger
+
+    // debugger;
+
+    const categoryList = categories.map((category) => (
+      <option key={category.id} value={`${category.id}`}>
+        {category.title}
+      </option>
+    ));
+
     return (
       <div>
         <form className="journal-form" onSubmit={this.handleSubmit}>
           <div className="j-btns">
+            <input className="publish-btn" type="submit" value={btnText} />
             <Link
               className="j-scdButton"
               to={`/users/${currentUserId}/journals`}
             >
               {scdButton}
             </Link>
-            <input className="publish-btn" type="submit" value={btnText} />
           </div>
           <input
             className="j-form-title"
@@ -81,6 +97,7 @@ class JournalForm extends React.Component {
           />
 
           <div>{preview}</div>
+          <img src={this.state.photo} alt="" />
 
           <textarea
             className="j-form-body"
@@ -92,10 +109,20 @@ class JournalForm extends React.Component {
             onChange={this.update("body")}
             value={this.state.body}
           ></textarea>
+          <label className="select-cat">Select category:</label>
+
+          <select
+            className="select-cat-list"
+            // value={this.state.category_id}
+            onChange={this.updateSelect()}
+          >
+            {categoryList}
+          </select>
         </form>
-        <div className="add-pic">
+        <label className="add-pic">
+          <i className="fas fa-plus-circle"></i>
           <input type="file" onChange={this.handleFile} />
-        </div>
+        </label>
       </div>
     );
   }

@@ -25,7 +25,7 @@ class JournalIndex extends React.Component {
       return (
         <li key={journal.id}>
           <Img className="journal-img" src={journal.image_url}></Img>
-
+          {/* <img src={journal.photo} alt="journal-pic"/>  */}
           <ul className="journal-info">
             <li>
               <Link to={`/journals/${journal.id}`}>{journal.title}</Link>
