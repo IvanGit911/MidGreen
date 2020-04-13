@@ -6,7 +6,6 @@ class JournalForm extends React.Component {
     super(props);
     this.state = this.props.journal;
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleDelete = this.handleDelete.bind(this);
   }
 
   update(field) {
@@ -20,8 +19,6 @@ class JournalForm extends React.Component {
       .action(this.state)
       .then(() => this.props.history.push(`/users/${this.props.currentUserId}/journals`));
   }
-
-
 
   render() {
     const { btnText, currentUserId } = this.props;

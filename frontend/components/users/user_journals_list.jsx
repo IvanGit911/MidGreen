@@ -8,7 +8,7 @@ class UserJournalsList extends React.Component {
   }
 
   handleDelete(journalId) {
-    this.props.deleteJournal(journalId).then(()=> this.props.history.push(`/users/${this.props.user.id}/journals`)());
+    this.props.deleteJournal(journalId).then(()=> this.props.history.push(`/users/${this.props.user.id}/journals`)); //?! how to refresh I tried return null, but not re-rendering
   }
 
   render() {

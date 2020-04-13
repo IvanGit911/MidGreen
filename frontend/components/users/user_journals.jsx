@@ -12,7 +12,7 @@ class UserJournals extends React.Component {
     const { user, deleteJournal } = this.props;
 
     if (!user.journals) return null; //! to trigger componentDidMount
-
+    
     return (
       <div className="my-journals">
         <div className="m-j-top">
@@ -21,7 +21,7 @@ class UserJournals extends React.Component {
             Write a journal
           </Link>
         </div>
-        <div className="count-journals">Published count</div>
+        <div className="count-journals">Published {user.journals.length}</div>
 
         <UserJournalsList user={user} deleteJournal={deleteJournal} />
       </div>
