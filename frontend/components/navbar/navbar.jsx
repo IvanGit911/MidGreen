@@ -8,9 +8,10 @@ class NavBar extends React.Component {
     this.state = { open: false };
     this.container = React.createRef();
 
-    // this.toggleShow = this.toggleShow.bind(this);
     this.handleButtonClick = this.handleButtonClick.bind(this);
     this.handleClickOutside = this.handleClickOutside.bind(this);
+    this.closeDropDown = this.closeDropDown.bind(this);
+    this.logout = this.logout.bind(this);
   }
 
   componentDidMount() {
@@ -18,7 +19,7 @@ class NavBar extends React.Component {
   }
 
   componentWillUnmount() {
-    document.addEventListener("mousedown", this.handleClickOutside);
+    document.removeEventListener("mousedown", this.handleClickOutside);
   }
 
   handleButtonClick() {
@@ -27,11 +28,21 @@ class NavBar extends React.Component {
   }
 
   handleClickOutside(e) {
+    // debugger
     if (this.container.current && !this.container.current.contains(e.target)) {
       this.setState({
         open: false,
       });
     }
+  }
+
+  closeDropDown() {
+    // debugger
+    this.setState({ open: false });
+  }
+
+  logout() {
+    this.props.logout().then(() => this.closeDropDown());
   }
 
   loggedout() {
@@ -49,7 +60,7 @@ class NavBar extends React.Component {
   }
 
   loggedin() {
-    let { logout, currentUser } = this.props;
+    let { currentUser } = this.props;
     const email = currentUser.email ? currentUser.email.split("@")[0] : null;
     return (
       <div ref={this.container}>
@@ -74,18 +85,20 @@ class NavBar extends React.Component {
                 </div>
               </div>
               <div className="dropdown-action">
-                <li>
+                <li className="dropdown-list" onClick={this.closeDropDown}>
                   <Link to="/new/journal">New journal</Link>
                 </li>
-                <li>
-                  <Link to={`/users/${currentUser.id}/journals`}>My journal</Link>
+                <li className="dropdown-list" onClick={this.closeDropDown}>
+                  <Link to={`/users/${currentUser.id}/journals`}>
+                    My journal
+                  </Link>
                 </li>
-                <li>Profile</li>
-                <li>
+                <li className="dropdown-list">Profile</li>
+                <li className="dropdown-list" onClick={this.closeDropDown}>
                   <Link to="/me/settings">Account settings</Link>
                 </li>
               </div>
-              <button id="logout-btn" onClick={logout}>
+              <button id="logout-btn" onClick={this.logout}>
                 Log out
               </button>
             </ul>
