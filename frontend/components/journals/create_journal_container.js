@@ -3,6 +3,7 @@ import JournalForm from "./journal_form";
 import { createJournal } from "../../actions/journal_actions";
 
 const msp = (state) => ({
+  currentUserId: state.session.id,
   journal: {
     title: "",
     body: "",

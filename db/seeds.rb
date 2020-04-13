@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+require 'open-uri'
 
 20.times do 
     User.create(username:Faker::Name.unique.name, email: Faker::Internet.unique.email, password: 'password')
@@ -26,5 +27,7 @@ category5 = Category.create(title: 'Air Polution', description: 'Air Polution');
 category9 = Category.create(title: 'Water polution', description: 'Water polution');
 
 100.times do
-    Journal.create(title: Faker::Book.unique.title, body: Faker::Hipster.paragraphs, author_id: rand(1...30), category_id: rand(1..10), image_url: "https://picsum.photos/200/?random=#{rand(1...1000)}")
+    j = Journal.create!(title: Faker::Book.unique.title, body: Faker::Hipster.paragraphs, author_id: rand(1...20), category_id: rand(1..10), image_url: "https://picsum.photos/200/?random=#{rand(1...1000)}")
+    file = open("https://picsum.photos/200/?random=#{rand(1...1000)}")
+    j.photo.attach(io: file, filename: 'random_pic.jpg') 
 end

@@ -21,6 +21,10 @@ class Api::JournalsController < ApplicationController
     def create
         @journal = Journal.new(journal_params)
         @journal.author_id = current_user.id
+
+        #todo
+        @journal.category_id = 1;
+        
         if @journal.save
             render :show
         else
@@ -57,7 +61,7 @@ class Api::JournalsController < ApplicationController
 
     private
     def journal_params
-        params.require(:journal).permit(:title, :body, :category_id)
+        params.require(:journal).permit(:title, :body, :category_id, :photo)
     end
 
 end

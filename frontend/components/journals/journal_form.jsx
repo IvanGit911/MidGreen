@@ -5,6 +5,10 @@ class JournalForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.journal;
+    this.state["imageUrl"] = "";
+    this.state["imageFile"] = null;
+
+    this.handleFile = this.handleFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -13,16 +17,48 @@ class JournalForm extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger
+    // debugger
     e.preventDefault();
-    this.props
-      .action(this.state)
-      .then(() => this.props.history.push(`/users/${this.props.currentUserId}/journals`));
+    const formData = new FormData();
+    formData.append("journal[title]", this.state.title);
+    formData.append("journal[body]", this.state.body);
+    if (this.state.imageUrl) {
+      formData.append("journal[photo]", this.state.imageFile);
+    }
+    $.ajax({
+      url: "/api/journals",
+      method: "POST",
+      data: formData,
+      contentType: false,
+      processData: false,
+    }).then(() =>
+      this.props.history.push(`/users/${this.props.currentUserId}/journals`)
+    );
+
+    // this.props
+    //   .action(this.state)
+    //   .then(() => this.props.history.push(`/users/${this.props.currentUserId}/journals`));
+  }
+
+  handleFile(e) {
+    const reader = new FileReader();
+    const file = e.currentTarget.files[0];
+    reader.onloadend = () =>
+      this.setState({ imageUrl: reader.result, imageFile: file });
+
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      this.setState({ imageUrl: "", imageFile: null });
+    }
   }
 
   render() {
     const { btnText, currentUserId } = this.props;
     const scdButton = btnText !== "Publish" ? "Back to Journals" : null;
+    const preview = this.state.imageUrl ? (
+      <img src={this.state.imageUrl} alt="" />
+    ) : null;
     // debugger
     return (
       <div>
@@ -44,6 +80,8 @@ class JournalForm extends React.Component {
             value={this.state.title}
           />
 
+          <div>{preview}</div>
+
           <textarea
             className="j-form-body"
             name=""
@@ -55,7 +93,9 @@ class JournalForm extends React.Component {
             value={this.state.body}
           ></textarea>
         </form>
-        <div>+</div>
+        <div className="add-pic">
+          <input type="file" onChange={this.handleFile} />
+        </div>
       </div>
     );
   }
