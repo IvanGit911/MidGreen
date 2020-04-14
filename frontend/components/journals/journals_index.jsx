@@ -37,6 +37,7 @@ class JournalIndex extends React.Component {
             <li>{journal.author}</li>
             <div className="journal-btm">
               <li>{dateHelper(journal.updated_at)}</li>
+              <li><i className="fas fa-circle"></i></li>
               <li>{`${Math.floor(Math.random() * 10 + 2)} min read`}</li>
             </div>
           </ul>

@@ -12,6 +12,8 @@ import CreateJournalContainer from "../components/journals/create_journal_contai
 import EditJournalContainer from "../components/journals/edit_journal_container";
 import UserJournalsContainer from "../components/users/user_journals_container";
 import Footer from "./footer/footer";
+import IndexPage from "./index";
+
 
 const App = () => {
   return (
@@ -30,6 +32,9 @@ const App = () => {
       <div className="category-bar">
         <ProtectedRoute path="/" component={CategoriesBar} />
       </div>
+
+
+      <IndexPage />
 
       <AuthRoute extract path="/" component={WelcomeContainer} />
       <ProtectedRoute path="/welcome" component={App} />

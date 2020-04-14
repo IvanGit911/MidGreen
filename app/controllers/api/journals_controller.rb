@@ -22,9 +22,6 @@ class Api::JournalsController < ApplicationController
         @journal = Journal.new(journal_params)
         @journal.author_id = current_user.id
 
-        #todo
-        # @journal.category_id = 1;
-
         if @journal.save
             render :show
         else
