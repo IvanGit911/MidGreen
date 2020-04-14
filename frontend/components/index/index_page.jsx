@@ -50,7 +50,7 @@ class IndexPage extends React.Component {
               </li>
               <li className="subtitle">{topStory.subtitle}</li>
               <li className="btm">
-                <p>{topStory.author}</p>
+                <p>{topStory.author} in category</p>
                 <ul className="date">
                   <li>{dateHelper(topStory.updated_at)}</li>
                   <li>
@@ -80,7 +80,7 @@ class IndexPage extends React.Component {
                 <ul className="btm">
                   <li>{journal1.author} in category</li>
                   <ul className="date">
-                    <li>{dateHelper(topStory.updated_at)}</li>
+                    <li>{dateHelper(journal1.updated_at)}</li>
                     <li>
                       <i className="fas fa-circle"></i>
                     </li>
@@ -107,7 +107,7 @@ class IndexPage extends React.Component {
                 <ul className="btm">
                   <li>{journal2.author} in category</li>
                   <ul className="date">
-                    <li>{dateHelper(topStory.updated_at)}</li>
+                    <li>{dateHelper(journal2.updated_at)}</li>
                     <li>
                       <i className="fas fa-circle"></i>
                     </li>
@@ -134,7 +134,7 @@ class IndexPage extends React.Component {
                 <ul className="btm">
                   <li>{journal3.author} in category</li>
                   <ul className="date">
-                    <li>{dateHelper(topStory.updated_at)}</li>
+                    <li>{dateHelper(journal3.updated_at)}</li>
                     <li>
                       <i className="fas fa-circle"></i>
                     </li>
@@ -163,7 +163,7 @@ class IndexPage extends React.Component {
               <ul className="btm">
                 <li>{journal4.author} in category</li>
                 <ul className="date">
-                  <li>{dateHelper(topStory.updated_at)}</li>
+                  <li>{dateHelper(journal4.updated_at)}</li>
                   <li>
                     <i className="fas fa-circle"></i>
                   </li>
@@ -178,12 +178,131 @@ class IndexPage extends React.Component {
         </div>
         <div className="index-mid">SEE EDITOR'S PICKS</div>
 
+        <div className="index-btm">
+          <div className="index-btm-left">
+            <div className="index-btm-left-content">
+              <ul>
+                <li className="base-on">BASED ON YOUR READING HISTORY</li>
+                <h3 className="title">{journal5.title}</h3>
+                <li className="subtitle">{journal5.subtitle}</li>
+                <ul className="btm">
+                  <li>{journal5.author} in category</li>
+                  <ul className="date">
+                    <li>{dateHelper(journal5.updated_at)}</li>
+                    <li>
+                      <i className="fas fa-circle"></i>
+                    </li>
+                    <li>{`${Math.floor(Math.random() * 10 + 2)} min read`}</li>
+                    <li>
+                      <i className="fas fa-star"></i>
+                    </li>
+                  </ul>
+                </ul>
+              </ul>
+              <div>
+                <img src={journal5.photo} />
+              </div>
+            </div>
+
+            <div className="index-btm-left-content">
+              <ul>
+                <li className="base-on">POPULAR ON MEDIUM</li>
+                <h3 className="title">{journal6.title}</h3>
+                <li className="subtitle">{journal6.subtitle}</li>
+                <ul className="btm">
+                  <li>{journal6.author} in category</li>
+                  <ul className="date">
+                    <li>{dateHelper(journal6.updated_at)}</li>
+                    <li>
+                      <i className="fas fa-circle"></i>
+                    </li>
+                    <li>{`${Math.floor(Math.random() * 10 + 2)} min read`}</li>
+                    <li>
+                      <i className="fas fa-star"></i>
+                    </li>
+                  </ul>
+                </ul>
+              </ul>
+              <div>
+                <img src={journal6.photo} />
+              </div>
+            </div>
+
+            <div className="index-btm-left-content">
+              <ul>
+                <li className="base-on">BASED ON YOUR READING HISTORY</li>
+                <h3 className="title">{journal7.title}</h3>
+                <li className="subtitle">{journal7.subtitle}</li>
+                <ul className="btm">
+                  <li>{journal7.author} in category</li>
+                  <ul className="date">
+                    <li>{dateHelper(journal7.updated_at)}</li>
+                    <li>
+                      <i className="fas fa-circle"></i>
+                    </li>
+                    <li>{`${Math.floor(Math.random() * 10 + 2)} min read`}</li>
+                    <li>
+                      <i className="fas fa-star"></i>
+                    </li>
+                  </ul>
+                </ul>
+              </ul>
+              <div>
+                <img src={journal7.photo} />
+              </div>
+            </div>
+
+            <div className="index-btm-left-content">
+              <ul>
+                <li className="base-on">BASED ON YOUR READING HISTORY</li>
+                <h3 className="title">{journal8.title}</h3>
+                <li className="subtitle">{journal8.subtitle}</li>
+                <ul className="btm">
+                  <li>{journal8.author} in category</li>
+                  <ul className="date">
+                    <li>{dateHelper(journal8.updated_at)}</li>
+                    <li>
+                      <i className="fas fa-circle"></i>
+                    </li>
+                    <li>{`${Math.floor(Math.random() * 10 + 2)} min read`}</li>
+                    <li>
+                      <i className="fas fa-star"></i>
+                    </li>
+                  </ul>
+                </ul>
+              </ul>
+              <div>
+                <img src={journal8.photo} />
+              </div>
+            </div>
+
+            <div className="index-btm-left-content">
+              <ul>
+                <li className="base-on">POPULAR ON MEDIUM</li>
+                <h3 className="title">{journal9.title}</h3>
+                <li className="subtitle">{journal9.subtitle}</li>
+                <ul className="btm">
+                  <li>{journal9.author} in category</li>
+                  <ul className="date">
+                    <li>{dateHelper(journal9.updated_at)}</li>
+                    <li>
+                      <i className="fas fa-circle"></i>
+                    </li>
+                    <li>{`${Math.floor(Math.random() * 10 + 2)} min read`}</li>
+                    <li>
+                      <i className="fas fa-star"></i>
+                    </li>
+                  </ul>
+                </ul>
+              </ul>
+              <div className="img-holder">
+                <img src={journal9.photo} />
+              </div>
+            </div>
+          </div>
 
 
-        <div>
-          <div>BASED ON YOUR READING HISTORY</div>
-
-          <div>
+          <div className="index-btm-right">
             <h3>Popular on Midgreen</h3>
 
             <div>
