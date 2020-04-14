@@ -36,7 +36,6 @@ class JournalDetail extends React.Component {
           </li>
           <li>
             <img src={journal.photo} />
-            {/* <Img src={journal.image_url}></Img> */}
           </li>
           <li className="journal-body">
             <p>{journal.body[0].toUpperCase()}</p>

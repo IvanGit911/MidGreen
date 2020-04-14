@@ -11,6 +11,6 @@ Rails.application.routes.draw do
     resources :categories, only: [:index, :show] do
       resources :journals, only: [:index]
     end
-    resources :journals, only: [:create, :show, :destroy, :update]
+    resources :journals, only: [:index, :create, :show, :destroy, :update]
   end
 end

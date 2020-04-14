@@ -9,6 +9,8 @@ class Api::JournalsController < ApplicationController
             # @Journals = Journal.includes(:category).where("category.id = ?", "3")
             # find_by(category_id: params[:category_id].to_i)
             @journals = Category.find(params[:category_id]).journals
+        else
+            @journals = Journal.all
         end
         render :index
     end

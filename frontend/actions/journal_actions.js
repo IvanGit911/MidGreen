@@ -25,6 +25,12 @@ const removeJournal = (journalId) => ({
 //     dispatch(receiveJournals(journals))
 //   );
 
+
+export const requestAllJournals = () => (dispatch) =>
+  JournalApiUtil.fetchAllJournals().then((journals) =>
+    dispatch(receiveJournals(journals))
+  );
+
 export const requestCategoryJournals = (categoryId) => (dispatch) =>
   JournalApiUtil.fetchCategoryJournals(categoryId).then((journals) =>
     dispatch(receiveJournals(journals))

@@ -13,6 +13,14 @@ export const fetchCategoryJournals = categoryId => (
 )
 
 
+export const fetchAllJournals = () => (
+    $.ajax({
+        method: 'GET',
+        url: `/api/journals`
+    })
+)
+
+
 export const fetchJournal = (journalId) => (
     $.ajax({
         method: 'GET',
