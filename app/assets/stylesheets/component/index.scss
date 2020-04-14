@@ -4,7 +4,7 @@
   font-family: "Source Serif Pro", serif;
 }
 
-h3 {
+h3, h4{
   margin: 0px;
 }
 
@@ -109,7 +109,7 @@ h3 {
 .mid-info > h3 {
   font-size: 18px;
   height: 40px;
-  margin: 0px;
+  // margin: 0px;
 }
 
 .index-top-mid > div:nth-child(-n + 2) {
@@ -120,7 +120,7 @@ h3 {
   // width: auto;
 }
 .index-top-right .right-img {
-  border: 1px solid red;
+  // border: 1px solid red;
   margin-bottom: 16px;
   // width: 265px;
   // height: 150px;
@@ -132,7 +132,7 @@ h3 {
 }
 
 .index-top-right h3 {
-  margin: 0px;
+  // margin: 0px;
   font-weight: bold;
   font-size: 21px;
 }
@@ -169,7 +169,8 @@ h3 {
 //   float: right;
 // }
 .index-btm-left {
-   width: 63.5%;
+  //  width: 63.5%;
+   width: 656px;
    margin-right: 24px;
 }
 .index-btm-left > div{
@@ -198,7 +199,34 @@ h3 {
 
 .index-btm-right{
   float: right;
-  // width: 328px;
-  width: 31.8%;
+  width: 264px;
+  // width: 31.8%;
   padding: 32px 32px 0px 32px;
+}
+
+.index-btm-right h3{
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  margin-bottom: 32px;
+}
+
+.index-btm-right-content > li{
+  height: 105px;
+  margin-bottom: 24px;
+  display: flex;
+}
+
+.index-btm-right-content .num{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;;
+  font-size: 34px;
+  margin: 5px 20px 0px 0px;
+  height: 100%;
+  color: rgba(0,0,0,.15);
+}
+
+.index-btm-right-content .info{
+  // width: ;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

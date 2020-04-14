@@ -3,8 +3,8 @@ import { requestAllJournals } from "../../actions/journal_actions";
 import IndexPage from "./index_page";
 
 const msp = (state) => ({
-    journals: state.entities.journals,
-    categories: state.entities.categories
+    journals: Object.values(state.entities.journals),
+    categories: Object.values(state.entities.categories)
 });
 
 const mdp = (dispatch) => ({

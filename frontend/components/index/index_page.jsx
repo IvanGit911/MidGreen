@@ -19,9 +19,10 @@ class IndexPage extends React.Component {
 
   render() {
     const { journals, categories } = this.props;
+    // debugger
 
     //todo this may need to change
-    const topStory = journals[30];
+    const topStory = journals[29];
 
     const journal1 = journals[Math.floor(Math.random() * 30)];
     const journal2 = journals[Math.floor(Math.random() * 30)];
@@ -183,7 +184,9 @@ class IndexPage extends React.Component {
             <div className="index-btm-left-content">
               <ul>
                 <li className="base-on">BASED ON YOUR READING HISTORY</li>
-                <h3 className="title">{journal5.title}</h3>
+                <h3 className="title">
+                  <Link to={`/journals/${journal5.id}`}>{journal5.title}</Link>
+                </h3>
                 <li className="subtitle">{journal5.subtitle}</li>
                 <ul className="btm">
                   <li>{journal5.author} in category</li>
@@ -200,14 +203,18 @@ class IndexPage extends React.Component {
                 </ul>
               </ul>
               <div>
-                <img src={journal5.photo} />
+                <Link to={`/journals/${journal5.id}`}>
+                  <img src={journal5.photo} />
+                </Link>
               </div>
             </div>
 
             <div className="index-btm-left-content">
               <ul>
                 <li className="base-on">POPULAR ON MEDIUM</li>
-                <h3 className="title">{journal6.title}</h3>
+                <h3 className="title">
+                  <Link to={`/journals/${journal6.id}`}>{journal6.title}</Link>
+                </h3>
                 <li className="subtitle">{journal6.subtitle}</li>
                 <ul className="btm">
                   <li>{journal6.author} in category</li>
@@ -224,14 +231,18 @@ class IndexPage extends React.Component {
                 </ul>
               </ul>
               <div>
-                <img src={journal6.photo} />
+                <Link to={`/journals/${journal6.id}`}>
+                  <img src={journal6.photo} />
+                </Link>
               </div>
             </div>
 
             <div className="index-btm-left-content">
               <ul>
                 <li className="base-on">BASED ON YOUR READING HISTORY</li>
-                <h3 className="title">{journal7.title}</h3>
+                <h3 className="title">
+                  <Link to={`/journals/${journal7.id}`}>{journal7.title}</Link>
+                </h3>
                 <li className="subtitle">{journal7.subtitle}</li>
                 <ul className="btm">
                   <li>{journal7.author} in category</li>
@@ -248,14 +259,18 @@ class IndexPage extends React.Component {
                 </ul>
               </ul>
               <div>
-                <img src={journal7.photo} />
+                <Link to={`/journals/${journal7.id}`}>
+                  <img src={journal7.photo} />
+                </Link>
               </div>
             </div>
 
             <div className="index-btm-left-content">
               <ul>
                 <li className="base-on">BASED ON YOUR READING HISTORY</li>
-                <h3 className="title">{journal8.title}</h3>
+                <h3 className="title">
+                  <Link to={`/journals/${journal8.id}`}>{journal8.title}</Link>
+                </h3>
                 <li className="subtitle">{journal8.subtitle}</li>
                 <ul className="btm">
                   <li>{journal8.author} in category</li>
@@ -272,14 +287,18 @@ class IndexPage extends React.Component {
                 </ul>
               </ul>
               <div>
-                <img src={journal8.photo} />
+                <Link to={`/journals/${journal8.id}`}>
+                  <img src={journal8.photo} />
+                </Link>
               </div>
             </div>
 
             <div className="index-btm-left-content">
               <ul>
                 <li className="base-on">POPULAR ON MEDIUM</li>
-                <h3 className="title">{journal9.title}</h3>
+                <h3 className="title">
+                  <Link to={`/journals/${journal9.id}`}>{journal9.title}</Link>
+                </h3>
                 <li className="subtitle">{journal9.subtitle}</li>
                 <ul className="btm">
                   <li>{journal9.author} in category</li>
@@ -296,23 +315,126 @@ class IndexPage extends React.Component {
                 </ul>
               </ul>
               <div className="img-holder">
-                <img src={journal9.photo} />
+                <Link to={`/journals/${journal9.id}`}>
+                  <img src={journal9.photo} />
+                </Link>
               </div>
             </div>
           </div>
 
-
           <div className="index-btm-right">
-            <h3>Popular on Midgreen</h3>
+            <h3 className="title">Popular on Midgreen</h3>
+            <ul className="index-btm-right-content">
+              <li>
+                <p className="num">01</p>
+                <div className="info">
+                  <h4>
+                    <Link to={`/journals/${journal2.id}`}>
+                      {journal2.title}
+                    </Link>
+                  </h4>
+                  <ul className="btm">
+                    <li>{journal2.author} in category</li>
+                    <ul className="date">
+                      <li>{dateHelper(journal2.updated_at)}</li>
+                      <li>
+                        <i className="fas fa-circle"></i>
+                      </li>
+                      <li>{`${Math.floor(
+                        Math.random() * 10 + 2
+                      )} min read`}</li>
+                      <li>
+                        <i className="fas fa-star"></i>
+                      </li>
+                    </ul>
+                  </ul>
+                </div>
+              </li>
+            </ul>
 
-            <div>
-              01..
-              <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
-            </div>
+            <ul className="index-btm-right-content">
+              <li>
+                <p className="num">02</p>
+                <div className="info">
+                  <h4>
+                    <Link to={`/journals/${journal4.id}`}>
+                      {journal4.title}
+                    </Link>
+                  </h4>
+                  <ul className="btm">
+                    <li>{journal4.author} in category</li>
+                    <ul className="date">
+                      <li>{dateHelper(journal4.updated_at)}</li>
+                      <li>
+                        <i className="fas fa-circle"></i>
+                      </li>
+                      <li>{`${Math.floor(
+                        Math.random() * 10 + 2
+                      )} min read`}</li>
+                      <li>
+                        <i className="fas fa-star"></i>
+                      </li>
+                    </ul>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+
+            <ul className="index-btm-right-content">
+              <li>
+                <p className="num">03</p>
+                <div className="info">
+                  <h4>
+                    <Link to={`/journals/${journal6.id}`}>
+                      {journal6.title}
+                    </Link>
+                  </h4>
+                  <ul className="btm">
+                    <li>{journal6.author} in category</li>
+                    <ul className="date">
+                      <li>{dateHelper(journal6.updated_at)}</li>
+                      <li>
+                        <i className="fas fa-circle"></i>
+                      </li>
+                      <li>{`${Math.floor(
+                        Math.random() * 10 + 2
+                      )} min read`}</li>
+                      <li>
+                        <i className="fas fa-star"></i>
+                      </li>
+                    </ul>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+
+            <ul className="index-btm-right-content">
+              <li>
+                <p className="num">04</p>
+                <div className="info">
+                  <h4>
+                    <Link to={`/journals/${journal9.id}`}>
+                      {journal9.title}
+                    </Link>
+                  </h4>
+                  <ul className="btm">
+                    <li>{journal9.author} in category</li>
+                    <ul className="date">
+                      <li>{dateHelper(journal9.updated_at)}</li>
+                      <li>
+                        <i className="fas fa-circle"></i>
+                      </li>
+                      <li>{`${Math.floor(
+                        Math.random() * 10 + 2
+                      )} min read`}</li>
+                      <li>
+                        <i className="fas fa-star"></i>
+                      </li>
+                    </ul>
+                  </ul>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
