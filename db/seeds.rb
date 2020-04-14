@@ -38,7 +38,7 @@ j = Journal.create!(title: "China’s new solar farms have an adorable design", 
 file= open("https://midgreen-dev.s3.amazonaws.com/solar/solar-1.jpg")
 j.photo.attach(io: file, filename: 'solar-1.jpg')
 
-j = Journal.create!(title: "After 40 Years of Hunting, Scientists Identify a Key Flaw in Solar", subtitle: Faker::Lorem.paragraph, body: lorem, author_id: rand(1...10), category_id: 1)
+j = Journal.create!(title: "Scientists Identify a Key Flaw in Solar", subtitle: Faker::Lorem.paragraph, body: lorem, author_id: rand(1...10), category_id: 1)
 file= open("https://midgreen-dev.s3.amazonaws.com/solar/solar-2.jpg")
 j.photo.attach(io: file, filename: 'solar-2.jpg')
 j = Journal.create!(title: "Apple the largest US user of solar power, ahead of Amazon", subtitle: Faker::Lorem.paragraph, body: lorem, author_id: rand(1...10), category_id: 1)
@@ -123,7 +123,7 @@ j.photo.attach(io: file, filename: 'gw-3.png')
 j = Journal.create!(title: "How Mexico City plans to fight air pollution", subtitle: Faker::Lorem.paragraph, body: lorem, author_id: rand(1...10), category_id: 6)
 file= open("https://midgreen-dev.s3.amazonaws.com/transportation/t-1.jpg")
 j.photo.attach(io: file, filename: 't-1.jpg')
-j = Journal.create!(title: "Air Pollution: What India can learn from other countries to beat ...", subtitle: Faker::Lorem.paragraph, body: lorem, author_id: rand(1...10), category_id: 6)
+j = Journal.create!(title: "Air Pollution: What India can learn from other countries", subtitle: Faker::Lorem.paragraph, body: lorem, author_id: rand(1...10), category_id: 6)
 file= open("https://midgreen-dev.s3.amazonaws.com/transportation/t-2.jpg")
 j.photo.attach(io: file, filename: 't-2.jpg')
 j = Journal.create!(title: "Is air quality a social problem?", subtitle: Faker::Lorem.paragraph, body: lorem, author_id: rand(1...10), category_id: 6)
@@ -135,13 +135,13 @@ j.photo.attach(io: file, filename: 't-3.jpg')
 
 
 
-j = Journal.create!(title: "Air Pollution Worsens Bronchiectasis, European Study Confirms", subtitle: Faker::Lorem.paragraph, body: lorem, author_id: rand(1...10), category_id: 7)
+j = Journal.create!(title: "Air Pollution Worsens Bronchiectasis", subtitle: Faker::Lorem.paragraph, body: lorem, author_id: rand(1...10), category_id: 7)
 file= open("https://midgreen-dev.s3.amazonaws.com/air/a-1.jpg")
 j.photo.attach(io: file, filename: 'a-1.jpg')
-j = Journal.create!(title: "Air pollution's hidden impacts | Science", subtitle: Faker::Lorem.paragraph, body: lorem, author_id: rand(1...10), category_id: 7)
+j = Journal.create!(title: "Air pollution's hidden impacts", subtitle: Faker::Lorem.paragraph, body: lorem, author_id: rand(1...10), category_id: 7)
 file= open("https://midgreen-dev.s3.amazonaws.com/air/a-2.jpg")
 j.photo.attach(io: file, filename: 'a-2.jpg')
-j = Journal.create!(title: "Best 50+ Air Pollution Wallpaper on HipWallpaper | Earth Pollution ...", subtitle: Faker::Lorem.paragraph, body: lorem, author_id: rand(1...10), category_id: 7)
+j = Journal.create!(title: "Air Pollution Wallpaper", subtitle: Faker::Lorem.paragraph, body: lorem, author_id: rand(1...10), category_id: 7)
 file= open("https://midgreen-dev.s3.amazonaws.com/air/a-3.jpg")
 j.photo.attach(io: file, filename: 'a-3.jpg')
 # j = Journal.create!(title: "A New View of Wintertime Air Pollution", subtitle: Faker::Lorem.paragraph, body: lorem, author_id: rand(1...10), category_id: 7)
@@ -163,7 +163,7 @@ j.photo.attach(io: file, filename: 'w-3.png')
 # j.photo.attach(io: file, filename: 'w-4.jpg')
 
 
-j = Journal.create!(title: "LEED Certification: How LEED Certified Buildings are Focused on ...", subtitle: Faker::Lorem.paragraph, body: lorem, author_id: rand(1...10), category_id: 9)
+j = Journal.create!(title: "How LEED Certified Buildings are Focused on ...", subtitle: Faker::Lorem.paragraph, body: lorem, author_id: rand(1...10), category_id: 9)
 file= open("https://midgreen-dev.s3.amazonaws.com/leed/l-1.jpg")
 j.photo.attach(io: file, filename: 'l-1.jpg')
 j = Journal.create!(title: "LEED-Certified Buildings Keep Sustainability at Forefront", subtitle: Faker::Lorem.paragraph, body: lorem, author_id: rand(1...10), category_id: 9)
@@ -178,7 +178,7 @@ j = Journal.create!(title: "AASHE", subtitle: Faker::Lorem.paragraph, body: lore
 file= open("https://midgreen-dev.s3.amazonaws.com/aashe/1.png")
 j.photo.attach(io: file, filename: '1.jpg')
 
-j = Journal.create!(title: "AASHE and ACTS - The Association for the Advancement of ...", subtitle: Faker::Lorem.paragraph, body: lorem, author_id: rand(1...10), category_id: 10)
+j = Journal.create!(title: "AASHE and ACTS", subtitle: Faker::Lorem.paragraph, body: lorem, author_id: rand(1...10), category_id: 10)
 file= open("https://midgreen-dev.s3.amazonaws.com/aashe/1.png")
 j.photo.attach(io: file, filename: '1.jpg')
 

@@ -22,7 +22,7 @@ class JournalIndex extends React.Component {
     if (!this.props.category) return null;
 
     const journalList = journals.map((journal) => {
-      debugger;
+      // debugger;
       return (
         <li key={journal.id}>
           {/* <Img className="journal-img" src={journal.image_url}></Img> */}

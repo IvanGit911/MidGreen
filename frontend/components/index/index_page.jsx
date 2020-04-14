@@ -1,10 +1,20 @@
 import React from "react";
 import dateHelper from "../../utils/date_helper";
+import { Link } from "react-router-dom";
 
 class IndexPage extends React.Component {
   componentDidMount() {
     // debugger
     this.props.requestAllJournals();
+  }
+
+  componentDidUpdate(prevProps) {
+    // debugger;
+    // if (
+    //   this.props.location.pathname !== prevProps.location.pathname
+    // ) {
+    //   this.props.requestAllJournals();
+    // }
   }
 
   render() {
@@ -28,73 +38,147 @@ class IndexPage extends React.Component {
     return (
       <div className="index">
         <div className="index-top">
-          <div className="index-top-left">
-            <ul>
-              <li>
+          <ul className="index-top-left">
+            <li>
+              <Link to={`/journals/${topStory.id}`}>
                 <img src={topStory.photo} />
+              </Link>
+            </li>
+            <div className="index-j-info">
+              <li className="title">
+                <Link to={`/journals/${topStory.id}`}>{topStory.title}</Link>
               </li>
-              <div className="index-j-info">
-                <li className="title">{topStory.title}</li>
-                <li className="subtitle">{topStory.subtitle}</li>
-                <li className="btm">
-                  <p>{topStory.author}</p>
-                  <div className="date">
+              <li className="subtitle">{topStory.subtitle}</li>
+              <li className="btm">
+                <p>{topStory.author}</p>
+                <ul className="date">
+                  <li>{dateHelper(topStory.updated_at)}</li>
+                  <li>
+                    <i className="fas fa-circle"></i>
+                  </li>
+                  <li>{`${Math.floor(Math.random() * 10 + 2)} min read`}</li>
+                  <li>
+                    <i className="fas fa-star"></i>
+                  </li>
+                </ul>
+              </li>
+            </div>
+          </ul>
+
+          <div className="index-top-mid">
+            <div>
+              <div className="mid-img">
+                <Link to={`/journals/${journal1.id}`}>
+                  <img src={journal1.photo} />
+                </Link>
+              </div>
+
+              <ul className="mid-info">
+                <h3>
+                  <Link to={`/journals/${journal1.id}`}>{journal1.title}</Link>
+                </h3>
+                <ul className="btm">
+                  <li>{journal1.author} in category</li>
+                  <ul className="date">
                     <li>{dateHelper(topStory.updated_at)}</li>
                     <li>
                       <i className="fas fa-circle"></i>
                     </li>
                     <li>{`${Math.floor(Math.random() * 10 + 2)} min read`}</li>
-                  </div>
-                </li>
+                    <li>
+                      <i className="fas fa-star"></i>
+                    </li>
+                  </ul>
+                </ul>
+              </ul>
+            </div>
+
+            <div>
+              <div className="mid-img">
+                <Link to={`/journals/${journal2.id}`}>
+                  <img src={journal2.photo} />
+                </Link>
               </div>
-            </ul>
+
+              <ul className="mid-info">
+                <h3>
+                  <Link to={`/journals/${journal2.id}`}>{journal2.title}</Link>
+                </h3>
+                <ul className="btm">
+                  <li>{journal2.author} in category</li>
+                  <ul className="date">
+                    <li>{dateHelper(topStory.updated_at)}</li>
+                    <li>
+                      <i className="fas fa-circle"></i>
+                    </li>
+                    <li>{`${Math.floor(Math.random() * 10 + 2)} min read`}</li>
+                    <li>
+                      <i className="fas fa-star"></i>
+                    </li>
+                  </ul>
+                </ul>
+              </ul>
+            </div>
+
+            <div>
+              <div className="mid-img">
+                <Link to={`/journals/${journal3.id}`}>
+                  <img src={journal3.photo} />
+                </Link>
+              </div>
+
+              <ul className="mid-info">
+                <h3>
+                  <Link to={`/journals/${journal3.id}`}>{journal3.title}</Link>
+                </h3>
+                <ul className="btm">
+                  <li>{journal3.author} in category</li>
+                  <ul className="date">
+                    <li>{dateHelper(topStory.updated_at)}</li>
+                    <li>
+                      <i className="fas fa-circle"></i>
+                    </li>
+                    <li>{`${Math.floor(Math.random() * 10 + 2)} min read`}</li>
+                    <li>
+                      <i className="fas fa-star"></i>
+                    </li>
+                  </ul>
+                </ul>
+              </ul>
+            </div>
           </div>
 
-          <div className="index-top-mid">
-            <div>
-              <img src="" alt="" />
-
-              <ul>
-                <li>title</li>
-                <li>author in category</li>
-                <li>date ic min ic</li>
-              </ul>
-            </div>
-
-            <div>
-              <img src="" alt="" />
-
-              <ul>
-                <li>title</li>
-                <li>author in category</li>
-                <li>date ic min ic</li>
-              </ul>
-            </div>
-
-            <div>
-              <img src="" alt="" />
-
-              <ul>
-                <li>title</li>
-                <li>author in category</li>
-                <li>date ic min ic</li>
-              </ul>
-            </div>
-          </div>
-
-          <div>
+          <div className="index-top-right">
             <ul>
-              <li>
-                <img src="" alt="" />
+              <li className="right-img">
+                <Link to={`/journals/${journal4.id}`}>
+                  <img src={journal4.photo} />
+                </Link>
               </li>
-              <li>title</li>
-              <li>subtitle</li>
-              <li>author in category</li>
-              <li>date ic min ic</li>
+              <h3>
+                <Link to={`/journals/${journal4.id}`}>{journal4.title}</Link>
+              </h3>
+              <li className="subtitle">{journal4.subtitle}</li>
+
+              <ul className="btm">
+                <li>{journal4.author} in category</li>
+                <ul className="date">
+                  <li>{dateHelper(topStory.updated_at)}</li>
+                  <li>
+                    <i className="fas fa-circle"></i>
+                  </li>
+                  <li>{`${Math.floor(Math.random() * 10 + 2)} min read`}</li>
+                  <li>
+                    <i className="fas fa-star"></i>
+                  </li>
+                </ul>
+              </ul>
             </ul>
-            <div>SEE EDITOR'S PICKS</div>
           </div>
         </div>
+        <div className="index-mid">SEE EDITOR'S PICKS</div>
+
+
 
         <div>
           <div>BASED ON YOUR READING HISTORY</div>
