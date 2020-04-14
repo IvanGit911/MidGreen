@@ -26,7 +26,7 @@
 
 .journal-img {
   width: 60%;
-  height: 100%;
+  height: auto;
 }
 
 //--------------------------------------
@@ -90,6 +90,7 @@
 
 .category-journals > li:nth-child(n + 3) .journal-img {
   width: 40%;
+  height: auto;
 }
 
 .category-journals > li:nth-child(n + 3) .journal-info {
@@ -152,4 +153,9 @@
 
 .fas{
   font-size: 5px;
+}
+
+
+.j-index-title-1{
+  width: 80%;
 }

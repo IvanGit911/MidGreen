@@ -35,12 +35,12 @@ class JournalDetail extends React.Component {
             </div>
           </li>
           <li>
-            {/* <img src={journal.photo} alt=""/> */}
-            <Img src={journal.image_url}></Img>
+            <img src={journal.photo} />
+            {/* <Img src={journal.image_url}></Img> */}
           </li>
           <li className="journal-body">
-            <p>{journal.body[2].toUpperCase()}</p>
-            <div>{journal.body.slice(3)}</div>
+            <p>{journal.body[0].toUpperCase()}</p>
+            <div>{journal.body.slice(1)}</div>
           </li>
         </ul>
       </div>

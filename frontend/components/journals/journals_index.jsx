@@ -22,17 +22,18 @@ class JournalIndex extends React.Component {
     if (!this.props.category) return null;
 
     const journalList = journals.map((journal) => {
+      debugger
       return (
         <li key={journal.id}>
-          <Img className="journal-img" src={journal.image_url}></Img>
-          {/* <img src={journal.photo} alt="journal-pic"/>  */}
+          {/* <Img className="journal-img" src={journal.image_url}></Img> */}
+          <img className="journal-img" src={journal.photo}/> 
           <ul className="journal-info">
-            <li>
+            <li className="j-index-title-1">
               <Link to={`/journals/${journal.id}`}>{journal.title}</Link>
             </li>
 
             <li>
-              {journal.body.slice(2, Math.floor(Math.random() * 50 + 50))}
+              {journal.subtitle}
             </li>
             <li>{journal.author}</li>
             <div className="journal-btm">
