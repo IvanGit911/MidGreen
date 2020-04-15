@@ -13,13 +13,17 @@ const Comment = ({ comment, allComments }) => {
   });
 
   return (
-    <div style={{ marginLeft: "25px", marginTop: "10px" }}>
+    <div className="comment-content" style={{ marginLeft: "25px", marginTop: "10px" }}>
       <div>
+        <div className="comment-top">
+          <div>pic</div>
+          <div>author: {comment.author}</div>
+          <div>date</div>
+        </div>
         <div>{comment.body}</div>
-        <div>author: {comment.author}</div>
       </div>
 
-      {nestedComments}
+      <div className="child-comments">{nestedComments}</div>
     </div>
   );
 };
