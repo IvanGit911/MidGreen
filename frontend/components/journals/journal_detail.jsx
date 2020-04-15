@@ -16,12 +16,14 @@ class JournalDetail extends React.Component {
 
     // debugger;
     return (
+      <>
+
       <div className="journal-content">
         <ul className="journal-detail">
           <li className="journal-title">{journal.title}</li>
           <li className="journal-subtitle">{journal.subtitle}</li>
           <li className="journal-authinfo">
-            <div>PIC</div>
+              <div>{journal.author[0]}</div>
             <div>
               <div className="journal-authinfo-1">
                 <div>
@@ -44,16 +46,21 @@ class JournalDetail extends React.Component {
           </li>
         </ul>
 
+      </div>
         <div className='comments'>
           <h1>Comments</h1>
-          <div>
+          {/* <form action="">
+            <textarea cols="30" rows="10"></textarea>
+            <input type="submit" value="Publish"/>
+          </form> */}
+          
             {journal.all_comments[""].map((comment) => {  //toplevel.map
               return <Comment key={comment.id} comment={comment} allComments={journal.all_comments}/>;
             })}
-          </div>
+          
 
         </div>
-      </div>
+      </>
     );
   }
 }

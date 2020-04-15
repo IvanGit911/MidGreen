@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
-import { requestAllCategories } from "../../actions/category_action";
-import { openModal, closeModal } from "../../actions/modal_action";
+import { requestAllCategories } from "../../actions/category_actions";
+import { openModal, closeModal } from "../../actions/modal_actions";
 import Welcome from "./welcome";
 
 const msp = (state) => ({
