@@ -31,7 +31,13 @@ class JournalForm extends React.Component {
 
     if (this.state.imageUrl) {
       formData.append("journal[photo]", this.state.imageFile);
-    }
+    } 
+
+    //?!
+    // else if (this.state.photo){
+    //   formData.append("journal[photo]", this.state.photo);
+    // }
+    // debugger
 
     $.ajax({
       url: "/api/journals",

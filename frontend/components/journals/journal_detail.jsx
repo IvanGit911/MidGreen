@@ -2,6 +2,7 @@ import React from "react";
 import Img from "react-image";
 import dateHelper from "../../utils/date_helper";
 import { Link } from "react-router-dom";
+import Comment from './comment'
 
 class JournalDetail extends React.Component {
   componentDidMount() {
@@ -13,7 +14,7 @@ class JournalDetail extends React.Component {
 
     if (!journal) return null;
 
-    // debugger
+    // debugger;
     return (
       <div className="journal-content">
         <ul className="journal-detail">
@@ -42,6 +43,16 @@ class JournalDetail extends React.Component {
             <div>{journal.body.slice(1)}</div>
           </li>
         </ul>
+
+        <div className='comments'>
+          <h1>Comments</h1>
+          <div>
+            {journal.all_comments[""].map((comment) => {  //toplevel.map
+              return <Comment key={comment.id} comment={comment} allComments={journal.all_comments}/>;
+            })}
+          </div>
+
+        </div>
       </div>
     );
   }

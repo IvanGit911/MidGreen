@@ -12,5 +12,7 @@ Rails.application.routes.draw do
       resources :journals, only: [:index]
     end
     resources :journals, only: [:index, :create, :show, :destroy, :update]
+
+    resources :comments, only: [:show, :create, :destroy]
   end
 end

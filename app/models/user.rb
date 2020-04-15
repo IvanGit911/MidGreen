@@ -25,6 +25,11 @@ class User < ApplicationRecord
         class_name: :Journal,
         dependent: :destroy
 
+    has_many :comments, 
+        foreign_key: :author_id,
+        class_name: :Comment,
+        inverse_of: :author
+
 
 
 
