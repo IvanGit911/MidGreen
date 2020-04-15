@@ -51,7 +51,9 @@ class IndexPage extends React.Component {
               </li>
               <li className="subtitle">{topStory.subtitle}</li>
               <li className="btm">
-                <p>{topStory.author} in category</p>
+                <p>
+                  {topStory.author} in {topStory.category}
+                </p>
                 <ul className="date">
                   <li>{dateHelper(topStory.updated_at)}</li>
                   <li>
@@ -79,7 +81,9 @@ class IndexPage extends React.Component {
                   <Link to={`/journals/${journal1.id}`}>{journal1.title}</Link>
                 </h3>
                 <ul className="btm">
-                  <li>{journal1.author} in category</li>
+                  <li>
+                    {journal1.author} in {journal1.category}
+                  </li>
                   <ul className="date">
                     <li>{dateHelper(journal1.updated_at)}</li>
                     <li>
@@ -106,7 +110,9 @@ class IndexPage extends React.Component {
                   <Link to={`/journals/${journal2.id}`}>{journal2.title}</Link>
                 </h3>
                 <ul className="btm">
-                  <li>{journal2.author} in category</li>
+                  <li>
+                    {journal2.author} in {journal2.category}
+                  </li>
                   <ul className="date">
                     <li>{dateHelper(journal2.updated_at)}</li>
                     <li>
@@ -133,7 +139,9 @@ class IndexPage extends React.Component {
                   <Link to={`/journals/${journal3.id}`}>{journal3.title}</Link>
                 </h3>
                 <ul className="btm">
-                  <li>{journal3.author} in category</li>
+                  <li>
+                    {journal3.author} in {journal3.category}
+                  </li>
                   <ul className="date">
                     <li>{dateHelper(journal3.updated_at)}</li>
                     <li>
@@ -162,7 +170,9 @@ class IndexPage extends React.Component {
               <li className="subtitle">{journal4.subtitle}</li>
 
               <ul className="btm">
-                <li>{journal4.author} in category</li>
+                <li>
+                  {journal4.author} in {journal4.category}
+                </li>
                 <ul className="date">
                   <li>{dateHelper(journal4.updated_at)}</li>
                   <li>
@@ -189,7 +199,9 @@ class IndexPage extends React.Component {
                 </h3>
                 <li className="subtitle">{journal5.subtitle}</li>
                 <ul className="btm">
-                  <li>{journal5.author} in category</li>
+                  <li>
+                    {journal5.author} in {journal5.category}
+                  </li>
                   <ul className="date">
                     <li>{dateHelper(journal5.updated_at)}</li>
                     <li>
@@ -217,7 +229,9 @@ class IndexPage extends React.Component {
                 </h3>
                 <li className="subtitle">{journal6.subtitle}</li>
                 <ul className="btm">
-                  <li>{journal6.author} in category</li>
+                  <li>
+                    {journal6.author} in {journal6.category}
+                  </li>
                   <ul className="date">
                     <li>{dateHelper(journal6.updated_at)}</li>
                     <li>
@@ -245,7 +259,9 @@ class IndexPage extends React.Component {
                 </h3>
                 <li className="subtitle">{journal7.subtitle}</li>
                 <ul className="btm">
-                  <li>{journal7.author} in category</li>
+                  <li>
+                    {journal7.author} in {journal7.category}
+                  </li>
                   <ul className="date">
                     <li>{dateHelper(journal7.updated_at)}</li>
                     <li>
@@ -273,7 +289,9 @@ class IndexPage extends React.Component {
                 </h3>
                 <li className="subtitle">{journal8.subtitle}</li>
                 <ul className="btm">
-                  <li>{journal8.author} in category</li>
+                  <li>
+                    {journal8.author} in {journal8.category}
+                  </li>
                   <ul className="date">
                     <li>{dateHelper(journal8.updated_at)}</li>
                     <li>
@@ -301,7 +319,9 @@ class IndexPage extends React.Component {
                 </h3>
                 <li className="subtitle">{journal9.subtitle}</li>
                 <ul className="btm">
-                  <li>{journal9.author} in category</li>
+                  <li>
+                    {journal9.author} in {journal9.category}
+                  </li>
                   <ul className="date">
                     <li>{dateHelper(journal9.updated_at)}</li>
                     <li>
@@ -334,7 +354,9 @@ class IndexPage extends React.Component {
                     </Link>
                   </h4>
                   <ul className="btm">
-                    <li>{journal2.author} in category</li>
+                    <li>
+                      {journal2.author} in {journal2.category}
+                    </li>
                     <ul className="date">
                       <li>{dateHelper(journal2.updated_at)}</li>
                       <li>
@@ -362,7 +384,9 @@ class IndexPage extends React.Component {
                     </Link>
                   </h4>
                   <ul className="btm">
-                    <li>{journal4.author} in category</li>
+                    <li>
+                      {journal4.author} in {journal4.category}
+                    </li>
                     <ul className="date">
                       <li>{dateHelper(journal4.updated_at)}</li>
                       <li>
@@ -390,7 +414,9 @@ class IndexPage extends React.Component {
                     </Link>
                   </h4>
                   <ul className="btm">
-                    <li>{journal6.author} in category</li>
+                    <li>
+                      {journal6.author} in {journal6.category}
+                    </li>
                     <ul className="date">
                       <li>{dateHelper(journal6.updated_at)}</li>
                       <li>
@@ -418,7 +444,9 @@ class IndexPage extends React.Component {
                     </Link>
                   </h4>
                   <ul className="btm">
-                    <li>{journal9.author} in category</li>
+                    <li>
+                      {journal9.author} in {journal9.category}
+                    </li>
                     <ul className="date">
                       <li>{dateHelper(journal9.updated_at)}</li>
                       <li>

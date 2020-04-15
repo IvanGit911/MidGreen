@@ -1,5 +1,5 @@
-# debugger
-json.partial! 'journal', journal: @journal
 
-# json.extract! @journal, :id, :title, :body, :author_id, :category_id, :image_url, :updated_at
-# json.author @journal.author.username
+json.extract! @journal, :id, :title, :body, :category_id, :subtitle, :updated_at
+json.author @journal.author.username
+json.category @journal.category.title
+json.photo url_for(@journal.photo)

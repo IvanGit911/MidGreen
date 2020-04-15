@@ -3,20 +3,23 @@ class Api::JournalsController < ApplicationController
         # debugger
         if params[:user_id]
             # @Journals = Journal.includes(:author).find_by(author_id: params[:user_id])
-            @journals = User.find(params[:user_id]).journals 
+            @journals = Journal.where(author_id: params[:user_id]).includes(:author, :category, "photo_attachment": :blob)
+            # @journals = User.find(params[:user_id]).journals 
         elsif params[:category_id]
             # debugger
-            # @Journals = Journal.includes(:category).where("category.id = ?", "3")
-            # find_by(category_id: params[:category_id].to_i)
-            @journals = Category.find(params[:category_id]).journals
+
+            @journals = Journal.where(category_id: params[:category_id]).includes(:author, :category, "photo_attachment": :blob)
+            # @journals = Category.find(params[:category_id]).journals
         else
-            @journals = Journal.all
+            @journals = Journal.all.includes(:author, :category, "photo_attachment": :blob)
         end
         render :index
     end
 
+    #?! is includes need for show as well? can't tell the difference from server log => 6steps
+
     def show
-        @journal = Journal.includes(:author).find(params[:id])
+        @journal = Journal.includes(:author, :category, "photo_attachment": :blob).find(params[:id])
         render :show
     end
 
