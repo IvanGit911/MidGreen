@@ -14,6 +14,10 @@ class JournalDetail extends React.Component {
 
     if (!journal) return null;
 
+    const showComments = !journal.all_comments ? null : (journal.all_comments[""].map((comment) => {  //toplevel.map
+      return <Comment key={comment.id} comment={comment} allComments={journal.all_comments} />;
+    }));
+
     // debugger;
     return (
       <>
@@ -53,10 +57,10 @@ class JournalDetail extends React.Component {
             <textarea cols="30" rows="10"></textarea>
             <input type="submit" value="Publish"/>
           </form> */}
-          
-            {journal.all_comments[""].map((comment) => {  //toplevel.map
+          {showComments}
+            {/* {journal.all_comments[""].map((comment) => {  //toplevel.map
               return <Comment key={comment.id} comment={comment} allComments={journal.all_comments}/>;
-            })}
+            })} */}
           
 
         </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import NavBarContainer from "./navbar/navbar_container";
 import EditUserContainer from "./users/edit_user_container";
-import { Route, Link } from "react-router-dom";
+import { Route, Link, Switch } from "react-router-dom";
 import { AuthRoute, ProtectedRoute } from "../utils/route_util";
 import Modal from "./modal/modal";
 import CategoriesBar from "../components/categories/category_container";
@@ -13,7 +13,6 @@ import EditJournalContainer from "../components/journals/edit_journal_container"
 import UserJournalsContainer from "../components/users/user_journals_container";
 import Footer from "./footer/footer";
 import IndexContainer from "./index/index_container";
-
 
 const App = () => {
   return (
@@ -33,40 +32,45 @@ const App = () => {
         <ProtectedRoute path="/" component={CategoriesBar} />
       </div>
 
-      {/* ?! use switch but how tried not working */}
-      <ProtectedRoute extact path="/" component={IndexContainer} />
-
       <AuthRoute extract path="/" component={WelcomeContainer} />
-      <ProtectedRoute path="/welcome" component={App} />
 
-      <ProtectedRoute exact path="/me/settings" component={EditUserContainer} />
+      <Switch>
+        <Route
+          exact
+          path="/categories/:categoryId/journals"
+          component={JournalIndexContainer}
+        />
 
-      <ProtectedRoute
-        path="/users/:userId/journals"
-        component={UserJournalsContainer}
-      />
+        <Route
+          exact
+          path="/journals/:journalId"
+          component={JournalDetailContainer}
+        />
 
-      <Route
-        exact
-        path="/journals/:journalId"
-        component={JournalDetailContainer}
-      />
+        <ProtectedRoute
+          exact
+          path="/me/settings"
+          component={EditUserContainer}
+        />
 
-      <ProtectedRoute
-        exact
-        path="/new/journal"
-        component={CreateJournalContainer}
-      />
+        <ProtectedRoute
+          path="/users/:userId/journals"
+          component={UserJournalsContainer}
+        />
 
-      <ProtectedRoute
-        path="/journals/:journalId/edit"
-        component={EditJournalContainer}
-      />
+        <ProtectedRoute
+          exact
+          path="/new/journal"
+          component={CreateJournalContainer}
+        />
 
-      <Route
-        path="/categories/:categoryId/journals"
-        component={JournalIndexContainer}
-      />
+        <ProtectedRoute
+          exact
+          path="/journals/:journalId/edit"
+          component={EditJournalContainer}
+        />
+        <ProtectedRoute exact path="/" component={IndexContainer} />
+      </Switch>
 
       <Footer />
     </div>

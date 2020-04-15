@@ -41,9 +41,21 @@ class Journal < ApplicationRecord
         comments_by_parent = Hash.new { |hash, key| hash[key] = [] }
 
         self.comments.includes(:author).each do |comment|
+       
         comments_by_parent[comment.parent_comment_id] << comment
+
         end
+    
 
         comments_by_parent
+    end
+
+    def comment_authors
+        comment_authors =  Hash.new 
+
+        self.comments.includes(:author).each do |comment|
+            comment_authors[comment.author.id] = comment.author.username
+        end
+        comment_authors
     end
 end
