@@ -9,7 +9,7 @@ const msp = (state) => ({
     title: "",
     body: "",
     category_id: undefined,
-    image_url: "",
+    subtitle: "",
   },
   btnText: "Publish",
 });

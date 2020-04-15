@@ -32,7 +32,6 @@ const App = () => {
       <div className="category-bar">
         <ProtectedRoute path="/" component={CategoriesBar} />
       </div>
-      
 
       {/* ?! use switch but how tried not working */}
       <ProtectedRoute extact path="/" component={IndexContainer} />
@@ -42,7 +41,10 @@ const App = () => {
 
       <ProtectedRoute exact path="/me/settings" component={EditUserContainer} />
 
-      <Route path="/users/:userId/journals" component={UserJournalsContainer} />
+      <ProtectedRoute
+        path="/users/:userId/journals"
+        component={UserJournalsContainer}
+      />
 
       <Route
         exact
@@ -50,9 +52,13 @@ const App = () => {
         component={JournalDetailContainer}
       />
 
-      <Route exact path="/new/journal" component={CreateJournalContainer} />
+      <ProtectedRoute
+        exact
+        path="/new/journal"
+        component={CreateJournalContainer}
+      />
 
-      <Route
+      <ProtectedRoute
         path="/journals/:journalId/edit"
         component={EditJournalContainer}
       />

@@ -1,5 +1,5 @@
 @categories.each do |category|
     json.set! category.id do
-        json.partial! 'category', category: category
+        json.extract! category, :id, :title, :description
     end
 end

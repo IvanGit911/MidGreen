@@ -9,7 +9,7 @@ class EditJournalForm extends React.Component {
   }
 
   render() {
-    const { journal, action, btnText, currentUserId } = this.props;
+    const { journal,categories, action, btnText, currentUserId } = this.props;
 
     if (!journal) return null; 
 
@@ -19,6 +19,7 @@ class EditJournalForm extends React.Component {
           action={action}
           btnText={btnText}
           journal={journal}
+          categories={categories}
           currentUserId={currentUserId}
         />
       </>
@@ -29,6 +30,7 @@ class EditJournalForm extends React.Component {
 const msp = (state, ownProps) => {
   return {
     currentUserId: state.session.id,
+    categories: Object.values(state.entities.categories),
     journal: state.entities.journals[ownProps.match.params.journalId],
     btnText: "Save and publish",
   };

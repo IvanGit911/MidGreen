@@ -25,7 +25,6 @@ class JournalIndex extends React.Component {
       // debugger;
       return (
         <li key={journal.id}>
-          {/* <Img className="journal-img" src={journal.image_url}></Img> */}
           <img className="journal-img" src={journal.photo} />
           <ul className="journal-info">
             <li className="j-index-title-1">

@@ -14,4 +14,7 @@ const usersReducer = (state = {}, action) => {
   }
 };
 
+//?! delete user need to delete session.id but how to get it?
+//?! check whether return a promise?
+
 export default usersReducer;

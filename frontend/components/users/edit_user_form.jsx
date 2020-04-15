@@ -25,7 +25,10 @@ class EditUserForm extends React.Component {
   handleDelete() {
     this.props
       .deleteUser(this.props.user.id)
-      .then(() => this.props.history.push("/welcome"));
+      .then(() => {
+        // debugger
+        this.props.history.push("/welcome")
+      });
   }
 
   render() {
@@ -63,9 +66,6 @@ class EditUserForm extends React.Component {
           <button
             className="dlt-user-btn"
             onClick={this.handleDelete}
-            // onClick={() => {
-            //   this.props.deleteUser(this.props.user.id);
-            // }}
           >
             Delete account
           </button>

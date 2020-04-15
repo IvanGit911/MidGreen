@@ -18,7 +18,7 @@ class JournalDetail extends React.Component {
       <div className="journal-content">
         <ul className="journal-detail">
           <li className="journal-title">{journal.title}</li>
-          <li className="journal-subtitle">subtitle</li>
+          <li className="journal-subtitle">{journal.subtitle}</li>
           <li className="journal-authinfo">
             <div>PIC</div>
             <div>

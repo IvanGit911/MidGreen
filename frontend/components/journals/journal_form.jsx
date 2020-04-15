@@ -95,9 +95,16 @@ class JournalForm extends React.Component {
             onChange={this.update("title")}
             value={this.state.title}
           />
+          <input
+            className="j-form-subtitle"
+            type="text"
+            placeholder="Subtitle"
+            onChange={this.update("subtitle")}
+            value={this.state.subtitle}
+          />
 
           <div>{preview}</div>
-          <img src={this.state.photo} alt="" />
+          <img src={this.state.photo} />
 
           <textarea
             className="j-form-body"
@@ -113,7 +120,7 @@ class JournalForm extends React.Component {
 
           <select
             className="select-cat-list"
-            // value={this.state.category_id}
+            // value={(this.state.category_id).toString()}
             onChange={this.updateSelect()}
           >
             {categoryList}
