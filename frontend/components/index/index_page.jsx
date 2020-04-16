@@ -13,19 +13,19 @@ class IndexPage extends React.Component {
     // debugger
 
     //todo this may need to change
-    const topStory = journals[29];
+    const topStory = journals[Math.floor(Math.random() * journals.length)];
 
-    const journal1 = journals[Math.floor(Math.random() * 30)];
-    const journal2 = journals[Math.floor(Math.random() * 30)];
-    const journal3 = journals[Math.floor(Math.random() * 30)];
-    const journal4 = journals[Math.floor(Math.random() * 30)];
-    const journal5 = journals[Math.floor(Math.random() * 30)];
-    const journal6 = journals[Math.floor(Math.random() * 30)];
-    const journal7 = journals[Math.floor(Math.random() * 30)];
-    const journal8 = journals[Math.floor(Math.random() * 30)];
-    const journal9 = journals[Math.floor(Math.random() * 30)];
+    const journal1 = journals[Math.floor(Math.random() * journals.length)];
+    const journal2 = journals[Math.floor(Math.random() * journals.length)];
+    const journal3 = journals[Math.floor(Math.random() * journals.length)];
+    const journal4 = journals[Math.floor(Math.random() * journals.length)];
+    const journal5 = journals[Math.floor(Math.random() * journals.length)];
+    const journal6 = journals[Math.floor(Math.random() * journals.length)];
+    const journal7 = journals[Math.floor(Math.random() * journals.length)];
+    const journal8 = journals[Math.floor(Math.random() * journals.length)];
+    const journal9 = journals[Math.floor(Math.random() * journals.length)];
     if (!topStory) return null;
-    
+    // debugger;
 
     return (
       <div className="index">
