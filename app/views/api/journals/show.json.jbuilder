@@ -11,10 +11,5 @@ comment_authors = @journal.comment_authors
 json.all_comments all_comments
 json.comment_authors comment_authors
 
-# all_comments.each do |comment|
-#     debugger
-#     json.partial! 'api/comments/comment', comment: comment
-# end
-
 
 

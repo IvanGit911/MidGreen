@@ -1,15 +1,10 @@
 class Api::JournalsController < ApplicationController
     def index
-        # debugger
+    
         if params[:user_id]
-            # @Journals = Journal.includes(:author).find_by(author_id: params[:user_id])
             @journals = Journal.where(author_id: params[:user_id]).includes(:author, :category, "photo_attachment": :blob)
-            # @journals = User.find(params[:user_id]).journals 
         elsif params[:category_id]
-            # debugger
-
             @journals = Journal.where(category_id: params[:category_id]).includes(:author, :category, "photo_attachment": :blob)
-            # @journals = Category.find(params[:category_id]).journals
         else
             @journals = Journal.all.includes(:author, :category, "photo_attachment": :blob)
         end

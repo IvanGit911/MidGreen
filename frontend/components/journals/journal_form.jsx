@@ -17,7 +17,7 @@ class JournalForm extends React.Component {
     return (e) => this.setState({ [field]: e.target.value });
   }
 
-  updateSelect(){
+  updateSelect() {
     return (e) => this.setState({ category_id: parseInt(e.target.value) });
   }
 
@@ -31,7 +31,7 @@ class JournalForm extends React.Component {
 
     if (this.state.imageUrl) {
       formData.append("journal[photo]", this.state.imageFile);
-    } 
+    }
 
     //?!
     // else if (this.state.photo){
