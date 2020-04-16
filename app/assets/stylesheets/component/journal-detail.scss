@@ -1,5 +1,7 @@
 .journal-content {
   width: 60%;
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
   // flex-direction: column;
   // justify-content: center;
   // align-items: center;
@@ -26,7 +28,7 @@
 }
 
 .journal-authinfo {
-  border: 1px solid red;
+  // border: 1px solid red;
   display: flex;
   height: 50px;
   margin: 20px 0px 20px 0px;
@@ -37,7 +39,11 @@
   border-radius: 200px 200px 200px 200px;
   height: 50px;
   width: 50px;
-  background-color: blue;
+  color: white;
+  background-color: rgba(3, 168, 124, 1);
+  line-height: 50px;
+  text-align: center;
+  margin-right: 15px;
 }
 
 .journal-authinfo > div:nth-child(2) {
@@ -56,6 +62,7 @@
   font-size: 13px;
   display: flex;
   justify-content: space-around;
+  width: 70%;
 }
 
 .journal-detail Img {

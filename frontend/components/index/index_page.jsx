@@ -8,15 +8,6 @@ class IndexPage extends React.Component {
     this.props.requestAllJournals();
   }
 
-  componentDidUpdate(prevProps) {
-    // debugger;
-    // if (
-    //   this.props.location.pathname !== prevProps.location.pathname
-    // ) {
-    //   this.props.requestAllJournals();
-    // }
-  }
-
   render() {
     const { journals, categories } = this.props;
     // debugger
@@ -33,8 +24,8 @@ class IndexPage extends React.Component {
     const journal7 = journals[Math.floor(Math.random() * 30)];
     const journal8 = journals[Math.floor(Math.random() * 30)];
     const journal9 = journals[Math.floor(Math.random() * 30)];
-    // debugger
     if (!topStory) return null;
+    
 
     return (
       <div className="index">

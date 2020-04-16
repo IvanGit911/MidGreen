@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import JournalIndex from "./journals_index";
 import { requestCategoryJournals } from "../../actions/journal_actions";
-import { requestCategory } from "../../actions/category_action";
+import { requestCategory } from "../../actions/category_actions";
 
 const msp = (state, ownProps) => {
   const category = state.entities.categories[ownProps.match.params.categoryId];

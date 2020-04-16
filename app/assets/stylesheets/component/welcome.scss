@@ -1,3 +1,4 @@
+
 .welcome {
   display: flex;
   flex-direction: column;
@@ -26,7 +27,7 @@
   min-height: 240px;
 }
 
-.cat-icons > li {
+.cat-icons > button {
   color: rgba(0, 0, 0, 0.54);
   background-color: rgba(0, 0, 0, 0.05);
   font-size: 24px;
@@ -34,14 +35,16 @@
   padding: 6px 12px 6px 6px;
   margin: 5px;
   border-radius: 99em;
+  display: flex;
+  // cursor: pointer;
 }
 
-.cat-icons > li > *:focus {
+.cat-icons > button:focus {
   background-color: #d5fce9;
 }
 
-.cat-icons > li:hover {
-  background-color: rgba(76, 79, 76, 0.3);
+.cat-icons > button:hover {
+  background-color: rgba(76, 79, 76, 0.1);
 }
 
 .wel-p-1 {

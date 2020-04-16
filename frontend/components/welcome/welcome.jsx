@@ -9,19 +9,17 @@ class Welcome extends React.Component {
     const { openModal } = this.props;
     const { categories } = this.props;
     const categoryList = categories.map((category, idx) => (
-      <li key={category.id}>
-        
+      <button key={category.id}>
         <img src={window.catIcons[idx]} alt="" />
-          <p>{category.title}</p> 
-        
-      </li>
+        <p>{category.title}</p>
+      </button>
     ));
 
     return (
       <ul className="welcome">
         <h1>We can’t just consume our way to a more sustainable world.</h1>
 
-        <ul className="cat-icons">{categoryList}</ul>
+        <div className="cat-icons">{categoryList}</div>
 
         <p className="wel-p-1">
           Select what you're into. We'll help you find great things to read.

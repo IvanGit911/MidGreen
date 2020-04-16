@@ -92,14 +92,13 @@ h3, h4{
 }
 
 .index-top-mid .mid-img {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-right: 24px;
+}
+
+.mid-img img{
   width: 100px;
   height: 100px;
-  // object-fit: scale-down;
-  // object-fit: cover;
-  margin-right: 24px;
+  object-fit: cover;
 }
 
 .index-top-mid .mid-info {
@@ -122,6 +121,7 @@ h3, h4{
 .index-top-right {
   // width: auto;
 }
+
 .index-top-right .right-img {
   // border: 1px solid red;
   margin-bottom: 16px;
@@ -205,6 +205,8 @@ h3, h4{
   width: 264px;
   // width: 31.8%;
   padding: 32px 32px 0px 32px;
+  position: sticky;
+  top: 0;
 }
 
 .index-btm-right h3{
