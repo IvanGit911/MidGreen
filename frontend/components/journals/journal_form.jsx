@@ -105,8 +105,8 @@ class JournalForm extends React.Component {
         </Link>
       ) : null;
 
-    const preview = this.state.imageUrl ? (
-      <img src={this.state.imageUrl} alt="" />
+    const preview = this.state.imageFile ? (
+      <img className="preview-img" src={this.state.imageUrl} />
     ) : null;
 
     // debugger;
@@ -120,14 +120,23 @@ class JournalForm extends React.Component {
     const action =
       btnText === "Publish" ? this.handleCreate : this.handleUpdate;
 
-    debugger;
+    const showPic =
+      btnText === "Publish" ? (
+        preview
+      ) : this.state.imageFile ? (
+        preview
+      ) : (
+        <img src={this.state.photo} />
+      );
 
+    let selected = this.state.category_id.toString();
+    debugger;
     return (
       <div>
         <form className="journal-form" onSubmit={action}>
           <div className="j-btns">
-            <input className="publish-btn" type="submit" value={btnText} />
             {scdButton}
+            <input className="publish-btn" type="submit" value={btnText} />
           </div>
           <input
             className="j-form-title"
@@ -144,8 +153,7 @@ class JournalForm extends React.Component {
             value={this.state.subtitle}
           />
 
-          <div>{preview}</div>
-          <img src={this.state.photo} />
+          {showPic}
 
           <textarea
             className="j-form-body"
@@ -159,7 +167,7 @@ class JournalForm extends React.Component {
 
           <select
             className="select-cat-list"
-            // value={(this.state.category_id).toString()}
+            value={selected}
             onChange={this.updateSelect()}
           >
             {categoryList}

@@ -8,7 +8,7 @@ const msp = (state) => ({
   journal: {
     title: "",
     body: "",
-    category_id: undefined,
+    category_id: 1,
     subtitle: "",
   },
   btnText: "Publish",

@@ -36,7 +36,6 @@ export const createJournal = journal => (
     })
 )
 
-
 export const updateJournal = journal => (
     $.ajax({
         method: 'PATCH',

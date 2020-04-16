@@ -13,7 +13,7 @@ import EditJournalContainer from "../components/journals/edit_journal_container"
 import UserJournalsContainer from "../components/users/user_journals_container";
 import Footer from "./footer/footer";
 import IndexContainer from "./index/index_container";
-import CreateChildCommentsContainer from './comments/create_child_comments_container';
+import CreateChildCommentsContainer from "./comments/create_child_comments_container";
 
 const App = () => {
   return (
@@ -29,11 +29,7 @@ const App = () => {
           <NavBarContainer />
         </div>
       </div>
-        <ProtectedRoute path="/" component={CategoriesBar} />
-      {/* <div className="category-bar">
-      </div> */}
-
-      
+      <ProtectedRoute path="/" component={CategoriesBar} />
 
       <Switch>
         <Route
@@ -71,7 +67,11 @@ const App = () => {
           component={EditJournalContainer}
         />
 
-        <ProtectedRoute exact path="/comments/:commentId/new" component={CreateChildCommentsContainer} />
+        <ProtectedRoute
+          exact
+          path="/comments/:commentId/new"
+          component={CreateChildCommentsContainer}
+        />
 
         <ProtectedRoute exact path="/" component={IndexContainer} />
         <AuthRoute extract path="/" component={WelcomeContainer} />

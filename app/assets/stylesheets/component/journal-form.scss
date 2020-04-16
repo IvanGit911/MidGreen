@@ -14,7 +14,7 @@
   padding-top: 16px;
 }
 
-.j-form-subtitle{
+.j-form-subtitle {
   font-size: 25px;
   padding: 15px 0px 15px 0px;
 }
@@ -28,7 +28,7 @@
   position: relative;
   right: -575px;
   top: -100px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   width: max-content;
 }
 
@@ -44,39 +44,36 @@
 }
 
 .j-scdButton {
-    font-size: 14px;
-    color: rgba(0, 0, 0, 0.35);
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.35);
 }
 
-
-
-.select-cat{
+.select-cat {
   position: relative;
   top: -600px;
-  left:  -150px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  left: -150px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 20px;
   font-weight: 600;
   color: rgba(0, 0, 0, 0.6);
-  
 }
 
-.select-cat-list{
+.select-cat-list {
   position: relative;
   top: -580px;
-  left:  -150px;
+  left: -150px;
   width: 20%;
 }
 
-
 .add-pic > input[type="file"] {
-    display: none;
+  display: none;
 }
 
-.add-pic{
-  font-size: 35px;;
+.add-pic {
+  font-size: 35px;
   position: relative;
   top: -700px;
-  left:  -65px;
+  left: -65px;
   cursor: pointer;
 }
