@@ -1,5 +1,4 @@
 .comments {
-  border: 1px solid red;
   font-family: Georgia, "Times New Roman", Times, serif;
   padding-top: 50px;
   //   border-top: 1px solid rgba(0, 0, 0, 0.84);
@@ -10,7 +9,6 @@
   color: rgba(0, 0, 0, 0.68);
   font-weight: bold;
   padding-left: 20px;
-
 }
 .comments > .comment-container {
   border: 1px solid rgba(0, 0, 0, 0.09);
@@ -66,4 +64,54 @@
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
+}
+
+.comment-btm{
+  display: flex;
+  flex-direction: column;
+}
+
+.new-comment {
+
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.new-comment-body {
+  resize: none;
+  width: 100%;
+  font-size: 18px;
+  line-height: 28px;
+  color: rgba(0, 0, 0, 0.84);
+  font-family: "Source Serif Pro", serif;
+  border-radius: 5px;
+  
+}
+
+.new-comment-body *::placeholder {
+  color: rgba(0, 0, 0, 0.33);
+}
+
+.submit-comment-btn {
+  padding: 0px 16px 0px 16px;
+  margin-left: 14px;
+  color: rgb(3, 168, 125);
+  border: 1px solid rgb(3, 168, 125);
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 37px;
+  text-align: center;
+}
+
+.new-child-comment {
+  padding: 0px 16px 0px 16px;
+  color: rgb(3, 168, 125);
+  border: 1px solid rgb(3, 168, 125);
+  border-radius: 5px;
+  font-size: 12px;
+  line-height: 30px;
+  text-align: center;
+  float: right;
+
 }

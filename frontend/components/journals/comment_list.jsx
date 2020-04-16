@@ -2,23 +2,24 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 //todo journalId no user?
-const Comment = ({ comment, allComments, comment_authors, journalId }) => {
+
+const CommentList = ({ comment, allComments, comment_authors, journalId }) => {
   const nestedComments = (allComments[comment.id] || []).map((comment) => {
     return (
-      <Comment
+      <CommentList
         key={comment.id}
         journalId={journalId}
         comment={comment}
         allComments={allComments}
         comment_authors={comment_authors}
-        type="child"
+        // type="child"
       />
     );
   });
 
   // debugger;
   return (
-    <div className="comment-container">
+    <div>
       <div>
         <div className="comment-top">
           <div className="comment-author">
@@ -29,8 +30,17 @@ const Comment = ({ comment, allComments, comment_authors, journalId }) => {
             {/* <div>date</div> */}
           </div>
         </div>
-        <div className="comment-body">{comment.body}</div>
-        <div><Link to={`/comments/${comment.id}/new`}>Write a comment</Link> </div>
+        <div className="comment-btm">
+          <div className="comment-body">{comment.body}</div>
+          <div>
+            <Link
+              className="new-child-comment"
+              to={`/comments/${comment.id}/new`}
+            >
+              Write a comment
+            </Link>
+          </div>
+        </div>
       </div>
 
       <div
@@ -47,4 +57,4 @@ const Comment = ({ comment, allComments, comment_authors, journalId }) => {
   );
 };
 
-export default Comment;
+export default CommentList;

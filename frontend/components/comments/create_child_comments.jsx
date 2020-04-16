@@ -23,15 +23,12 @@ class CreateChildComments extends React.Component {
       journalId: this.props.parentComment.journal_id,
     };
     // debugger
-    this.props
-      .createComment(childComment)
-      .then(() =>{
-        debugger
-        this.props.history.push(
-          `/journals/${this.props.parentComment.journal_id}`
-        )}
+    this.props.createComment(childComment).then(() => {
+      // debugger;
+      this.props.history.push(
+        `/journals/${this.props.parentComment.journal_id}`
       );
-    
+    });
   }
 
   componentDidMount() {
@@ -53,13 +50,14 @@ class CreateChildComments extends React.Component {
           </div>
         </div>
 
-        <form onSubmit={this.handleSubmitComment}>
+        <form className="new-comment" onSubmit={this.handleSubmitComment}>
           <textarea
             cols="1"
             rows="3"
+            className="new-comment-body"
             onChange={this.updateComment("body")}
           ></textarea>
-          <input type="submit" value="publish" />
+          <input className="submit-comment-btn" type="submit" value="publish" />
         </form>
       </div>
     );

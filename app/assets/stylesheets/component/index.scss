@@ -92,14 +92,18 @@ h3, h4{
 }
 
 .index-top-mid .mid-img {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
   width: 100px;
   height: 100px;
   // object-fit: scale-down;
   // object-fit: cover;
   margin-right: 24px;
+}
+
+.mid-img img{
+  object-fit: cover;
 }
 
 .index-top-mid .mid-info {

@@ -1,7 +1,7 @@
 import React from "react";
 import dateHelper from "../../utils/date_helper";
 import { Link } from "react-router-dom";
-import Comment from "./comment";
+import CommentList from "./comment_list";
 
 class JournalDetail extends React.Component {
   constructor(props) {
@@ -43,7 +43,7 @@ class JournalDetail extends React.Component {
         ? journal.all_comments[""].map((comment) => {
             //toplevel.map
             return (
-              <Comment
+              <CommentList
                 key={comment.id}
                 journalId={journal.id}
                 comment={comment}
@@ -54,7 +54,10 @@ class JournalDetail extends React.Component {
           })
         : null
       : null;
+      
 
+    const placeHolderText = showComments ? "Write a comment..." : "Be the first to write a comment...";
+    
     return (
       <>
         <div className="journal-content">
@@ -86,15 +89,10 @@ class JournalDetail extends React.Component {
           </ul>
         </div>
         <div className="comments">
-          <div>
-            <Link to={`/journals/${journal.id}/comments/new`}>
-              Write a comment
-            </Link>{" "}
-          </div>
-          <h1>Comments</h1>
-          <form onSubmit={this.handleSubmitComment}>
-            <textarea cols="1" rows="3" onChange={this.updateComment('body')}></textarea>
-            <input type="submit" value="Publish" />
+          <h1 >Comments</h1>
+          <form className="new-comment" onSubmit={this.handleSubmitComment}>
+            <textarea className="new-comment-body" cols="1" rows="5" placeholder={placeHolderText} onChange={this.updateComment('body')}></textarea>
+            <input className="submit-comment-btn" type="submit" value="Publish" />
           </form>
           {showComments}
         </div>

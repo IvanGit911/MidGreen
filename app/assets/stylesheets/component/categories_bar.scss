@@ -20,8 +20,11 @@
   height: 50px;
   line-height: 50px;
   text-align: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-  overflow: hidden;  //bonus, move outside the bar
+  
+  //todo
+  position: sticky;
+  top: 0;
+  // overflow: hidden;  //bonus, move outside the bar
  
 }
 

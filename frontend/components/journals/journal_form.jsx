@@ -114,8 +114,6 @@ class JournalForm extends React.Component {
 
           <textarea
             className="j-form-body"
-            name=""
-            id=""
             cols="1"
             rows="30"
             placeholder="Tell your story..."
