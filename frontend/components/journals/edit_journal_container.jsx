@@ -9,14 +9,14 @@ class EditJournalForm extends React.Component {
   }
 
   render() {
-    const { journal,categories, action, btnText, currentUserId } = this.props;
+    const { journal, categories, updateJournal, btnText, currentUserId } = this.props;
 
     if (!journal) return null; 
 
     return (
       <>
         <JournalForm
-          action={action}
+          updateJournal={updateJournal}
           btnText={btnText}
           journal={journal}
           categories={categories}
@@ -37,7 +37,7 @@ const msp = (state, ownProps) => {
 };
 
 const mdp = (dispatch) => ({
-  action: (journal) => dispatch(updateJournal(journal)),
+  updateJournal: (journal) => dispatch(updateJournal(journal)),
   requestJournal: (journalId) => dispatch(requestJournal(journalId)),
 });
 

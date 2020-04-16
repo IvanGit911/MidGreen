@@ -30,6 +30,7 @@ class Api::JournalsController < ApplicationController
     end
 
     def update
+        debugger
         @journal = Journal.find(params[:id])
         if @journal.author_id == current_user.id
             if @journal.update(journal_params)
@@ -55,7 +56,7 @@ class Api::JournalsController < ApplicationController
 
     private
     def journal_params
-        params.require(:journal).permit(:title, :body, :category_id, :photo)
+        params.require(:journal).permit(:title, :subtitle, :body, :category_id, :photo)
     end
 
 end

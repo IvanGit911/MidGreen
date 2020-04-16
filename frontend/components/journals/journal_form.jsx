@@ -9,7 +9,8 @@ class JournalForm extends React.Component {
     this.state["imageFile"] = null;
 
     this.handleFile = this.handleFile.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleCreate = this.handleCreate.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
     this.update = this.update.bind(this);
   }
 
@@ -19,39 +20,6 @@ class JournalForm extends React.Component {
 
   updateSelect() {
     return (e) => this.setState({ category_id: parseInt(e.target.value) });
-  }
-
-  handleSubmit(e) {
-    // debugger
-    e.preventDefault();
-    const formData = new FormData();
-    formData.append("journal[title]", this.state.title);
-    formData.append("journal[body]", this.state.body);
-    formData.append("journal[category_id]", this.state.category_id);
-
-    if (this.state.imageUrl) {
-      formData.append("journal[photo]", this.state.imageFile);
-    }
-
-    //?!
-    // else if (this.state.photo){
-    //   formData.append("journal[photo]", this.state.photo);
-    // }
-    // debugger
-
-    $.ajax({
-      url: "/api/journals",
-      method: "POST",
-      data: formData,
-      contentType: false,
-      processData: false,
-    }).then(() =>
-      this.props.history.push(`/users/${this.props.currentUserId}/journals`)
-    );
-
-    // this.props
-    //   .action(this.state)
-    //   .then(() => this.props.history.push(`/users/${this.props.currentUserId}/journals`));
   }
 
   handleFile(e) {
@@ -67,9 +35,76 @@ class JournalForm extends React.Component {
     }
   }
 
+  handleCreate(e) {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("journal[title]", this.state.title);
+    formData.append("journal[subtitle]", this.state.subtitle);
+    formData.append("journal[body]", this.state.body);
+    formData.append("journal[category_id]", this.state.category_id);
+
+    if (this.state.imageUrl) {
+      formData.append("journal[photo]", this.state.imageFile);
+    }
+
+    $.ajax({
+      url: "/api/journals",
+      method: "POST",
+      data: formData,
+      contentType: false,
+      processData: false,
+    }).then(() =>
+      this.props.history.push(`/users/${this.props.currentUserId}/journals`)
+    );
+  }
+
+  handleUpdate(e) {
+    e.preventDefault();
+    if (this.state["imageFile"]) {
+      const formData = new FormData();
+      formData.append("journal[title]", this.state.title);
+      formData.append("journal[subtitle]", this.state.subtitle);
+      formData.append("journal[body]", this.state.body);
+      formData.append("journal[category_id]", this.state.category_id);
+
+      if (this.state.imageUrl) {
+        formData.append("journal[photo]", this.state.imageFile);
+      }
+
+      $.ajax({
+        url: `/api/journals/${this.state.id}`,
+        method: "PATCH",
+        data: formData,
+        contentType: false,
+        processData: false,
+      }).then(() =>
+        this.props.history.push(`/users/${this.props.currentUserId}/journals`)
+      );
+    } else {
+      const newJournal = {
+        id: this.state.id,
+        title: this.state.title,
+        subtitle: this.state.subtitle,
+        body: this.state.body,
+        category_id: this.state.category_id,
+      };
+      this.props
+        .updateJournal(newJournal)
+        .then(() =>
+          this.props.history.push(`/users/${this.props.currentUserId}/journals`)
+        );
+    }
+  }
+
   render() {
     const { btnText, currentUserId, categories } = this.props;
-    const scdButton = btnText !== "Publish" ? "Back to Journals" : null;
+    const scdButton =
+      btnText !== "Publish" ? (
+        <Link className="j-scdButton" to={`/users/${currentUserId}/journals`}>
+          Back to Journals
+        </Link>
+      ) : null;
+
     const preview = this.state.imageUrl ? (
       <img src={this.state.imageUrl} alt="" />
     ) : null;
@@ -82,17 +117,17 @@ class JournalForm extends React.Component {
       </option>
     ));
 
+    const action =
+      btnText === "Publish" ? this.handleCreate : this.handleUpdate;
+
+    debugger;
+
     return (
       <div>
-        <form className="journal-form" onSubmit={this.handleSubmit}>
+        <form className="journal-form" onSubmit={action}>
           <div className="j-btns">
             <input className="publish-btn" type="submit" value={btnText} />
-            <Link
-              className="j-scdButton"
-              to={`/users/${currentUserId}/journals`}
-            >
-              {scdButton}
-            </Link>
+            {scdButton}
           </div>
           <input
             className="j-form-title"

@@ -33,7 +33,7 @@ const App = () => {
       {/* <div className="category-bar">
       </div> */}
 
-      <AuthRoute extract path="/" component={WelcomeContainer} />
+      
 
       <Switch>
         <Route
@@ -74,6 +74,7 @@ const App = () => {
         <ProtectedRoute exact path="/comments/:commentId/new" component={CreateChildCommentsContainer} />
 
         <ProtectedRoute exact path="/" component={IndexContainer} />
+        <AuthRoute extract path="/" component={WelcomeContainer} />
       </Switch>
 
       <Footer />

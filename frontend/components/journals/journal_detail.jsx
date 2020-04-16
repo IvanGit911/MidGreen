@@ -1,7 +1,7 @@
 import React from "react";
 import dateHelper from "../../utils/date_helper";
 import { Link } from "react-router-dom";
-import CommentList from "./comment_list";
+import CommentList from "../comments/comment_list";
 
 class JournalDetail extends React.Component {
   constructor(props) {
