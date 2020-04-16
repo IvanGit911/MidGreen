@@ -41,13 +41,16 @@ class CreateChildComments extends React.Component {
     if (!parentComment) return null;
 
     return (
-      <div>
-        <div>
-          <div>Showing responses for:</div>
-          <div>
-            <div>{parentComment.comment_author}</div>
-            <div>{parentComment.body}</div>
+      <div className="comments">
+        <h1>Showing comments for:</h1>
+        <div className="comment-container">
+          <div className="comment-top">
+            <div className="comment-author">
+              {parentComment.comment_author[0]}
+            </div>
+            <div className="comment-info">{parentComment.comment_author}</div>
           </div>
+          <div className="comment-body">{parentComment.body}</div>
         </div>
 
         <form className="new-comment" onSubmit={this.handleSubmitComment}>

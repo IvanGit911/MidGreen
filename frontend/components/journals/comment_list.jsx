@@ -19,8 +19,8 @@ const CommentList = ({ comment, allComments, comment_authors, journalId }) => {
 
   // debugger;
   return (
-    <div>
-      <div>
+    <>
+      <>
         <div className="comment-top">
           <div className="comment-author">
             {comment_authors[comment.author_id][0]}
@@ -41,7 +41,7 @@ const CommentList = ({ comment, allComments, comment_authors, journalId }) => {
             </Link>
           </div>
         </div>
-      </div>
+      </>
 
       <div
         className="child-comments"
@@ -53,7 +53,7 @@ const CommentList = ({ comment, allComments, comment_authors, journalId }) => {
       >
         {nestedComments}
       </div>
-    </div>
+    </>
   );
 };
 

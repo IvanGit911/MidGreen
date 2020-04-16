@@ -29,9 +29,9 @@ const App = () => {
           <NavBarContainer />
         </div>
       </div>
-      <div className="category-bar">
         <ProtectedRoute path="/" component={CategoriesBar} />
-      </div>
+      {/* <div className="category-bar">
+      </div> */}
 
       <AuthRoute extract path="/" component={WelcomeContainer} />
 

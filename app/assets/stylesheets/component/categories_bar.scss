@@ -1,14 +1,15 @@
-.category-bar{
-
+.category-bar {
   display: flex;
   // max-width: 1032px;
-  
 
+  position: sticky;
+  top: 0px;
+  background-color: white;
 }
 
 .categoryList {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  max-width: 1032px;
+  // max-width: 1032px;
   width: 1032px;
   // width: 100%;
   padding: 0px 30px 0px 30px;
@@ -20,12 +21,8 @@
   height: 50px;
   line-height: 50px;
   text-align: center;
-  
-  //todo
-  position: sticky;
-  top: 0;
+
   // overflow: hidden;  //bonus, move outside the bar
- 
 }
 
 .categoryList > li {

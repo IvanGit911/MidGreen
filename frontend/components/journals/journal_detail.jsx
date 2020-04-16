@@ -6,23 +6,27 @@ import CommentList from "./comment_list";
 class JournalDetail extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {//this for create top-level comment
+    this.state = {
+      //this for create top-level comment
       body: "",
       journal_id: this.props.match.params.journalId,
     };
     this.updateComment = this.updateComment.bind(this);
-    this.handleSubmitComment = this.handleSubmitComment.bind(this)
+    this.handleSubmitComment = this.handleSubmitComment.bind(this);
   }
 
   updateComment(field) {
     return (e) => this.setState({ [field]: e.target.value });
   }
 
-  handleSubmitComment(e){
+  handleSubmitComment(e) {
     e.preventDefault();
-    debugger
-    this.props.createComment(this.state)
-    //this will have a when
+    // debugger;
+    this.props.createComment(this.state);
+    // .then(() => {
+    //   debugger
+    //   this.setState({ body: "" })});
+    //this will have a then
   }
 
   componentDidMount() {
@@ -35,8 +39,6 @@ class JournalDetail extends React.Component {
     if (!journal) return null;
 
     const comment_authors = journal.comment_authors;
-    // debugger
-    // debugger
 
     const showComments = journal.all_comments
       ? Object.keys(journal.all_comments).length !== 0
@@ -54,10 +56,11 @@ class JournalDetail extends React.Component {
           })
         : null
       : null;
-      
 
-    const placeHolderText = showComments ? "Write a comment..." : "Be the first to write a comment...";
-    
+    const placeHolderText = showComments
+      ? "Write a comment..."
+      : "Be the first to write a comment...";
+
     return (
       <>
         <div className="journal-content">
@@ -89,11 +92,22 @@ class JournalDetail extends React.Component {
           </ul>
         </div>
         <div className="comments">
-          <h1 >Comments</h1>
+          <h1>Comments</h1>
           <form className="new-comment" onSubmit={this.handleSubmitComment}>
-            <textarea className="new-comment-body" cols="1" rows="5" placeholder={placeHolderText} onChange={this.updateComment('body')}></textarea>
-            <input className="submit-comment-btn" type="submit" value="Publish" />
+            <textarea
+              className="new-comment-body"
+              cols="1"
+              rows="5"
+              placeholder={placeHolderText}
+              onChange={this.updateComment("body")}
+            ></textarea>
+            <input
+              className="submit-comment-btn"
+              type="submit"
+              value="Publish"
+            />
           </form>
+          
           {showComments}
         </div>
       </>
