@@ -44,10 +44,6 @@ class Footer extends React.Component {
             <img src={window.github} alt="" />
             <img src={window.linkedin} alt="" />
             <img src={window.angellist} alt="" />
-            {/* <li>Github</li>
-            <li>Linkedin</li>
-            <li>Anglelist</li>
-            <li>Profolio</li> */}
           </div>
         </div>
       </footer>

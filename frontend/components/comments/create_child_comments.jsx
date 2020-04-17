@@ -16,15 +16,14 @@ class CreateChildComments extends React.Component {
 
   handleSubmitComment(e) {
     e.preventDefault();
-    // debugger;
     const childComment = {
       body: this.state.body,
       parent_comment_id: this.props.parentComment.id,
       journalId: this.props.parentComment.journal_id,
     };
-    // debugger
+
     this.props.createComment(childComment).then(() => {
-      // debugger;
+      // debugger
       this.props.history.push(
         `/journals/${this.props.parentComment.journal_id}`
       );
@@ -32,12 +31,11 @@ class CreateChildComments extends React.Component {
   }
 
   componentDidMount() {
-    // debugger
     this.props.requestComment(this.props.match.params.commentId);
   }
   render() {
     const { parentComment } = this.props;
-    // debugger;
+
     if (!parentComment) return null;
 
     return (

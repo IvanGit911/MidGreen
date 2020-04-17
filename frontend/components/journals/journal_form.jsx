@@ -90,8 +90,9 @@ class JournalForm extends React.Component {
       };
       this.props
         .updateJournal(newJournal)
-        .then(() =>
-          this.props.history.push(`/users/${this.props.currentUserId}/journals`)
+        .then(() => {
+          debugger
+            this.props.history.push(`/users/${this.props.currentUserId}/journals`)}
         );
     }
   }

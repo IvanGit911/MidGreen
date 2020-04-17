@@ -30,7 +30,6 @@ class Api::JournalsController < ApplicationController
     end
 
     def update
-        debugger
         @journal = Journal.find(params[:id])
         if @journal.author_id == current_user.id
             if @journal.update(journal_params)

@@ -2,6 +2,7 @@ import React from "react";
 import dateHelper from "../../utils/date_helper";
 import { Link } from "react-router-dom";
 import CommentList from "../comments/comment_list";
+import CreateTopLevelCommentContainer from "../comments/create_top_level_comment_container";
 
 class JournalDetail extends React.Component {
   constructor(props) {
@@ -91,9 +92,19 @@ class JournalDetail extends React.Component {
             </li>
           </ul>
         </div>
+
+        <div>
+          <Link to={`/journals/${journal.id}/newComment`}>
+            {placeHolderText}
+          </Link>
+        </div>
+
         <div className="comments">
           <h1>Comments</h1>
-          <form className="new-comment" onSubmit={this.handleSubmitComment}>
+
+          <CreateTopLevelCommentContainer key={journal.id} journalId={journal.id} />
+
+          {/* <form className="new-comment" onSubmit={this.handleSubmitComment}>
             <textarea
               className="new-comment-body"
               cols="1"
@@ -106,8 +117,8 @@ class JournalDetail extends React.Component {
               type="submit"
               value="Publish"
             />
-          </form>
-          
+          </form> */}
+
           {showComments}
         </div>
       </>

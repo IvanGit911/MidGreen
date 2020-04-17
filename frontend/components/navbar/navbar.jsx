@@ -63,7 +63,7 @@ class NavBar extends React.Component {
     let { currentUser } = this.props;
     const email = currentUser.email ? currentUser.email.split("@")[0] : null;
     return (
-      <div ref={this.container}>
+      <div className="dropdown-box">
         <button className="currentuser-1" onClick={this.handleButtonClick}>
           {currentUser.username[0].toUpperCase()}
         </button>
@@ -71,8 +71,8 @@ class NavBar extends React.Component {
         {/* <Dropdown logout={logout} email={email} currentUser={currentUser} /> */}
 
         {this.state.open && (
-          <div className="dropdown-content">
-            <ul className="dropdown-box">
+         
+          <ul ref={this.container} className="dropdown-content">
               <div className="user-info3">
                 <li className="currentuser">
                   {currentUser.username[0].toUpperCase()}
@@ -102,7 +102,7 @@ class NavBar extends React.Component {
                 Log out
               </button>
             </ul>
-          </div>
+          
         )}
       </div>
     );

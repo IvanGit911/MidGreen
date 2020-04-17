@@ -13,7 +13,9 @@ import EditJournalContainer from "../components/journals/edit_journal_container"
 import UserJournalsContainer from "../components/users/user_journals_container";
 import Footer from "./footer/footer";
 import IndexContainer from "./index/index_container";
+
 import CreateChildCommentsContainer from "./comments/create_child_comments_container";
+import CreateTopLevelCommentContainer from "./comments/create_top_level_comment_container";
 
 const App = () => {
   return (
@@ -65,6 +67,12 @@ const App = () => {
           exact
           path="/journals/:journalId/edit"
           component={EditJournalContainer}
+        />
+
+        <ProtectedRoute
+          exact
+          path="/journals/:journalId/newComment"
+          component={CreateTopLevelCommentContainer}
         />
 
         <ProtectedRoute

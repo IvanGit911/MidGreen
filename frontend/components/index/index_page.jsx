@@ -6,11 +6,9 @@ import BottomLeftList from "./bottom_left_list";
 import BottomRightList from "./bottom_right_list";
 import TopStory from "./top_story";
 import TopRightList from "./top_right_list";
-TopRightList;
 
 class IndexPage extends React.Component {
   componentDidMount() {
-    // debugger
     this.props.requestAllJournals();
   }
 
@@ -60,7 +58,7 @@ class IndexPage extends React.Component {
 
           <div className="index-top-mid">{topMidList}</div>
 
-          <TopRightList key={topStory.id} journal={topRightJournal} />
+          <TopRightList key={topRightJournal.id} journal={topRightJournal} />
         </div>
         <div className="index-mid">SEE EDITOR'S PICKS</div>
 
