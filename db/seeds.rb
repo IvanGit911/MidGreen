@@ -11,20 +11,20 @@ lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 Ut etiam sit amet nisl. Amet consectetur adipiscing elit duis tristique sollicitudin nibh. Rhoncus aenean vel elit scelerisque. Fermentum dui faucibus in ornare quam. Turpis cursus in hac habitasse platea dictumst quisque sagittis. Eros in cursus turpis massa tincidunt dui ut. Leo vel orci porta non pulvinar. Enim nulla aliquet porttitor lacus luctus accumsan tortor posuere ac. Adipiscing elit duis tristique sollicitudin. Lobortis feugiat vivamus at augue eget arcu dictum. Faucibus a pellentesque sit amet. Vulputate eu scelerisque felis imperdiet proin fermentum leo vel orci. Vivamus arcu felis bibendum ut tristique et egestas quis. Tincidunt ornare massa eget egestas. Id velit ut tortor pretium viverra. Lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit amet. Etiam sit amet nisl purus in mollis nunc. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar proin. Ligula ullamcorper malesuada proin libero nunc consequat."
 # demoUser = User.create(username: "Ivan Wang", email: "wang.han.ivan@hotmail.com", password: 'thisisareallygoodpassword');
 
-9.times do 
-    User.create(username:Faker::Name.unique.name, email: Faker::Internet.unique.email, password: 'password')
-end
+# 9.times do 
+#     User.create(username:Faker::Name.unique.name, email: Faker::Internet.unique.email, password: 'password')
+# end
 
-category1 = Category.create(title: 'Solar', description: 'Solar energy.');
-category2 = Category.create(title: 'Wind', description: 'Wind energy.');
-category10 = Category.create(title: 'SDG goals', description: 'SDG goals.');
-category3 = Category.create(title: 'Electric cars', description: 'Electric cars');
-category4 = Category.create(title: 'Global warming', description: 'Global warming');
-category8 = Category.create(title: 'Transportation', description: 'Transportation');
-category5 = Category.create(title: 'Air Polution', description: 'Air Polution');
-category9 = Category.create(title: 'Water polution', description: 'Water polution');
-category7 = Category.create(title: 'LEED', description: 'LEED certificate');
-category6 = Category.create(title: 'Aashe', description: 'Aashe');
+# category1 = Category.create(title: 'Solar', description: 'Solar energy.');
+# category2 = Category.create(title: 'Wind', description: 'Wind energy.');
+# category10 = Category.create(title: 'SDG goals', description: 'SDG goals.');
+# category3 = Category.create(title: 'Electric cars', description: 'Electric cars');
+# category4 = Category.create(title: 'Global warming', description: 'Global warming');
+# category8 = Category.create(title: 'Transportation', description: 'Transportation');
+# category5 = Category.create(title: 'Air Polution', description: 'Air Polution');
+# category9 = Category.create(title: 'Water polution', description: 'Water polution');
+# category7 = Category.create(title: 'LEED', description: 'LEED certificate');
+# category6 = Category.create(title: 'Aashe', description: 'Aashe');
 
 
 j = Journal.create!(title: "China’s new solar farms have an adorable design", subtitle: Faker::Lorem.paragraph, body: lorem, author_id: rand(1...10), category_id: 1)
