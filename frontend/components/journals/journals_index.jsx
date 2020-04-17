@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Img from "react-image";
 import dateHelper from "../../utils/date_helper";
 
 class JournalIndex extends React.Component {
@@ -25,7 +24,12 @@ class JournalIndex extends React.Component {
       // debugger;
       return (
         <li key={journal.id}>
-          <img className="journal-img" src={journal.photo} />
+          <div className="journal-img">
+            <Link to={`/journals/${journal.id}`}>
+              <img src={journal.photo} />
+            </Link>
+          </div>
+
           <ul className="journal-info">
             <li className="j-index-title-1">
               <Link to={`/journals/${journal.id}`}>{journal.title}</Link>

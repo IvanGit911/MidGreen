@@ -24,9 +24,8 @@
   color: rgba(0, 0, 0, 0.6);
 }
 
-.journal-img {
-  width: 60%;
-  height: auto;
+.journal-img img{
+  object-fit: cover;
 }
 
 //--------------------------------------
@@ -48,6 +47,15 @@
   
 }
 
+.category-journals > li:nth-child(-n + 2) .journal-img{
+  width: 60%;
+}
+
+.category-journals > li:nth-child(-n + 2) img{
+  height: 355px;
+}
+
+
 .category-journals > li:nth-child(-n + 2) .journal-info > li {
   padding: 10px;
 }
@@ -58,9 +66,15 @@
 
 .category-journals > li:nth-child(-n + 2) .journal-info .journal-btm {
   display: flex;
-  width: 38%;
+  width: 35%;
   justify-content: space-between;
   font-size: 13px;
+}
+
+
+.category-journals > li:nth-child(-n + 2) .j-index-title-1{
+  width: 80%;
+  text-align: center;
 }
 
 .category-journals > li:nth-child(2) {
@@ -86,6 +100,10 @@
   border-top: 1px solid rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: row-reverse;
+}
+
+.category-journals > li:nth-child(n + 3) img {
+  height: 180px;
 }
 
 .category-journals > li:nth-child(n + 3) .journal-img {
@@ -140,7 +158,7 @@
 
 .category-journals > li:nth-child(n + 3) .journal-info .journal-btm {
   display: flex;
-  width: 25%;
+  width: 20%;
   justify-content: space-between;
 }
 
@@ -153,9 +171,4 @@
 
 .journals .fas{
   font-size: 5px;
-}
-
-
-.j-index-title-1{
-  width: 80%;
 }

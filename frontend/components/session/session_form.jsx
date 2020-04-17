@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -8,19 +9,25 @@ class SessionForm extends React.Component {
       password: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   demoLogin(e) {
-    this.props.demoLogin(this.props.demoUser).then(this.props.closeModal);
+    this.props
+      .demoLogin(this.props.demoUser)
+      .then(this.props.clearErrors)
+      .then(this.props.closeModal)
+      .then(() => this.props.history.push("/"));
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state);
+    // const user = Object.assign({}, this.state);
     this.props
-      .processForm(user)
+      .processForm(this.state)
       .then(this.props.clearErrors)
-      .then(this.props.closeModal);
+      .then(this.props.closeModal)
+      .then(() => this.props.history.push("/"));
   }
 
   update(field) {
@@ -92,4 +99,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default SessionForm;
+export default withRouter(SessionForm);

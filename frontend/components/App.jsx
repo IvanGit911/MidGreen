@@ -74,8 +74,8 @@ const App = () => {
         />
 
         <ProtectedRoute exact path="/" component={IndexContainer} />
-        <AuthRoute extract path="/" component={WelcomeContainer} />
       </Switch>
+      <Route exact path="/welcome" component={WelcomeContainer} />
 
       <Footer />
     </div>

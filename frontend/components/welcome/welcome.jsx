@@ -94,17 +94,21 @@ class Welcome extends React.Component {
             </div>
           </div>
         </li>
-        <li>
+
+        {/* todo */}
+        
+            {/* <div className="wel-background">this need to be fixed</div> */}
+        {/* <li>
           <div className="wel-tle-2">
             <h1 className="wel-title">
               100 million sustainabiity readers and growing.
             </h1>
-            {/* <div className="wel-background">this need to be fixed</div> */}
             <div className="wel-cmt">
               this will be replaced with some awesome comments!!!
             </div>
           </div>
-        </li>
+        </li> */}
+
         <li className="wel-btm">
           <div className="wel-title">Save the planet. Save the legacy.</div>
         </li>

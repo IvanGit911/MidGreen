@@ -77,13 +77,16 @@
 }
 
 .new-comment {
-  border: 1px solid rgba(0, 0, 0, 0.09);
+  // border: 1px solid rgba(0, 0, 0, 0.09);
   margin-top: 15px;
   margin-bottom: 20px;
-  border-radius: 5px;
+  // border-radius: 5px;
 }
 
 .new-comment-body {
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  border-radius: 5px;
+  padding: 10px;
   resize: none;
   width: 100%;
   font-size: 18px;

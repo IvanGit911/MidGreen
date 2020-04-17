@@ -65,7 +65,7 @@ class EditUserForm extends React.Component {
           <p>Permanently delete your account and all of your journals.</p>
           <button
             className="dlt-user-btn"
-            onClick={this.handleDelete}
+            // onClick={this.handleDelete}
           >
             Delete account
           </button>

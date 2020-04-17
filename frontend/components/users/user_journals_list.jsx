@@ -20,7 +20,9 @@ class UserJournalsList extends React.Component {
         <Link to={`/journals/${journal.id}`}>{journal.title}</Link>
         <div className="my-j-btns">
           <Link to={`/journals/${journal.id}/edit`}>Edit journal</Link>
-          <button onClick={() => this.handleDelete(journal.id)}>
+          <button
+          // onClick={() => this.handleDelete(journal.id)}
+          >
             Delete journal
           </button>
         </div>
