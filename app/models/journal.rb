@@ -14,7 +14,7 @@
 class Journal < ApplicationRecord
     validates :title, :body, :author_id, :category_id, presence: true
 
-    validate :ensure_photo
+    # validate :ensure_photo
 
     belongs_to :author,
         foreign_key: :author_id,
