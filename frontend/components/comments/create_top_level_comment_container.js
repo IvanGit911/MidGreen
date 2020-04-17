@@ -7,11 +7,11 @@ const msp = (state, ownProps) => {
   return {
     comment: {
       body: "",
-    //   journal_id: state.entities.journals[ownProps.match.params.journalId].id,
-      journal_id: state.entities.journals[ownProps.journalId].id,
+      journal_id: state.entities.journals[ownProps.match.params.journalId].id,
+      // journal_id: state.entities.journals[ownProps.journalId].id,
     },
-    // journal: state.entities.journals[ownProps.match.params.journalId],
-    journal: state.entities.journals[ownProps.journalId],
+    journal: state.entities.journals[ownProps.match.params.journalId],
+    // journal: state.entities.journals[ownProps.journalId],
   };
 };
 

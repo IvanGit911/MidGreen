@@ -14,18 +14,19 @@ class CreateTopLevelComment extends React.Component {
   handleSubmitComment(e) {
     e.preventDefault();
     // debugger
+    const that = this;
     this.props.createComment(this.state)
-    // .then(() => {
-    //     debugger
-    //   this.props.history.push(
-    //     `/journals/${this.props.journal.journalId}`
-    //   );
-    // });
+    .then(() => {
+        // debugger
+        that.props.history.push(
+        `/journals/${that.props.journal.id}`
+      );
+    });
   }
 
   render() {
     const {journal} = this.props;
-    debugger
+    // debugger
     return (
       <div className="comments">
         <h1>Showing comments for:</h1>

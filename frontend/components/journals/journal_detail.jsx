@@ -8,26 +8,9 @@ class JournalDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      //this for create top-level comment
-      body: "",
-      journal_id: this.props.match.params.journalId,
+      newComment: this.props.comment
     };
-    this.updateComment = this.updateComment.bind(this);
-    this.handleSubmitComment = this.handleSubmitComment.bind(this);
-  }
-
-  updateComment(field) {
-    return (e) => this.setState({ [field]: e.target.value });
-  }
-
-  handleSubmitComment(e) {
-    e.preventDefault();
-    // debugger;
-    this.props.createComment(this.state);
-    // .then(() => {
-    //   debugger
-    //   this.setState({ body: "" })});
-    //this will have a then
+    // this for create top-level comment
   }
 
   componentDidMount() {
@@ -38,7 +21,7 @@ class JournalDetail extends React.Component {
     const { journal } = this.props;
 
     if (!journal) return null;
-
+    
     const comment_authors = journal.comment_authors;
     // debugger
     const showComments = journal.all_comments
@@ -57,7 +40,7 @@ class JournalDetail extends React.Component {
           })
         : null
       : null;
-
+    // debugger
     const placeHolderText = showComments
       ? "Write a comment..."
       : "Be the first to write a comment...";
@@ -103,26 +86,14 @@ class JournalDetail extends React.Component {
         <div className="comments">
           <h1>Comments</h1>
 
-          <CreateTopLevelCommentContainer
+          {/* <CreateTopLevelCommentContainer
             key={journal.id}
             journalId={journal.id}
-          />
+          /> */}
+          {/* link to a comment index then add */}
 
-          {/* <form className="new-comment" onSubmit={this.handleSubmitComment}>
-            <textarea
-              className="new-comment-body"
-              cols="1"
-              rows="5"
-              placeholder={placeHolderText}
-              onChange={this.updateComment("body")}
-            ></textarea>
-            <input
-              className="submit-comment-btn"
-              type="submit"
-              value="Publish"
-            />
-          </form> */}
-
+          
+          
           {showComments}
         </div>
       </>

@@ -5,6 +5,7 @@ import { createComment } from "../../actions/comment_actions";
 
 const msp = (state, ownProps) => ({
   journal: state.entities.journals[ownProps.match.params.journalId],
+  // comment: Object.values(state.entities.comments)[0]
 });
 
 const mdp = (dispatch) => ({
