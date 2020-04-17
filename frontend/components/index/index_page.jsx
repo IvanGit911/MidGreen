@@ -19,12 +19,16 @@ class IndexPage extends React.Component {
 
     if (!journals[0]) return null;
 
-    const randomJournals = [];
-    for (let i = 0; i < 15; i++) {
-      randomJournals.push(
-        journals[Math.floor(Math.random() * journals.length)]
-      );
-    }
+    // const randomJournals = [];
+    // for (let i = 0; i < 15; i++) {
+    //   randomJournals.push(
+    //     journals[Math.floor(Math.random() * journals.length)]
+    //   );
+    // }
+
+    const randNum = Math.floor(Math.random() * (journals.length - 15));
+    // debugger;
+    const randomJournals = journals.slice(randNum, randNum + 15);
 
     const topStory = randomJournals[0];
 
@@ -32,33 +36,27 @@ class IndexPage extends React.Component {
 
     const topMidJournals = randomJournals.slice(2, 5);
     const topMidList = topMidJournals.map((journal) => (
-      <>
-        <TopMidList key={journal.id} journal={journal} />
-      </>
+      <TopMidList key={journal.id} journal={journal} />
     ));
 
     const btmLeftJournals = randomJournals.slice(5, 10);
     const btmLeftList = btmLeftJournals.map((journal) => (
-      <>
-        <BottomLeftList key={journal.id} journal={journal} />
-      </>
+      <BottomLeftList key={journal.id} journal={journal} />
     ));
 
     const btmRightJournals = randomJournals.slice(10, 14);
     const btmRightList = btmRightJournals.map((journal, idx) => (
-      <>
-        <BottomRightList key={journal.id} journal={journal} i={idx} />
-      </>
+      <BottomRightList key={journal.id} journal={journal} i={idx} />
     ));
 
     return (
       <div className="index">
         <div className="index-top">
-          <TopStory key={topStory.id} topStory={topStory} />
+          <TopStory topStory={topStory} />
 
           <div className="index-top-mid">{topMidList}</div>
 
-          <TopRightList key={topRightJournal.id} journal={topRightJournal} />
+          <TopRightList journal={topRightJournal} />
         </div>
         <div className="index-mid">SEE EDITOR'S PICKS</div>
 

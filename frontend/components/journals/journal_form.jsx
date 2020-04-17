@@ -91,7 +91,7 @@ class JournalForm extends React.Component {
       this.props
         .updateJournal(newJournal)
         .then(() => {
-          debugger
+          // debugger
             this.props.history.push(`/users/${this.props.currentUserId}/journals`)}
         );
     }
@@ -131,7 +131,7 @@ class JournalForm extends React.Component {
       );
 
     let selected = this.state.category_id.toString();
-    debugger;
+    // debugger;
     return (
       <div>
         <form className="journal-form" onSubmit={action}>

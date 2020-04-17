@@ -40,7 +40,7 @@ class JournalDetail extends React.Component {
     if (!journal) return null;
 
     const comment_authors = journal.comment_authors;
-
+    // debugger
     const showComments = journal.all_comments
       ? Object.keys(journal.all_comments).length !== 0
         ? journal.all_comments[""].map((comment) => {
@@ -79,6 +79,7 @@ class JournalDetail extends React.Component {
                 </div>
                 <div className="journal-authinfo-2">
                   <div>{dateHelper(journal.updated_at)}</div>
+                  <i className="fas fa-circle"></i>
                   <div>{`${Math.floor(Math.random() * 10 + 2)} min read`}</div>
                 </div>
               </div>
@@ -93,7 +94,7 @@ class JournalDetail extends React.Component {
           </ul>
         </div>
 
-        <div>
+        <div className="m-j-add-comment">
           <Link to={`/journals/${journal.id}/newComment`}>
             {placeHolderText}
           </Link>
@@ -102,7 +103,10 @@ class JournalDetail extends React.Component {
         <div className="comments">
           <h1>Comments</h1>
 
-          <CreateTopLevelCommentContainer key={journal.id} journalId={journal.id} />
+          <CreateTopLevelCommentContainer
+            key={journal.id}
+            journalId={journal.id}
+          />
 
           {/* <form className="new-comment" onSubmit={this.handleSubmitComment}>
             <textarea
