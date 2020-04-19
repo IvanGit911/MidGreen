@@ -7,6 +7,7 @@ class SessionForm extends React.Component {
     this.state = {
       username: "",
       password: "",
+      email: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
@@ -45,6 +46,20 @@ class SessionForm extends React.Component {
         ? "Create an account to join our green community, publish sustainability journals, and follow authors and categories you love."
         : "Sign in to get up-to-date sustainability journals, follow authors and categories you love, and interact with journals.";
 
+    const emailInput =
+      formType === "Go Green." ? (
+        <div className="ses-info">
+          <label>Email</label>
+          <input
+            className="modal-input"
+            type="email"
+            value={this.state.email}
+            onChange={this.update("email")}
+            placeholder="Enter email"
+          />
+        </div>
+      ) : null;
+
     return (
       <div className="modal-child">
         <div onClick={closeModal} className="close-x">
@@ -67,7 +82,8 @@ class SessionForm extends React.Component {
               />
             </div>
 
-            <br />
+            {emailInput}
+
             <div className="ses-info">
               <label htmlFor="password">Password</label>
               <input
@@ -79,7 +95,6 @@ class SessionForm extends React.Component {
               />
             </div>
 
-            <br />
             <input className="modal-submit" type="submit" value={btn_text} />
           </form>
           <button

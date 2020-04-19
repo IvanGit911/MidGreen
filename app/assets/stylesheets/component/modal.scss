@@ -52,7 +52,7 @@
   flex-direction: column;
   align-items: center;
   width: 55%;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .modal-switch {
@@ -70,6 +70,7 @@
   height: 23px;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 15px;
 }
 
 .modal-title {
@@ -128,4 +129,11 @@
 .demo:hover{
   color: white;
   background-color: rgba(3, 168, 124, 1);
+}
+
+.session-err{
+  padding-top: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: red;
 }
