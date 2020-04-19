@@ -47,15 +47,12 @@ class JournalForm extends React.Component {
       formData.append("journal[photo]", this.state.imageFile);
     }
 
-    $.ajax({
-      url: "/api/journals",
-      method: "POST",
-      data: formData,
-      contentType: false,
-      processData: false,
-    }).then(() =>
-      this.props.history.push(`/users/${this.props.currentUserId}/journals`)
-    );
+    this.props
+      .createJournal(formData)
+      .then(() => this.props.clearErrors())
+      .then(() =>
+        this.props.history.push(`/users/${this.props.currentUserId}/journals`)
+      );
   }
 
   handleUpdate(e) {
@@ -70,7 +67,7 @@ class JournalForm extends React.Component {
       if (this.state.imageUrl) {
         formData.append("journal[photo]", this.state.imageFile);
       }
-
+      debugger;
       $.ajax({
         url: `/api/journals/${this.state.id}`,
         method: "PATCH",
@@ -88,17 +85,17 @@ class JournalForm extends React.Component {
         body: this.state.body,
         category_id: this.state.category_id,
       };
-      this.props
-        .updateJournal(newJournal)
-        .then(() => {
-          // debugger
-            this.props.history.push(`/users/${this.props.currentUserId}/journals`)}
-        );
+      this.props.updateJournal(newJournal).then(() => {
+        // debugger
+        this.props.history.push(`/users/${this.props.currentUserId}/journals`);
+      });
     }
   }
 
   render() {
-    const { btnText, currentUserId, categories } = this.props;
+    const { btnText, currentUserId, categories, errors } = this.props;
+    const errList = errors.map((err, idx) => <li key={idx}>{err}</li>);
+
     const scdButton =
       btnText !== "Publish" ? (
         <Link className="j-scdButton" to={`/users/${currentUserId}/journals`}>
@@ -109,8 +106,6 @@ class JournalForm extends React.Component {
     const preview = this.state.imageFile ? (
       <img className="preview-img" src={this.state.imageUrl} />
     ) : null;
-
-    // debugger;
 
     const categoryList = categories.map((category) => (
       <option key={category.id} value={`${category.id}`}>
@@ -178,6 +173,7 @@ class JournalForm extends React.Component {
           <i className="fas fa-plus-circle"></i>
           <input type="file" onChange={this.handleFile} />
         </label>
+        <ul className="journal-errs">{errList}</ul>
       </div>
     );
   }

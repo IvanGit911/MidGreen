@@ -11,7 +11,7 @@ class UserJournals extends React.Component {
   render() {
     const { user, deleteJournal } = this.props;
 
-    if (!user.journals) return null; //! to trigger componentDidMount
+    if (!user.journals) return null;
     
     return (
       <div className="my-journals">

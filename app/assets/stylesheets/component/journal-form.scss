@@ -77,3 +77,19 @@
   left: -65px;
   cursor: pointer;
 }
+
+.journal-errs{
+  // text-align: center;
+  position: relative;
+  top: -900px;
+  left: -210px;
+  color: red;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  width: 200px;
+  font-size:20px;
+  font-weight: bold;
+
+}
+.journal-errs > li {
+  padding-bottom: 13px;
+}

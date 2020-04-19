@@ -32,7 +32,7 @@ class Journal < ApplicationRecord
 
     def ensure_photo
         unless self.photo.attached?
-            errors[:photo] << 'must exist to publish a journal!'
+            errors[:photo] << 'must exist!'
         end
     end
 

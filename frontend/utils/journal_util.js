@@ -28,11 +28,18 @@ export const fetchJournal = (journalId) => (
     })
 );
 
-export const createJournal = journal => (
+export const createJournal = formData => (
+    // $.ajax({
+    //     method: 'POST',
+    //     url: '/api/journals',
+    //     data: {journal}
+    // })
     $.ajax({
-        method: 'POST',
-        url: '/api/journals',
-        data: {journal}
+        url: "/api/journals",
+        method: "POST",
+        data: formData,
+        contentType: false,
+        processData: false,
     })
 )
 
@@ -42,6 +49,7 @@ export const updateJournal = journal => (
         url:  `/api/journals/${journal.id}`,
         data: {journal}
     })
+
 );
 
 export const deleteJournal = journalId => (
