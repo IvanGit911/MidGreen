@@ -11,9 +11,12 @@ Rails.application.routes.draw do
     resources :categories, only: [:index, :show] do
       resources :journals, only: [:index]
     end
+
+    # custom routes
+    post '/users/:id/follow', to: "users#follow", as: "follow_user"
+    post '/users/:id/unfollow', to: "users#unfollow", as: "unfollow_user"
+    
     resources :journals, only: [:index, :create, :show, :destroy, :update] 
-
-
 
     resources :comments, only: [:show, :create, :destroy]
   end

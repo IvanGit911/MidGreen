@@ -31,6 +31,24 @@ class User < ApplicationRecord
         inverse_of: :author
 
 
+    has_many :a_follows_b,
+        foreign_key: :follower_id,
+        class_name: :Follow,
+        dependent: :destroy
+
+    has_many :b_followed_by_a,
+        foreign_key: :followed_id,
+        class_name: :Follow,
+        dependent: :destroy
+         
+    has_many :followings, #a followed many people
+        through: :a_follows_b,
+        source: :followed
+
+    has_many :followers, #b has many followers
+        through: :b_followed_by_a,
+        source: :follower
+
 
 
 

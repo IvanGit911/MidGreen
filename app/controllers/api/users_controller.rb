@@ -1,7 +1,7 @@
 class Api::UsersController < ApplicationController
 
     def show
-        @user = User.includes(:journals).find(params[:id])
+        @user = User.includes(:journals, :followings, :followers).find(params[:id])
         render :show
     end
 
@@ -28,6 +28,19 @@ class Api::UsersController < ApplicationController
     def destroy
         @user = User.find(params[:id])
         @user.destroy
+    end
+
+    def follow
+        @user = User.find(params[:id])
+        @current_user.followings << @user
+        render :show
+    end
+
+
+    def unfollow
+        @user = User.find(params)
+        @current_user.a_follows_b.find_by(followed_id: @user.id).destroy
+        render :show
     end
 
     private
