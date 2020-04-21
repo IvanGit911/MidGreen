@@ -9,4 +9,4 @@ json.followers @user.followers.each do |follower|
 end
 json.followings @user.followings.each  do |follower|
     json.extract! follower, :id, :username
-end 
+end  

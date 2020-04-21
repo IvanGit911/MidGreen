@@ -3,25 +3,36 @@ import dateHelper from "../../utils/date_helper";
 import { Link } from "react-router-dom";
 import CommentList from "../comments/comment_list";
 import CreateTopLevelCommentContainer from "../comments/create_top_level_comment_container";
+import { follow, unfollow } from "../../utils/user-api_util";
 
 class JournalDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      newComment: this.props.comment
+      followed: false,
     };
     // this for create top-level comment
+    this.handleFollow = this.handleFollow.bind(this);
   }
 
   componentDidMount() {
     this.props.requestJournal(this.props.match.params.journalId);
   }
 
+  handleFollow() {
+    // debugger
+    // if follow, unfollow. vise versa
+
+    follow(this.props.journal.author_id).then(() =>
+      this.setState({ followed: !this.state.followed })
+    )
+  }
+
   render() {
-    const { journal } = this.props;
+    const { journal, currentUser } = this.props;
 
     if (!journal) return null;
-    
+    debugger
     const comment_authors = journal.comment_authors;
     // debugger
     const showComments = journal.all_comments
@@ -58,7 +69,12 @@ class JournalDetail extends React.Component {
                   <div>
                     <Link to="">{journal.author}</Link>
                   </div>
-                  <button className="journal-flw-btn">Follow</button>
+                  <button
+                    className="journal-flw-btn"
+                    onClick={this.handleFollow}
+                  >
+                    Follow
+                  </button>
                 </div>
                 <div className="journal-authinfo-2">
                   <div>{dateHelper(journal.updated_at)}</div>
@@ -85,15 +101,6 @@ class JournalDetail extends React.Component {
 
         <div className="comments">
           <h1>Comments</h1>
-
-          {/* <CreateTopLevelCommentContainer
-            key={journal.id}
-            journalId={journal.id}
-          /> */}
-          {/* link to a comment index then add */}
-
-          
-          
           {showComments}
         </div>
       </>

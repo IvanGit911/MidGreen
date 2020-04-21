@@ -30,3 +30,20 @@ export const deleteUser = (userId) => (
   })
 )
 
+export const follow = (userId) => {
+  debugger
+  return $.ajax({
+    method: "POST",
+    url: `/api/users/${userId}/follow`,
+    data: {userId}
+  })
+}
+
+
+export const unfollow = (userId) => (
+  $.ajax({
+    method: "POST",
+    url: `/api/users/${userId}/unfollow`,
+    data: { userId }
+  })
+)
