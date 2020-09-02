@@ -81,6 +81,12 @@ const App = () => {
           component={CreateChildCommentsContainer}
         />
 
+        {/* <ProtectedRoute
+          exact
+          path="/comments/:commentId/edit"
+          component={editCommentsContainer}
+        /> */}
+        
         <ProtectedRoute exact path="/" component={IndexContainer} />
       </Switch>
       <Route exact path="/welcome" component={WelcomeContainer} />

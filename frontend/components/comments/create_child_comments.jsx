@@ -33,6 +33,7 @@ class CreateChildComments extends React.Component {
   componentDidMount() {
     this.props.requestComment(this.props.match.params.commentId);
   }
+  
   render() {
     const { parentComment } = this.props;
 

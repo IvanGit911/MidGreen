@@ -31,7 +31,7 @@ export const deleteUser = (userId) => (
 )
 
 export const follow = (userId) => {
-  debugger
+  // debugger
   return $.ajax({
     method: "POST",
     url: `/api/users/${userId}/follow`,

@@ -17,3 +17,9 @@ export const createComment = (comment) => (dispatch) =>
     (comment) => dispatch(receiveComment(comment)),
     (errors) => dispatch(receiveErrors(errors.responseJSON))
   );
+
+export const updateComment = (comment) => (dispatch) =>
+  CommentApiUtil.updateComment(comment).then(
+    (comment) => dispatch(receiveComment(comment)),
+    (errors) => dispatch(receiveErrors(errors.responseJSON))
+  );

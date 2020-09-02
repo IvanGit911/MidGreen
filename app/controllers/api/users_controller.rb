@@ -32,14 +32,14 @@ class Api::UsersController < ApplicationController
 
     def follow
         @user = User.find(params[:id])
-        debugger
+        # debugger
         current_user.followings << @user
         render :show
     end
 
 
     def unfollow
-        debugger
+        # debugger
         @user = User.find(params[:id])
         current_user.a_follows_b.find_by(followed_id: @user.id).destroy
         render :show

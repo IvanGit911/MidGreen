@@ -4,11 +4,12 @@ import { connect } from "react-redux";
 
 //todo journalId no user?
 class CommentList extends React.Component {
-  componentDidMount(){ // to fetch comment, but this is in journal, fetch journal?
-
+  componentDidMount() {
+    // to fetch comment, but this is in journal, fetch journal?
   }
 
   render() {
+    debugger
     const { comment, allComments, comment_authors, journalId } = this.props;
     const nestedComments = (allComments[comment.id] || []).map((comment) => {
       return (
@@ -18,11 +19,11 @@ class CommentList extends React.Component {
           comment={comment}
           allComments={allComments}
           comment_authors={comment_authors}
-          // type="child"
         />
       );
     });
-
+    //todo if comment_author is cuurentuser, show edit and delete. Otherwise, not.
+    //comment_authors
     // debugger;
     return (
       <>
@@ -39,6 +40,7 @@ class CommentList extends React.Component {
           <div className="comment-btm">
             <div className="comment-body">{comment.body}</div>
             <div>
+              <p>edit</p>
               <Link
                 className="new-child-comment"
                 to={`/comments/${comment.id}/new`}

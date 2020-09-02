@@ -14,3 +14,11 @@ export const createComment = comment => (
         data: { comment }
     })
 );
+
+export const updateComment = comment => (
+    $.ajax({
+        method: 'PATCH',
+        url: `/api/comments/${comment.id}`,
+        data: {comment}
+    })
+)

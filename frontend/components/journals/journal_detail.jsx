@@ -2,7 +2,7 @@ import React from "react";
 import dateHelper from "../../utils/date_helper";
 import { Link } from "react-router-dom";
 import CommentList from "../comments/comment_list";
-import CreateTopLevelCommentContainer from "../comments/create_top_level_comment_container";
+// import CreateTopLevelCommentContainer from "../comments/create_top_level_comment_container";
 import { follow, unfollow } from "../../utils/user-api_util";
 
 class JournalDetail extends React.Component {
@@ -13,26 +13,51 @@ class JournalDetail extends React.Component {
     };
     // this for create top-level comment
     this.handleFollow = this.handleFollow.bind(this);
+    this.handleUnfollow = this.handleUnfollow.bind(this);
   }
 
   componentDidMount() {
-    this.props.requestJournal(this.props.match.params.journalId);
+    this.props
+      .requestJournal(this.props.match.params.journalId)
+      .then(() => this.props.fetchUser(this.props.currentUserId));
   }
 
   handleFollow() {
     // debugger
     // if follow, unfollow. vise versa
+    // follow(this.props.journal.author_id);
+    this.props
+      .follow(this.props.journal.author_id)
+      .then(() => this.setState({ followed: !this.state.followed }));
+  }
 
-    follow(this.props.journal.author_id).then(() =>
-      this.setState({ followed: !this.state.followed })
-    )
+  handleUnfollow() {
+    // debugger
+    // if follow, unfollow. vise versa
+    // follow(this.props.journal.author_id);
+    this.props
+      .unfollow(this.props.journal.author_id)
+      .then(() => this.setState({ followed: !this.state.followed }));
   }
 
   render() {
-    const { journal, currentUser } = this.props;
+    const { journal, user } = this.props;
 
-    if (!journal) return null;
-    debugger
+    if (!journal || !user.followings) return null;
+    // debugger;
+
+    let followed = false;
+    // debugger;
+    user.followings.forEach((following) => {
+      if (following.username === journal.author) {
+        followed = true;
+      }
+    });
+    // debugger;
+    // if (followed) {
+    //   this.setState({ followed: followed });
+    // }
+
     const comment_authors = journal.comment_authors;
     // debugger
     const showComments = journal.all_comments
@@ -56,6 +81,9 @@ class JournalDetail extends React.Component {
       ? "Write a comment..."
       : "Be the first to write a comment...";
 
+    const followBtn = followed ? "Unfollow" : "Follow";
+    const followAction = followed ? this.handleUnfollow : this.handleFollow;
+
     return (
       <>
         <div className="journal-content">
@@ -69,11 +97,8 @@ class JournalDetail extends React.Component {
                   <div>
                     <Link to="">{journal.author}</Link>
                   </div>
-                  <button
-                    className="journal-flw-btn"
-                    onClick={this.handleFollow}
-                  >
-                    Follow
+                  <button className="journal-flw-btn" onClick={followAction}>
+                    {followBtn}
                   </button>
                 </div>
                 <div className="journal-authinfo-2">
