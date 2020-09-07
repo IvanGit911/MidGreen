@@ -41,9 +41,15 @@ class Footer extends React.Component {
             <p>Tel: 732-875-8961</p>
           </div>
           <div className="footer-icons">
-            <img src={window.github} alt="" />
-            <img src={window.linkedin} alt="" />
-            <img src={window.angellist} alt="" />
+            <a href="https://github.com/IvanGit911">
+              <img src={window.github} alt="" />
+            </a>
+            <a href="https://www.linkedin.com/in/han-ivan-wang-883855126/">
+              <img src={window.linkedin} alt="" />
+            </a>
+            <a href="https://angel.co/u/ivan-wang-14">
+              <img src={window.angellist} alt="" />
+            </a>
           </div>
         </div>
       </footer>

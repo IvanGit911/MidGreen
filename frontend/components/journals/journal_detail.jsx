@@ -97,9 +97,9 @@ class JournalDetail extends React.Component {
                   <div>
                     <Link to="">{journal.author}</Link>
                   </div>
-                  <button className="journal-flw-btn" onClick={followAction}>
+                  {/* <button className="journal-flw-btn" onClick={followAction}>
                     {followBtn}
-                  </button>
+                  </button> */}
                 </div>
                 <div className="journal-authinfo-2">
                   <div>{dateHelper(journal.updated_at)}</div>

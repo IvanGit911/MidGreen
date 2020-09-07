@@ -55,7 +55,7 @@ class JournalIndex extends React.Component {
           <h1>{category.title}</h1>
           <p>{category.description}</p>
           <div className="category-follow">
-            <button className="flw-category-btn">Follow</button>
+            {/* <button className="flw-category-btn">Follow</button> */}
             <p> 100k followers</p>
           </div>
         </div>

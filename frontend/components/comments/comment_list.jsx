@@ -40,7 +40,7 @@ class CommentList extends React.Component {
           <div className="comment-btm">
             <div className="comment-body">{comment.body}</div>
             <div>
-              <p>edit</p>
+              {/* <p>edit</p> */}
               <Link
                 className="new-child-comment"
                 to={`/comments/${comment.id}/new`}
