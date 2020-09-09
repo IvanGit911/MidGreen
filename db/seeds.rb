@@ -35,9 +35,9 @@ category6 = Category.create(title: 'Aashe', description: 'Aashe');
 j = Journal.new(title: "China’s new solar farms have an adorable design", subtitle: Faker::Lorem.paragraph, body: lorem, author_id: rand(1...10), category_id: 1)
 file= open("https://midgreen-dev.s3.amazonaws.com/solar/solar-1.jpg")
 j.photo.attach(io: file, filename: 'solar-1.jpg')
-debugger
+# debugger
 j.save!
-debugger
+# debugger
 j = Journal.new(title: "Scientists Identify a Key Flaw in Solar", subtitle: Faker::Lorem.paragraph, body: lorem, author_id: rand(1...10), category_id: 1)
 file= open("https://midgreen-dev.s3.amazonaws.com/solar/solar-2.jpg")
 j.photo.attach(io: file, filename: 'solar-2.jpg')
